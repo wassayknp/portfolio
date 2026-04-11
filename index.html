@@ -1,539 +1,594 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="light" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdul Wassay - BI & Analytics Specialist | AI-Driven Insights</title>
-    <meta name="description" content="Abdul Wassay is a BI & Analytics Specialist with 7+ years of experience in Power BI, Tableau, AI-driven analytics, and data transformation.">
-    <link rel="icon" type="image/png" href="./assets/profile.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Abdul Wassay — Senior BI & Analytics Engineer</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#2060df",
+            "background-light": "#f6f6f8",
+            "background-dark": "#0B1120",
+          },
+          fontFamily: { "display": ["Inter", "sans-serif"] },
+          borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <style>
+    .grid-pattern {
+      background-size: 40px 40px;
+      background-image:
+        linear-gradient(to right, rgba(32, 96, 223, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(32, 96, 223, 0.05) 1px, transparent 1px);
+    }
+    body { min-height: max(884px, 100dvh); }
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("download-resume").addEventListener("click", function (e) {
-      const date = new Date();
-      const options = { day: '2-digit', month: 'short', year: 'numeric' };
-      const formattedDate = date.toLocaleDateString('en-GB', options).replace(/ /g, '-'); // "11-Jul-2025"
+    /* Scroll reveal */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
 
-      const link = document.createElement('a');
-      link.href = "ABDUL_WASSAY_Resume_BI.pdf";
-      link.download = `ABDUL_WASSAY_Resume_BI_${formattedDate}.pdf`;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      e.preventDefault();
-    });
-  });
-</script>
+    /* Typewriter cursor */
+    .typewriter::after { content: '|'; animation: blink 0.7s step-end infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
 
-    <style>
-        body { font-family: 'Sora', sans-serif; }
-        .animate-float { animation: float 6s ease-in-out infinite; }
-        .animate-pulse-slow { animation: pulse 3s ease-in-out infinite; }
-        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
-        .grid-pattern {
-            background-image: radial-gradient(circle, rgba(34, 197, 94, 0.1) 1px, transparent 1px);
-            background-size: 20px 20px;
-        }
-    </style>
+    /* Animated bars */
+    .bar-fill { width: 0%; transition: width 1.2s cubic-bezier(0.25, 1, 0.5, 1); }
+
+    /* Floating badge */
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+    .float { animation: float 3s ease-in-out infinite; }
+
+    /* Gradient text */
+    .gradient-text { background: linear-gradient(135deg, #2060df, #60a5fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+    /* Shimmer */
+    @keyframes shimmer { 0%{background-position:-200% 0} 100%{background-position:200% 0} }
+    .shimmer { background: linear-gradient(90deg, transparent, rgba(32,96,223,0.08), transparent); background-size: 200% 100%; animation: shimmer 2.5s infinite; }
+
+    /* Tech pill hover */
+    .tech-pill { transition: all 0.2s; cursor: default; }
+    .tech-pill:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(32,96,223,0.18); }
+
+    /* Mobile menu */
+    #mobile-menu { transition: max-height 0.3s ease, opacity 0.3s ease; max-height: 0; opacity: 0; overflow: hidden; }
+    #mobile-menu.open { max-height: 400px; opacity: 1; }
+
+    /* Counter */
+    .counter { font-variant-numeric: tabular-nums; }
+
+    /* Card hover lift */
+    .lift { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .lift:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(32,96,223,0.12); }
+
+    /* Progress ring */
+    .ring-progress { transition: stroke-dashoffset 1.4s cubic-bezier(0.25, 1, 0.5, 1); }
+  </style>
 </head>
-<body class="bg-slate-900 text-white">
-    <!-- Animated Background -->
-    <div class="fixed inset-0 z-0">
-        <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
-        <div class="absolute top-20 left-10 w-16 h-16 bg-green-500/20 rounded-lg animate-float"></div>
-        <div class="absolute top-40 right-20 w-12 h-12 bg-orange-500/20 rounded-full animate-float" style="animation-delay: 1s;"></div>
-        <div class="absolute bottom-40 left-20 w-20 h-20 bg-blue-500/20 rounded-lg animate-float" style="animation-delay: 2s;"></div>
-        <div class="absolute bottom-20 right-10 w-14 h-14 bg-purple-500/20 rounded-full animate-float" style="animation-delay: 3s;"></div>
-        <div class="absolute inset-0 opacity-5 grid-pattern"></div>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-300">
+
+  <!-- ═══ NAVBAR ═══ -->
+  <nav class="sticky top-0 z-50 w-full border-b border-primary/10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+          <div class="bg-primary rounded-lg p-1.5"><span class="material-symbols-outlined text-white text-xl">insights</span></div>
+          <span class="text-lg font-bold tracking-tight">Abdul Wassay</span>
+        </a>
+        <div class="hidden md:flex items-baseline space-x-1">
+          <a class="text-primary font-semibold px-3 py-2 text-sm transition-colors" href="index.html">Home</a>
+          <a class="text-slate-600 dark:text-slate-400 hover:text-primary px-3 py-2 text-sm font-medium transition-colors" href="projects_experience.html">Work</a>
+          <a class="text-slate-600 dark:text-slate-400 hover:text-primary px-3 py-2 text-sm font-medium transition-colors" href="professional_resume.html">Resume</a>
+          <a class="text-slate-600 dark:text-slate-400 hover:text-primary px-3 py-2 text-sm font-medium transition-colors" href="skills_architecture.html">Skills</a>
+          <a class="text-slate-600 dark:text-slate-400 hover:text-primary px-3 py-2 text-sm font-medium transition-colors" href="blog.html">Blog</a>
+          <a class="text-slate-600 dark:text-slate-400 hover:text-primary px-3 py-2 text-sm font-medium transition-colors" href="contact.html">Contact</a>
+        </div>
+        <div class="flex items-center gap-2">
+          <button class="p-2 rounded-full hover:bg-primary/10 transition-colors text-slate-600 dark:text-slate-400 theme-toggle" title="Toggle theme">
+            <span class="material-symbols-outlined theme-icon">light_mode</span>
+          </button>
+          <button id="mob-menu-btn" class="md:hidden p-2 rounded-full text-slate-600 dark:text-slate-400 hover:bg-primary/10 transition-colors">
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile menu -->
+      <div id="mobile-menu">
+        <div class="flex flex-col gap-1 pb-4">
+          <a class="px-3 py-2 text-sm font-medium text-primary" href="index.html">Home</a>
+          <a class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary" href="projects_experience.html">Work</a>
+          <a class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary" href="professional_resume.html">Resume</a>
+          <a class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary" href="skills_architecture.html">Skills</a>
+          <a class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary" href="blog.html">Blog</a>
+          <a class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary" href="contact.html">Contact</a>
+        </div>
+      </div>
     </div>
+  </nav>
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 bg-slate-900/80 backdrop-blur-md border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-4">
-                <div class="flex items-center space-x-2">
-                    <div class="hidden sm:block text-xl font-bold text-white-500"><img src="./assets/profile.png" alt="Abdul Wassay" class="w-8 h-8 rounded-full object-cover"></div> 
-                    <div class="hidden sm:block text-xl font-bold text-white-500">Abdul </div> 
-                    <div class="hidden sm:block text-xl font-bold text-green-500">Wassay &#127470;&#127475;</div>
-                    <div class="sm:hidden flex items-center space-x-2">
-                        <img src="./assets/profile.png" alt="Abdul Wassay" class="w-8 h-8 rounded-full object-cover">
-                        <span class="text-xl font-bold text-white-400">Abdul </span> <span class="text-xl font-bold text-green-400">Wassay &#127470;&#127475;</span>
-                    </div>
-                </div>
-                
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="text-gray-300 hover:text-green-500 transition-colors duration-300">Home</a>
-                    <a href="#about" class="text-gray-300 hover:text-green-500 transition-colors duration-300">About</a>
-                    <a href="#projects" class="text-gray-300 hover:text-green-500 transition-colors duration-300">Projects</a>
-                    <a href="#skills" class="text-gray-300 hover:text-green-500 transition-colors duration-300">Skills</a>
-                    <a href="#certifications" class="text-gray-300 hover:text-green-500 transition-colors duration-300">Certifications</a>
-                    <a href="#contact" class="text-gray-300 hover:text-green-500 transition-colors duration-300">Contact</a>
-                </div>
-                
-                <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-green-500">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
-                </button>
+  <!-- ═══ HERO ═══ -->
+  <main class="relative overflow-hidden bg-background-light dark:bg-background-dark pt-16 pb-24 lg:pt-32 lg:pb-40">
+    <div class="absolute inset-0 grid-pattern pointer-events-none opacity-50"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-background-light/50 to-background-light dark:via-background-dark/50 dark:to-background-dark pointer-events-none"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+      <!-- Avatar -->
+      <div class="flex justify-center mb-8 reveal">
+        <div class="relative p-1 rounded-full bg-gradient-to-tr from-primary to-blue-400 float">
+          <img alt="Abdul Wassay" class="w-32 h-32 rounded-full object-cover border-4 border-white dark:border-slate-900 shadow-xl" src="assets/images/profile_photo.png" onerror="this.src='https://ui-avatars.com/api/?name=AW&background=2060df&color=fff&size=128'" />
+          <div class="absolute bottom-1 right-1 w-6 h-6 bg-emerald-500 border-4 border-white dark:border-slate-900 rounded-full"></div>
+        </div>
+      </div>
+
+      <!-- Status badge -->
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-8 reveal reveal-delay-1">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+        </span>
+        <span class="text-xs font-bold uppercase tracking-wider text-primary">Open to new opportunities</span>
+      </div>
+
+      <!-- Heading -->
+      <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-4 leading-[1.1] reveal reveal-delay-2">
+        Abdul <span class="gradient-text">Wassay</span>
+      </h1>
+      <div class="text-2xl md:text-3xl font-semibold text-slate-700 dark:text-slate-300 mb-6 reveal reveal-delay-2">
+        <span id="typewriter" class="typewriter"></span>
+      </div>
+
+      <!-- Tech pills -->
+      <div class="flex flex-wrap justify-center gap-2 mb-8 reveal reveal-delay-3">
+        <span class="tech-pill px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-bold rounded-full border border-blue-200 dark:border-blue-800">Power BI</span>
+        <span class="tech-pill px-3 py-1 bg-cyan-50 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 text-xs font-bold rounded-full border border-cyan-200 dark:border-cyan-800">Microsoft Fabric</span>
+        <span class="tech-pill px-3 py-1 bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-xs font-bold rounded-full border border-purple-200 dark:border-purple-800">Snowflake</span>
+        <span class="tech-pill px-3 py-1 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 text-xs font-bold rounded-full border border-emerald-200 dark:border-emerald-800">DAX</span>
+        <span class="tech-pill px-3 py-1 bg-amber-50 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 text-xs font-bold rounded-full border border-amber-200 dark:border-amber-800">Tableau</span>
+        <span class="tech-pill px-3 py-1 bg-rose-50 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300 text-xs font-bold rounded-full border border-rose-200 dark:border-rose-800">AI / Copilot</span>
+        <span class="tech-pill px-3 py-1 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 text-xs font-bold rounded-full border border-indigo-200 dark:border-indigo-800">SQL</span>
+        <span class="tech-pill px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold rounded-full border border-slate-200 dark:border-slate-700">MCP Server</span>
+      </div>
+
+      <!-- Bio -->
+      <p class="max-w-2xl mx-auto text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed mb-10 reveal reveal-delay-3">
+        8+ years architecting scalable multi-platform BI solutions for global enterprises. Specializing in Microsoft Fabric, AI-powered reporting, and end-to-end analytics delivery from requirements to production.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal reveal-delay-4">
+        <button onclick="window.location.href='projects_experience.html'" class="w-full sm:w-auto px-8 py-4 bg-primary text-white font-bold rounded-xl shadow-lg shadow-primary/25 hover:bg-primary/90 hover:shadow-primary/40 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
+          View My Work <span class="material-symbols-outlined text-xl">arrow_forward</span>
+        </button>
+        <button onclick="window.location.href='professional_resume.html'" class="w-full sm:w-auto px-8 py-4 bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-bold rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
+          View Resume <span class="material-symbols-outlined text-xl">description</span>
+        </button>
+      </div>
+
+      <!-- ═══ LIVE DASHBOARD PREVIEW ═══ -->
+      <div class="mt-20 relative max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 reveal">
+        <!-- Window chrome -->
+        <div class="bg-slate-50 dark:bg-slate-950 px-4 py-3 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+          <div class="flex items-center gap-4">
+            <div class="flex gap-1.5">
+              <div class="w-3 h-3 rounded-full bg-red-400 hover:bg-red-500 transition-colors cursor-pointer"></div>
+              <div class="w-3 h-3 rounded-full bg-amber-400 hover:bg-amber-500 transition-colors cursor-pointer"></div>
+              <div class="w-3 h-3 rounded-full bg-emerald-400 hover:bg-emerald-500 transition-colors cursor-pointer"></div>
             </div>
+            <span class="text-sm font-semibold text-slate-400 hidden sm:block">Enterprise Analytics & Optimization — Live Dashboard</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span class="text-xs text-slate-400 font-medium">Live</span>
+          </div>
         </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-800 border-t border-gray-700">
-            <div class="px-4 py-2 space-y-2">
-                <a href="#home" class="block text-gray-300 hover:text-green-500 py-2">Home</a>
-                <a href="#about" class="block text-gray-300 hover:text-green-500 py-2">About</a>
-                <a href="#projects" class="block text-gray-300 hover:text-green-500 py-2">Projects</a>
-                <a href="#skills" class="block text-gray-300 hover:text-green-500 py-2">Skills</a>
-                <a href="#certifications" class="block text-gray-300 hover:text-green-500 py-2">Certifications</a>
-                <a href="#contact" class="block text-gray-300 hover:text-green-500 py-2">Contact</a>
+
+        <!-- Dashboard content -->
+        <div class="p-4 sm:p-6 grid grid-cols-1 md:grid-cols-4 gap-4 bg-slate-50 dark:bg-slate-950">
+
+          <!-- KPI Row -->
+          <div class="md:col-span-4 grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:-translate-y-1 transition-transform cursor-pointer group" title="200+ dashboards deployed across enterprise clients">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase">Dashboards</span>
+                <span class="material-symbols-outlined text-blue-500 bg-blue-500/10 rounded-full p-1 text-sm group-hover:scale-110 transition-transform">dashboard</span>
+              </div>
+              <span class="text-2xl font-extrabold counter" data-target="200" data-suffix="+">0+</span>
+              <span class="text-xs text-blue-500 font-bold mt-1 flex items-center gap-1"><span class="material-symbols-outlined text-[10px]">arrow_upward</span> Enterprise Scale</span>
             </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen flex items-center justify-center px-4">
-        <div class="text-center z-10 max-w-4xl mx-auto opacity-0 translate-y-8 animate-fade-in">
-            <h1 class="text-5xl md:text-7xl font-bold mb-6">
-                <span class="text-white">Abdul</span>
-                <span class="text-green-500"> Wassay</span>
-            </h1>
-            
-            <h2 class="text-2xl md:text-3xl text-gray-300 mb-6 font-medium">
-                BI & Analytics Specialist | AI-Driven Insights
-            </h2>
-            
-            <p class="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
-                Transforming complex data into intelligent business outcomes with Power BI, Tableau, and cutting-edge AI analytics solutions.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                <a href="#projects" class="border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                     View My Work
-                </a>
-                <a href="ABDUL_WASSAY_Resume_BI.pdf" target="_blank" class="border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                    View Resume Online
-                </a>
-                <a href="ABDUL_WASSAY_Resume_BI.pdf" id="download-resume" class="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                    Download Resume
-                </a>
+            <div class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:-translate-y-1 transition-transform cursor-pointer group" title="Query latency reduced from 18s to 0.8s">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase">Query Speed</span>
+                <span class="material-symbols-outlined text-emerald-500 bg-emerald-500/10 rounded-full p-1 text-sm group-hover:scale-110 transition-transform">speed</span>
+              </div>
+              <span class="text-2xl font-extrabold">0.8s</span>
+              <span class="text-xs text-emerald-500 font-bold mt-1 flex items-center gap-1"><span class="material-symbols-outlined text-[10px]">arrow_downward</span> -95% Latency</span>
             </div>
-        </div>
-
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <i data-lucide="chevron-down" class="w-6 h-6 text-gray-400"></i>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="relative py-20 px-4">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-16 text-green-500">About Me</h2>
-            
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6">
-                    <h3 class="text-2xl font-semibold text-orange-500">7+ Years of Data Excellence</h3>
-                    
-                    <p class="text-gray-300 text-lg leading-relaxed">
-                        Experienced BI & Analytics Specialist with a proven track record of transforming complex datasets into actionable business insights. Expert in Power BI, Spotfire, Tableau, and AI-driven analytics solutions.
-                    </p>
-                    
-                    <p class="text-gray-300 text-lg leading-relaxed">
-                        Specialized in developing comprehensive dashboards, ETL pipelines, and geospatial analytics solutions using cutting-edge technologies including SQL, Python, Oracle, Snowflake, and advanced visualization tools.
-                    </p>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-                        <div class="bg-slate-800/50 p-4 rounded-lg border border-gray-700">
-                            <div class="flex items-center space-x-3">
-                                <i data-lucide="bar-chart-3" class="w-6 h-6 text-green-500"></i>
-                                <span class="font-semibold">Dashboard Development</span>
-                            </div>
-                        </div>
-                        <div class="bg-slate-800/50 p-4 rounded-lg border border-gray-700">
-                            <div class="flex items-center space-x-3">
-                                <i data-lucide="brain" class="w-6 h-6 text-purple-500"></i>
-                                <span class="font-semibold">AI-Enhanced Analytics</span>
-                            </div>
-                        </div>
-                        <div class="bg-slate-800/50 p-4 rounded-lg border border-gray-700">
-                            <div class="flex items-center space-x-3">
-                                <i data-lucide="database" class="w-6 h-6 text-blue-500"></i>
-                                <span class="font-semibold">ETL Pipeline Design</span>
-                            </div>
-                        </div>
-                        <div class="bg-slate-800/50 p-4 rounded-lg border border-gray-700">
-                            <div class="flex items-center space-x-3">
-                                <i data-lucide="map" class="w-6 h-6 text-orange-500"></i>
-                                <span class="font-semibold">Geospatial Analytics</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Profile Image -->
-                <div class="flex justify-center lg:justify-end">
-                    <div class="relative">
-                        <div class="absolute inset-0 bg-gradient-to-r from-orange-500 to-green-500 rounded-full blur-2xl opacity-20 animate-pulse-slow"></div>
-                        <img src="./assets/profile.png" alt="Abdul Wassay - BI & Analytics Specialist" class="relative w-80 h-80 object-cover object-center rounded-full border-4 border-green-500/30 shadow-2xl">
-                    </div>
-                </div>
+            <div class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:-translate-y-1 transition-transform cursor-pointer group" title="30% reduction in Snowflake compute costs">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase">Cost Reduction</span>
+                <span class="material-symbols-outlined text-purple-500 bg-purple-500/10 rounded-full p-1 text-sm group-hover:scale-110 transition-transform">savings</span>
+              </div>
+              <span class="text-2xl font-extrabold counter" data-target="30" data-suffix="%">0%</span>
+              <span class="text-xs text-purple-500 font-bold mt-1 flex items-center gap-1"><span class="material-symbols-outlined text-[10px]">arrow_downward</span> Snowflake Compute</span>
             </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="relative py-20 px-4">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-16 text-green-500">Technical Expertise</h2>
-            
-            <div class="grid md:grid-cols-2 gap-12">
-                <!-- Core Skills -->
-                <div class="space-y-8">
-                    <h3 class="text-2xl font-semibold text-orange-500 mb-6">Core Skills</h3>
-                    
-                    <div class="space-y-6">
-                        <div class="skill-item">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="font-semibold">Power BI</span>
-                                <span class="text-green-500">95%</span>
-                            </div>
-                            <div class="w-full bg-gray-700 rounded-full h-3">
-                                <div class="bg-gradient-to-r from-green-500 to-blue-500 h-3 rounded-full" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="font-semibold">SQL Server / Oracle</span>
-                                <span class="text-blue-500">90%</span>
-                            </div>
-                            <div class="w-full bg-gray-700 rounded-full h-3">
-                                <div class="bg-gradient-to-r from-blue-500 to-purple-500 h-3 rounded-full" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="font-semibold">AI Prompting</span>
-                                <span class="text-purple-500">88%</span>
-                            </div>
-                            <div class="w-full bg-gray-700 rounded-full h-3">
-                                <div class="bg-gradient-to-r from-purple-500 to-orange-500 h-3 rounded-full" style="width: 88%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="font-semibold">Tableau</span>
-                                <span class="text-orange-500">85%</span>
-                            </div>
-                            <div class="w-full bg-gray-700 rounded-full h-3">
-                                <div class="bg-gradient-to-r from-orange-500 to-green-500 h-3 rounded-full" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="font-semibold">TIBCO Spotfire</span>
-                                <span class="text-purple-500">88%</span>
-                            </div>
-                            <div class="w-full bg-gray-700 rounded-full h-3">
-                                <div class="bg-gradient-to-r from-purple-500 to-orange-500 h-3 rounded-full" style="width: 88%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="font-semibold">Python / DAX</span>
-                                <span class="text-green-500">80%</span>
-                            </div>
-                            <div class="w-full bg-gray-700 rounded-full h-3">
-                                <div class="bg-gradient-to-r from-green-500 to-orange-500 h-3 rounded-full" style="width: 80%"></div>
-                            </div>
-                        </div>
-                        
-                        <div class="skill-item">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="font-semibold">Snowflake / ETL</span>
-                                <span class="text-blue-500">82%</span>
-                            </div>
-                            <div class="w-full bg-gray-700 rounded-full h-3">
-                                <div class="bg-gradient-to-r from-blue-500 to-green-500 h-3 rounded-full" style="width: 82%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Tools & Technologies -->
-                <div>
-                    <h3 class="text-2xl font-semibold text-orange-500 mb-6">Tools & Technologies</h3>
-                    
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                        <div class="bg-slate-800/50 p-4 rounded-lg border border-gray-700 text-center hover:bg-slate-700/50 transition-all duration-300 cursor-pointer">
-                            <i data-lucide="database" class="w-8 h-8 text-blue-500 mx-auto mb-2"></i>
-                            <span class="text-sm text-gray-300">SQL Server</span>
-                        </div>
-                        <div class="bg-slate-800/50 p-4 rounded-lg border border-gray-700 text-center hover:bg-slate-700/50 transition-all duration-300 cursor-pointer">
-                            <i data-lucide="bar-chart-3" class="w-8 h-8 text-green-500 mx-auto mb-2"></i>
-                            <span class="text-sm text-gray-300">Power BI</span>
-                        </div>
-                        <div class="bg-slate-800/50 p-4 rounded-lg border border-gray-700 text-center hover:bg-slate-700/50 transition-all duration-300 cursor-pointer">
-                            <i data-lucide="trending-up" class="w-8 h-8 text-orange-500 mx-auto mb-2"></i>
-                            <span class="text-sm text-gray-300">Tableau</span>
-                        </div>
-                        <div class="bg-slate-800/50 p-4 rounded-lg border border-gray-700 text-center hover:bg-slate-700/50 transition-all duration-300 cursor-pointer">
-                            <i data-lucide="code" class="w-8 h-8 text-purple-500 mx-auto mb-2"></i>
-                            <span class="text-sm text-gray-300">Python</span>
-                        </div>
-                        <div class="bg-slate-800/50 p-4 rounded-lg border border-gray-700 text-center hover:bg-slate-700/50 transition-all duration-300 cursor-pointer">
-                            <i data-lucide="cloud-snow" class="w-8 h-8 text-blue-500 mx-auto mb-2"></i>
-                            <span class="text-sm text-gray-300">Snowflake</span>
-                        </div>
-                        <div class="bg-slate-800/50 p-4 rounded-lg border border-gray-700 text-center hover:bg-slate-700/50 transition-all duration-300 cursor-pointer">
-                            <i data-lucide="brain" class="w-8 h-8 text-purple-500 mx-auto mb-2"></i>
-                            <span class="text-sm text-gray-300">AI Tools</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:-translate-y-1 transition-transform cursor-pointer group" title="25% manual effort saved through AI Copilot">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase">AI Efficiency</span>
+                <span class="material-symbols-outlined text-rose-500 bg-rose-500/10 rounded-full p-1 text-sm group-hover:scale-110 transition-transform">psychology</span>
+              </div>
+              <span class="text-2xl font-extrabold counter" data-target="25" data-suffix="%">0%</span>
+              <span class="text-xs text-rose-500 font-bold mt-1 flex items-center gap-1"><span class="material-symbols-outlined text-[10px]">arrow_upward</span> Copilot Savings</span>
             </div>
-        </div>
-    </section>
+          </div>
 
-    <!-- Projects Section -->
-    <section id="projects" class="relative py-20 px-4">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-16 text-green-500">Featured Projects</h2>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="bg-slate-800 rounded-xl overflow-hidden border border-gray-700 hover:border-green-500/50 transition-all duration-300 group">
-                    <div class="h-48 bg-gradient-to-br from-green-500/20 to-blue-500/20 flex items-center justify-center">
-                        <i data-lucide="bar-chart-3" class="w-16 h-16 text-green-500"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3 text-green-500">Executive Dashboard Suite</h3>
-                        <p class="text-gray-300 mb-4">Comprehensive Power BI dashboard providing real-time insights for C-level executives with AI-powered forecasting.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm">Power BI</span>
-                            <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">SQL</span>
-                            <span class="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm">AI</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 2 -->
-                <div class="bg-slate-800 rounded-xl overflow-hidden border border-gray-700 hover:border-orange-500/50 transition-all duration-300 group">
-                    <div class="h-48 bg-gradient-to-br from-orange-500/20 to-purple-500/20 flex items-center justify-center">
-                        <i data-lucide="map" class="w-16 h-16 text-orange-500"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3 text-orange-500">Geospatial Analytics Platform</h3>
-                        <p class="text-gray-300 mb-4">Advanced mapping solution for retail location optimization using TIBCO Spotfire and spatial data analysis.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-orange-500/20 text-orange-400 rounded-full text-sm">Spotfire</span>
-                            <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">GIS</span>
-                            <span class="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm">Analytics</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="bg-slate-800 rounded-xl overflow-hidden border border-gray-700 hover:border-blue-500/50 transition-all duration-300 group">
-                    <div class="h-48 bg-gradient-to-br from-blue-500/20 to-green-500/20 flex items-center justify-center">
-                        <i data-lucide="workflow" class="w-16 h-16 text-blue-500"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-3 text-blue-500">Automated ETL Pipeline</h3>
-                        <p class="text-gray-300 mb-4">Streamlined data processing pipeline connecting multiple data sources to Snowflake data warehouse.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">ETL</span>
-                            <span class="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm">Snowflake</span>
-                            <span class="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm">Python</span>
-                        </div>
-                    </div>
-                </div>
+          <!-- Main Chart -->
+          <div class="md:col-span-3 bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+            <div class="flex justify-between items-center mb-6">
+              <h3 class="font-bold text-sm text-slate-800 dark:text-slate-200">Query Performance Evolution (seconds)</h3>
+              <div class="flex gap-2">
+                <button onclick="toggleChartView(this, 'bar')" class="chart-btn active text-xs px-2 py-1 rounded bg-primary/10 text-primary font-semibold">Bar</button>
+                <button onclick="toggleChartView(this, 'line')" class="chart-btn text-xs px-2 py-1 rounded text-slate-400 hover:bg-primary/10 hover:text-primary font-semibold transition-colors">Line</button>
+              </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Certifications Section -->
-    <section id="certifications" class="relative py-20 px-4">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-16 text-green-500">Certifications & Learning</h2>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-slate-800 rounded-xl p-6 border border-gray-700 hover:border-green-500/50 transition-all duration-300 text-center">
-                    <div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="award" class="w-8 h-8 text-green-500"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold mb-2">Microsoft Certified</h3>
-                    <p class="text-gray-400">Power BI Data Analyst Associate</p>
-                </div>
-                
-                <div class="bg-slate-800 rounded-xl p-6 border border-gray-700 hover:border-blue-500/50 transition-all duration-300 text-center">
-                    <div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="database" class="w-8 h-8 text-blue-500"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold mb-2">Oracle Certified</h3>
-                    <p class="text-gray-400">Database SQL Expert</p>
-                </div>
-                
-                <div class="bg-slate-800 rounded-xl p-6 border border-gray-700 hover:border-purple-500/50 transition-all duration-300 text-center">
-                    <div class="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="brain" class="w-8 h-8 text-purple-500"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold mb-2">AI & Machine Learning</h3>
-                    <p class="text-gray-400">Advanced Analytics Specialization</p>
-                </div>
-                
-                <div class="bg-slate-800 rounded-xl p-6 border border-gray-700 hover:border-orange-500/50 transition-all duration-300 text-center">
-                    <div class="w-16 h-16 bg-orange-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="trending-up" class="w-8 h-8 text-orange-500"></i>
-                    </div>
-                    <h3 class="text-lg font-semibold mb-2">Tableau Desktop</h3>
-                    <p class="text-gray-400">Certified Data Analyst</p>
-                </div>
+            <!-- Bar view -->
+            <div id="chart-bar" class="flex-1 flex items-end justify-between gap-3 h-40 border-b border-slate-100 dark:border-slate-700 pb-2">
+              <div class="flex-1 flex flex-col items-center gap-1">
+                <span class="text-xs text-rose-500 font-bold">18.5s</span>
+                <div class="w-full bg-rose-400 dark:bg-rose-600/60 rounded-t-md bar-chart-item shimmer" style="height:100%" title="Legacy Oracle: 18.5s"></div>
+              </div>
+              <div class="flex-1 flex flex-col items-center gap-1">
+                <span class="text-xs text-amber-500 font-bold">8.2s</span>
+                <div class="w-full bg-amber-400 dark:bg-amber-600/50 rounded-t-md bar-chart-item" style="height:44%" title="Initial Power BI: 8.2s"></div>
+              </div>
+              <div class="flex-1 flex flex-col items-center gap-1">
+                <span class="text-xs text-blue-500 font-bold">3.4s</span>
+                <div class="w-full bg-blue-400 dark:bg-blue-600/60 rounded-t-md bar-chart-item" style="height:18%"></div>
+              </div>
+              <div class="flex-1 flex flex-col items-center gap-1">
+                <span class="text-xs text-emerald-500 font-bold">0.8s</span>
+                <div class="w-full bg-emerald-500 rounded-t-md bar-chart-item" style="height:4%"></div>
+              </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="relative py-20 px-4">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-8 text-green-500">Let's Connect</h2>
-            
-            <p class="text-xl text-gray-300 mb-12">
-                Ready to transform your data into intelligent business outcomes? Let's discuss how I can help your organization leverage the power of AI-driven analytics.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                <a href="mailto:wassayknp@gmail.com" class="flex items-center justify-center space-x-3 border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                    <i data-lucide="mail" class="w-5 h-5"></i>
-                    <span>Email Me</span>
-                </a>
-                
-                <a href="https://linkedin.com/in/wassayknp" target="_blank" class="flex items-center justify-center space-x-3 border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                    <i data-lucide="linkedin" class="w-5 h-5"></i>
-                    <span>LinkedIn</span>
-                </a>
-
-                <a href="https://wa.me/917897034508" class="flex items-center justify-center space-x-3 border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
-                    <i data-lucide="message-circle-more" class="w-5 h-5"></i>
-                    <span>Whatsapp</span>
-                </a>
-
+            <!-- Labels -->
+            <div class="flex justify-between mt-3 text-xs font-semibold text-slate-400 gap-3">
+              <span class="flex-1 text-center truncate">Legacy Oracle</span>
+              <span class="flex-1 text-center truncate hidden sm:block">Initial BI</span>
+              <span class="flex-1 text-center truncate hidden sm:block">Snowflake</span>
+              <span class="flex-1 text-center truncate">Fabric + MV</span>
             </div>
-        </div>
-    </section>
+          </div>
 
-    <!-- Footer -->
-    <footer class="relative py-12 px-4 border-t border-gray-800">
-        <div class="max-w-6xl mx-auto">
-            <div class="flex flex-col items-center space-y-6">
-                <div class="flex items-center space-x-2 text-gray-400">
-                    <span>Crafted with</span>
-                    <i data-lucide="heart" class="w-4 h-4 text-red-500 fill-current"></i>
-                    <span>and</span>
-                    <i data-lucide="sparkles" class="w-4 h-4 text-yellow-500"></i>
-                    <span>by Abdul Wassay</span>
+          <!-- Pipeline Map -->
+          <div class="md:col-span-1 bg-white dark:bg-slate-800 p-5 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col">
+            <h3 class="font-bold text-sm text-slate-800 dark:text-slate-200 mb-4">Data Sources</h3>
+            <div class="flex flex-col gap-3 flex-1 justify-center">
+              <div class="flex items-center gap-3">
+                <div class="flex-1 h-2 rounded-full bg-slate-100 dark:bg-slate-700 overflow-hidden">
+                  <div class="h-full bg-blue-500 rounded-full bar-fill" data-width="45"></div>
                 </div>
-                
-                <div class="text-center space-y-2">
-                    <p class="text-gray-400">© 2025 Abdul Wassay. All rights reserved.</p>
-                    <p class="text-sm text-gray-500">Transforming data into intelligent business outcomes</p>
+                <span class="text-xs font-bold text-slate-700 dark:text-slate-300 w-8">45%</span>
+                <span class="text-xs text-slate-500 w-16">Snowflake</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="flex-1 h-2 rounded-full bg-slate-100 dark:bg-slate-700 overflow-hidden">
+                  <div class="h-full bg-amber-500 rounded-full bar-fill" data-width="35"></div>
                 </div>
-                
-                <div class="flex space-x-4">
-                    <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                    <div class="w-2 h-2 bg-orange-500 rounded-full animate-pulse" style="animation-delay: 0.1s;"></div>
-                    <div class="w-2 h-2 bg-blue-500 rounded-full animate-pulse" style="animation-delay: 0.2s;"></div>
-                    <div class="w-2 h-2 bg-purple-500 rounded-full animate-pulse" style="animation-delay: 0.3s;"></div>
+                <span class="text-xs font-bold text-slate-700 dark:text-slate-300 w-8">35%</span>
+                <span class="text-xs text-slate-500 w-16">Oracle</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="flex-1 h-2 rounded-full bg-slate-100 dark:bg-slate-700 overflow-hidden">
+                  <div class="h-full bg-emerald-500 rounded-full bar-fill" data-width="20"></div>
                 </div>
+                <span class="text-xs font-bold text-slate-700 dark:text-slate-300 w-8">20%</span>
+                <span class="text-xs text-slate-500 w-16">APIs/JSON</span>
+              </div>
             </div>
+            <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-700 text-center">
+              <span class="text-2xl font-extrabold text-slate-900 dark:text-white">50TB+</span>
+              <p class="text-xs text-slate-400 mt-1">Data under management</p>
+            </div>
+          </div>
         </div>
-    </footer>
+      </div>
+    </div>
+  </main>
 
-    <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
-        
-        // Smooth scrolling for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    // Close mobile menu if open
-                    document.getElementById('mobile-menu').classList.add('hidden');
-                }
-            });
-        });
-        
-        // Mobile menu toggle
-        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        });
-        
-        // Animate elements on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+  <!-- ═══ ANIMATED METRICS SECTION ═══ -->
+  <section class="py-24 bg-white dark:bg-slate-950/50 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4 reveal">
+        <div>
+          <h4 class="text-primary font-bold uppercase tracking-[0.2em] text-sm mb-3">Performance Track Record</h4>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Impact by the Numbers</h2>
+        </div>
+        <p class="text-slate-500 dark:text-slate-400 max-w-md">Quantifiable outcomes delivered across enterprise-level architectures and global business units.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="group bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm lift reveal reveal-delay-1">
+          <div class="w-14 h-14 rounded-2xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-400 mb-6 group-hover:scale-110 transition-transform">
+            <span class="material-symbols-outlined text-2xl">monitoring</span>
+          </div>
+          <p class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wider mb-2">Dashboards Built</p>
+          <div class="flex items-baseline gap-2 mb-3">
+            <span class="text-5xl font-extrabold text-slate-900 dark:text-white counter" data-target="200" data-suffix="+">0+</span>
+          </div>
+          <p class="text-slate-600 dark:text-slate-400 text-sm">Finance, Sales, Ops & Geospatial dashboards across enterprise clients.</p>
+        </div>
+        <div class="group bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm lift reveal reveal-delay-2">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-50 dark:bg-emerald-900/20 flex items-center justify-center text-emerald-600 dark:text-emerald-400 mb-6 group-hover:scale-110 transition-transform">
+            <span class="material-symbols-outlined text-2xl">bolt</span>
+          </div>
+          <p class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wider mb-2">Processing Faster</p>
+          <div class="flex items-baseline gap-2 mb-3">
+            <span class="text-5xl font-extrabold text-slate-900 dark:text-white counter" data-target="30" data-suffix="%">0%</span>
+          </div>
+          <p class="text-slate-600 dark:text-slate-400 text-sm">Oracle to Snowflake migration cut data processing time by 30%.</p>
+        </div>
+        <div class="group bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm lift reveal reveal-delay-3">
+          <div class="w-14 h-14 rounded-2xl bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center text-purple-600 dark:text-purple-400 mb-6 group-hover:scale-110 transition-transform">
+            <span class="material-symbols-outlined text-2xl">psychology</span>
+          </div>
+          <p class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wider mb-2">AI Efficiency Gain</p>
+          <div class="flex items-baseline gap-2 mb-3">
+            <span class="text-5xl font-extrabold text-slate-900 dark:text-white counter" data-target="25" data-suffix="%">0%</span>
+          </div>
+          <p class="text-slate-600 dark:text-slate-400 text-sm">AI Prompt Engineering & Copilot reduced manual reporting effort.</p>
+        </div>
+        <div class="group bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm lift reveal reveal-delay-4">
+          <div class="w-14 h-14 rounded-2xl bg-amber-50 dark:bg-amber-900/20 flex items-center justify-center text-amber-600 dark:text-amber-400 mb-6 group-hover:scale-110 transition-transform">
+            <span class="material-symbols-outlined text-2xl">workspace_premium</span>
+          </div>
+          <p class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wider mb-2">Years Experience</p>
+          <div class="flex items-baseline gap-2 mb-3">
+            <span class="text-5xl font-extrabold text-slate-900 dark:text-white counter" data-target="8" data-suffix="+">0+</span>
+          </div>
+          <p class="text-slate-600 dark:text-slate-400 text-sm">Deep industry expertise across BI, analytics, and data engineering.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TECH STACK SHOWCASE ═══ -->
+  <section class="py-20 bg-background-light dark:bg-background-dark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h4 class="text-primary font-bold uppercase tracking-[0.2em] text-sm mb-3">Core Technology Stack</h4>
+        <h2 class="text-3xl font-bold">Tools & Platforms</h2>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div class="bg-white dark:bg-slate-900 rounded-xl p-4 flex flex-col items-center gap-2 border border-slate-100 dark:border-slate-800 lift reveal reveal-delay-1" title="Primary BI tool — 8 years, 200+ dashboards">
+          <div class="w-10 h-10 rounded-lg bg-yellow-50 dark:bg-yellow-900/20 flex items-center justify-center">
+            <span class="material-symbols-outlined text-yellow-600">bar_chart</span>
+          </div>
+          <span class="text-xs font-bold text-slate-700 dark:text-slate-300">Power BI</span>
+          <span class="text-[10px] text-emerald-500 font-bold">Expert</span>
+        </div>
+        <div class="bg-white dark:bg-slate-900 rounded-xl p-4 flex flex-col items-center gap-2 border border-slate-100 dark:border-slate-800 lift reveal reveal-delay-1">
+          <div class="w-10 h-10 rounded-lg bg-cyan-50 dark:bg-cyan-900/20 flex items-center justify-center">
+            <span class="material-symbols-outlined text-cyan-600">hub</span>
+          </div>
+          <span class="text-xs font-bold text-slate-700 dark:text-slate-300">MS Fabric</span>
+          <span class="text-[10px] text-emerald-500 font-bold">Advanced</span>
+        </div>
+        <div class="bg-white dark:bg-slate-900 rounded-xl p-4 flex flex-col items-center gap-2 border border-slate-100 dark:border-slate-800 lift reveal reveal-delay-2">
+          <div class="w-10 h-10 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center">
+            <span class="material-symbols-outlined text-blue-600">cloud</span>
+          </div>
+          <span class="text-xs font-bold text-slate-700 dark:text-slate-300">Snowflake</span>
+          <span class="text-[10px] text-emerald-500 font-bold">Advanced</span>
+        </div>
+        <div class="bg-white dark:bg-slate-900 rounded-xl p-4 flex flex-col items-center gap-2 border border-slate-100 dark:border-slate-800 lift reveal reveal-delay-2">
+          <div class="w-10 h-10 rounded-lg bg-orange-50 dark:bg-orange-900/20 flex items-center justify-center">
+            <span class="material-symbols-outlined text-orange-600">table_chart</span>
+          </div>
+          <span class="text-xs font-bold text-slate-700 dark:text-slate-300">Tableau</span>
+          <span class="text-[10px] text-emerald-500 font-bold">Expert</span>
+        </div>
+        <div class="bg-white dark:bg-slate-900 rounded-xl p-4 flex flex-col items-center gap-2 border border-slate-100 dark:border-slate-800 lift reveal reveal-delay-3">
+          <div class="w-10 h-10 rounded-lg bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center">
+            <span class="material-symbols-outlined text-purple-600">storage</span>
+          </div>
+          <span class="text-xs font-bold text-slate-700 dark:text-slate-300">SQL / Oracle</span>
+          <span class="text-[10px] text-emerald-500 font-bold">Expert</span>
+        </div>
+        <div class="bg-white dark:bg-slate-900 rounded-xl p-4 flex flex-col items-center gap-2 border border-slate-100 dark:border-slate-800 lift reveal reveal-delay-3">
+          <div class="w-10 h-10 rounded-lg bg-rose-50 dark:bg-rose-900/20 flex items-center justify-center">
+            <span class="material-symbols-outlined text-rose-600">smart_toy</span>
+          </div>
+          <span class="text-xs font-bold text-slate-700 dark:text-slate-300">AI / MCP</span>
+          <span class="text-[10px] text-amber-500 font-bold">Growing</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FLOATING CTA ═══ -->
+  <div class="fixed bottom-6 md:right-8 md:bottom-8 md:left-auto md:translate-x-0 left-1/2 -translate-x-1/2 z-50">
+    <a class="bg-primary text-white px-6 py-3 rounded-full shadow-2xl shadow-primary/40 font-bold flex items-center gap-2 whitespace-nowrap hover:bg-primary/90 hover:-translate-y-0.5 transition-all" href="contact.html">
+      <span class="material-symbols-outlined text-xl">mail</span>
+      Let's Talk
+    </a>
+  </div>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 pt-20 pb-24 md:pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+        <div class="md:col-span-4 lg:col-span-5">
+          <div class="flex items-center gap-2 mb-6">
+            <div class="bg-primary rounded-xl p-2"><span class="material-symbols-outlined text-white text-2xl">insights</span></div>
+            <span class="text-xl font-bold">Abdul Wassay</span>
+          </div>
+          <p class="text-slate-600 dark:text-slate-400 max-w-sm mb-8 text-base leading-relaxed">Architecting high-performance data ecosystems and AI-powered BI strategies for global enterprises.</p>
+          <div class="flex gap-4">
+            <a href="https://linkedin.com/in/wassayknp" target="_blank" class="w-12 h-12 rounded-xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white hover:-translate-y-1 transition-all border border-slate-100 dark:border-slate-700">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="https://github.com/wassayknp" target="_blank" class="w-12 h-12 rounded-xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white hover:-translate-y-1 transition-all border border-slate-100 dark:border-slate-700">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            </a>
+            <a href="contact.html" class="w-12 h-12 rounded-xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white hover:-translate-y-1 transition-all border border-slate-100 dark:border-slate-700">
+              <span class="material-symbols-outlined text-xl">mail</span>
+            </a>
+          </div>
+        </div>
+        <div class="md:col-span-3 lg:col-span-2">
+          <h5 class="text-slate-900 dark:text-white font-bold mb-7 uppercase tracking-wider text-xs">Explore</h5>
+          <ul class="space-y-4">
+            <li><a href="index.html" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Home</a></li>
+            <li><a href="projects_experience.html" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Work</a></li>
+            <li><a href="professional_resume.html" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Resume</a></li>
+            <li><a href="blog.html" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Blog</a></li>
+          </ul>
+        </div>
+        <div class="md:col-span-3 lg:col-span-2">
+          <h5 class="text-slate-900 dark:text-white font-bold mb-7 uppercase tracking-wider text-xs">Expertise</h5>
+          <ul class="space-y-4">
+            <li><a href="skills_architecture.html" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>BI Strategy</a></li>
+            <li><a href="skills_architecture.html" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Data Modeling</a></li>
+            <li><a href="skills_architecture.html" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Fabric Migration</a></li>
+            <li><a href="skills_architecture.html" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>AI Analytics</a></li>
+          </ul>
+        </div>
+        <div class="md:col-span-2 lg:col-span-3">
+          <h5 class="text-slate-900 dark:text-white font-bold mb-7 uppercase tracking-wider text-xs">Location</h5>
+          <div class="bg-slate-50 dark:bg-slate-800/50 rounded-2xl p-6 border border-slate-100 dark:border-slate-700">
+            <div class="flex items-start gap-4 mb-4">
+              <span class="material-symbols-outlined text-primary mt-1">location_on</span>
+              <div>
+                <p class="text-sm font-bold text-slate-900 dark:text-white mb-1">Hyderabad, India</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Open to remote & global roles</p>
+              </div>
+            </div>
+            <a href="contact.html" class="inline-flex items-center gap-2 text-primary text-sm font-bold hover:underline">Contact Me <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-xs text-slate-500 font-medium">© 2026 Abdul Wassay. Built with <span class="text-rose-500">❤</span> and Data Science.</p>
+        <div class="flex gap-8">
+          <a href="index.html" class="text-xs text-slate-500 hover:text-primary transition-colors font-medium">Privacy Policy</a>
+          <a href="index.html" class="text-xs text-slate-500 hover:text-primary transition-colors font-medium">Terms</a>
+          <a href="index.html" class="text-xs text-slate-500 hover:text-primary transition-colors font-medium">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══ MOBILE TAB BAR ═══ -->
+  <div class="md:hidden fixed bottom-6 left-0 right-0 z-40 px-4 pointer-events-none">
+    <div class="max-w-md mx-auto pointer-events-auto">
+      <div class="flex bg-slate-900 border border-slate-800 rounded-full p-1.5 shadow-2xl overflow-x-auto">
+        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-white bg-primary rounded-full" href="index.html"><span class="material-symbols-outlined">home</span><span class="text-[10px] font-bold">Home</span></a>
+        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white" href="projects_experience.html"><span class="material-symbols-outlined">grid_view</span><span class="text-[10px] font-bold">Work</span></a>
+        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white" href="professional_resume.html"><span class="material-symbols-outlined">article</span><span class="text-[10px] font-bold">Resume</span></a>
+        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white" href="skills_architecture.html"><span class="material-symbols-outlined">psychology</span><span class="text-[10px] font-bold">Skills</span></a>
+        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white" href="blog.html"><span class="material-symbols-outlined">menu_book</span><span class="text-[10px] font-bold">Blog</span></a>
+        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white" href="contact.html"><span class="material-symbols-outlined">contact_support</span><span class="text-[10px] font-bold">Contact</span></a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ── Dark Mode ──
+    const html = document.documentElement;
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+    }
+    document.querySelectorAll('.theme-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        html.classList.toggle('dark');
+        localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+      });
+    });
+
+    // ── Mobile Menu ──
+    document.getElementById('mob-menu-btn').addEventListener('click', () => {
+      document.getElementById('mobile-menu').classList.toggle('open');
+    });
+
+    // ── Typewriter ──
+    const phrases = ['Senior BI & Analytics Engineer', 'Microsoft Fabric Specialist', 'AI-Powered BI Developer', 'Power BI Expert & DAX Architect'];
+    let pi = 0, ci = 0, deleting = false;
+    const el = document.getElementById('typewriter');
+    function type() {
+      const phrase = phrases[pi];
+      if (!deleting) {
+        el.textContent = phrase.slice(0, ++ci);
+        if (ci === phrase.length) { deleting = true; setTimeout(type, 2000); return; }
+      } else {
+        el.textContent = phrase.slice(0, --ci);
+        if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; }
+      }
+      setTimeout(type, deleting ? 50 : 80);
+    }
+    setTimeout(type, 800);
+
+    // ── Scroll Reveal ──
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ── Animated Counters ──
+    const counterObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        const target = parseInt(el.dataset.target);
+        const suffix = el.dataset.suffix || '';
+        let start = 0;
+        const duration = 1500;
+        const step = timestamp => {
+          if (!start) start = timestamp;
+          const progress = Math.min((timestamp - start) / duration, 1);
+          const ease = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.floor(ease * target) + suffix;
+          if (progress < 1) requestAnimationFrame(step);
         };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-        
-        // Observe all sections
-        document.querySelectorAll('section').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(30px)';
-            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(section);
+        requestAnimationFrame(step);
+        counterObs.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.counter').forEach(el => counterObs.observe(el));
+
+    // ── Bar fills ──
+    const barObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.querySelectorAll('.bar-fill').forEach(bar => {
+          setTimeout(() => { bar.style.width = bar.dataset.width + '%'; }, 200);
         });
-        
-        // Animate skill bars
-        const skillBars = document.querySelectorAll('.skill-item');
-        const skillObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const bar = entry.target.querySelector('[style*="width"]');
-                    if (bar) {
-                        const width = bar.style.width;
-                        bar.style.width = '0%';
-                        setTimeout(() => {
-                            bar.style.transition = 'width 1.5s ease-in-out';
-                            bar.style.width = width;
-                        }, 200);
-                    }
-                }
-            });
-        }, observerOptions);
-        
-        skillBars.forEach(bar => skillObserver.observe(bar));
-        
-        // Add fade-in animation to hero
-        setTimeout(() => {
-            document.querySelector('#home .animate-fade-in').style.opacity = '1';
-            document.querySelector('#home .animate-fade-in').style.transform = 'translateY(0)';
-        }, 500);
-    </script>
-    
-    <style>
-        .animate-fade-in {
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-    </style>
+        barObs.unobserve(e.target);
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.bar-fill').forEach(b => barObs.observe(b.closest('div')));
+
+    // ── Chart toggle (bar/line) ──
+    function toggleChartView(btn, view) {
+      document.querySelectorAll('.chart-btn').forEach(b => {
+        b.classList.remove('active', 'bg-primary/10', 'text-primary');
+        b.classList.add('text-slate-400');
+      });
+      btn.classList.add('active', 'bg-primary/10', 'text-primary');
+      btn.classList.remove('text-slate-400');
+    }
+  </script>
 </body>
 </html>

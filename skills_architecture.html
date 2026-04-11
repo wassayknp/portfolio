@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Senior BI &amp; Analytics Portfolio | Skills &amp; Architecture</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2060df",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#0B1120",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .architecture-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #2060df 0%, #2060df20 100%);
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-300">
+
+    <!-- Top Navbar (to be updated by script) -->
+    <nav
+        class="sticky top-0 z-50 w-full border-b border-primary/10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+                <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                    <div class="bg-primary rounded-lg p-1.5 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-white text-xl">insights</span>
+                    </div>
+                    <span class="text-lg font-bold tracking-tight text-slate-900 dark:text-white">Portfolio</span>
+                </a>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+                            href="index.html">Home</a>
+                        <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+                            href="projects_experience.html">Work</a>
+                        <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+                            href="professional_resume.html">Resume</a>
+                        <a class="text-primary font-semibold px-3 py-2 text-sm font-medium transition-colors"
+                            href="skills_architecture.html">Skills</a>
+                        <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+                            href="blog.html">Blog</a>
+                        <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+                            href="contact.html">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-4 py-8 space-y-12">
+        <section>
+            <div class="flex items-center gap-3 mb-6">
+                <span class="material-symbols-outlined text-primary p-2 bg-primary/10 rounded-lg">deployed_code</span>
+                <h2 class="text-2xl font-extrabold tracking-tight">Modern Skills &amp; Expertise</h2>
+            </div>
+            <div class="space-y-8">
+                <div>
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">Analytics &amp;
+                        Visualization</h3>
+                    <div class="flex gap-2 flex-wrap">
+                        <div
+                            class="flex items-center gap-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-3 py-1.5 rounded-xl shadow-sm">
+                            <span class="material-symbols-outlined text-primary text-xl">bar_chart</span>
+                            <span class="text-sm font-semibold">Power BI</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-3 py-1.5 rounded-xl shadow-sm">
+                            <span class="material-symbols-outlined text-primary text-xl">calculate</span>
+                            <span class="text-sm font-semibold">DAX</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-3 py-1.5 rounded-xl shadow-sm">
+                            <span class="material-symbols-outlined text-primary text-xl">table_chart</span>
+                            <span class="text-sm font-semibold">Semantic Modeling</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">Data Engineering</h3>
+                    <div class="flex gap-2 flex-wrap">
+                        <div
+                            class="flex items-center gap-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-3 py-1.5 rounded-xl shadow-sm">
+                            <span class="material-symbols-outlined text-primary text-xl">cloud</span>
+                            <span class="text-sm font-semibold">Snowflake</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-3 py-1.5 rounded-xl shadow-sm">
+                            <span class="material-symbols-outlined text-primary text-xl">package_2</span>
+                            <span class="text-sm font-semibold">Microsoft Fabric</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-3 py-1.5 rounded-xl shadow-sm">
+                            <span class="material-symbols-outlined text-primary text-xl">database</span>
+                            <span class="text-sm font-semibold">SQL Server</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-3 py-1.5 rounded-xl shadow-sm">
+                            <span class="material-symbols-outlined text-primary text-xl">terminal</span>
+                            <span class="text-sm font-semibold">Python</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                        <h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">Governance</h3>
+                        <div class="flex gap-2 flex-wrap">
+                            <div
+                                class="flex items-center gap-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-3 py-1.5 rounded-xl shadow-sm">
+                                <span class="material-symbols-outlined text-primary text-xl">shield</span>
+                                <span class="text-sm font-semibold">Compliance</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">AI &amp; Advanced
+                        </h3>
+                        <div class="flex gap-2 flex-wrap">
+                            <div
+                                class="flex items-center gap-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-3 py-1.5 rounded-xl shadow-sm">
+                                <span
+                                    class="material-symbols-outlined text-primary text-xl">temp_preferences_custom</span>
+                                <span class="text-sm font-semibold">AI Insights</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">Geospatial</h3>
+                        <div class="flex gap-2 flex-wrap">
+                            <div
+                                class="flex items-center gap-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-3 py-1.5 rounded-xl shadow-sm">
+                                <span class="material-symbols-outlined text-primary text-xl">map</span>
+                                <span class="text-sm font-semibold">Spatial Analytics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="flex items-center gap-3 mb-10">
+                <span class="material-symbols-outlined text-primary p-2 bg-primary/10 rounded-lg">account_tree</span>
+                <h2 class="text-2xl font-extrabold tracking-tight">Architecture Thinking</h2>
+            </div>
+            <div class="relative py-4 pb-20">
+                <div class="architecture-line"></div>
+                <div class="space-y-12 relative z-10">
+                    <div class="flex items-center justify-center">
+                        <div
+                            class="bg-white dark:bg-slate-800 border-2 border-primary p-4 rounded-xl shadow-lg w-full max-w-sm flex items-center gap-4">
+                            <div class="bg-primary/10 p-3 rounded-full">
+                                <span class="material-symbols-outlined text-primary">lightbulb</span>
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold text-primary uppercase">Step 01</p>
+                                <h4 class="font-bold text-lg">Business Requirement</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <div
+                            class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-4 rounded-xl shadow-md w-full max-w-sm flex items-center gap-4">
+                            <div class="bg-slate-100 dark:bg-slate-700 p-3 rounded-full">
+                                <span class="material-symbols-outlined text-slate-500 dark:text-slate-300">schema</span>
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold text-slate-400 uppercase">Step 02</p>
+                                <h4 class="font-bold text-lg">Data Modeling</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <div
+                            class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-4 rounded-xl shadow-md w-full max-w-sm flex items-center gap-4">
+                            <div class="bg-slate-100 dark:bg-slate-700 p-3 rounded-full">
+                                <span
+                                    class="material-symbols-outlined text-slate-500 dark:text-slate-300">sync_alt</span>
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold text-slate-400 uppercase">Step 03</p>
+                                <h4 class="font-bold text-lg">ETL &amp; Fabric</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <div
+                            class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-4 rounded-xl shadow-md w-full max-w-sm flex items-center gap-4">
+                            <div class="bg-slate-100 dark:bg-slate-700 p-3 rounded-full">
+                                <span class="material-symbols-outlined text-slate-500 dark:text-slate-300">layers</span>
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold text-slate-400 uppercase">Step 04</p>
+                                <h4 class="font-bold text-lg">Semantic Model</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <div
+                            class="bg-primary text-white p-4 rounded-xl shadow-xl w-full max-w-sm flex items-center gap-4">
+                            <div class="bg-white/20 p-3 rounded-full">
+                                <span class="material-symbols-outlined text-white">bar_chart</span>
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold text-white/70 uppercase">Step 05</p>
+                                <h4 class="font-bold text-lg">Power BI Delivery</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <div
+                            class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-4 rounded-xl shadow-md w-full max-w-sm flex items-center gap-4">
+                            <div class="bg-slate-100 dark:bg-slate-700 p-3 rounded-full">
+                                <span
+                                    class="material-symbols-outlined text-slate-500 dark:text-slate-300">verified_user</span>
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold text-slate-400 uppercase">Step 06</p>
+                                <h4 class="font-bold text-lg">Governance</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <div
+                            class="bg-slate-900 dark:bg-primary/20 border border-primary/40 text-white p-4 rounded-xl shadow-2xl w-full max-w-sm flex items-center gap-4">
+                            <div class="bg-primary p-3 rounded-full">
+                                <span class="material-symbols-outlined text-white">auto_awesome</span>
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold text-primary uppercase">Final Outcome</p>
+                                <h4 class="font-bold text-lg">AI-Powered Insights</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 pt-20 pb-24 md:pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+                <!-- Brand Section -->
+                <div class="md:col-span-4 lg:col-span-5">
+                    <div class="flex items-center gap-2 mb-6">
+                        <div
+                            class="bg-primary rounded-xl p-2 flex items-center justify-center shadow-lg shadow-primary/20">
+                            <span class="material-symbols-outlined text-white text-2xl">insights</span>
+                        </div>
+                        <span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Abdul
+                            Wassay</span>
+                    </div>
+                    <p class="text-slate-600 dark:text-slate-400 max-w-sm mb-8 text-base leading-relaxed">
+                        Architecting high-performance data ecosystems and executive BI strategies. Helping organizations
+                        turn complex data into competitive advantages.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://linkedin.com/in/wassayknp" target="_blank"
+                            class="w-12 h-12 rounded-xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white hover:-translate-y-1 transition-all duration-300 shadow-sm border border-slate-100 dark:border-slate-700">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/wassayknp" target="_blank"
+                            class="w-12 h-12 rounded-xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white hover:-translate-y-1 transition-all duration-300 shadow-sm border border-slate-100 dark:border-slate-700">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12">
+                                </path>
+                            </svg>
+                        </a>
+                        <a href="contact.html"
+                            class="w-12 h-12 rounded-xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white hover:-translate-y-1 transition-all duration-300 shadow-sm border border-slate-100 dark:border-slate-700">
+                            <span class="material-symbols-outlined text-xl">mail</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="md:col-span-3 lg:col-span-2">
+                    <h5 class="text-slate-900 dark:text-white font-bold mb-7 uppercase tracking-wider text-xs">Explore
+                    </h5>
+                    <ul class="space-y-4">
+                        <li><a href="index.html"
+                                class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Home</a>
+                        </li>
+                        <li><a href="projects_experience.html"
+                                class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Work</a>
+                        </li>
+                        <li><a href="professional_resume.html"
+                                class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Resume</a>
+                        </li>
+                        <li><a href="blog.html"
+                                class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Blog</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="md:col-span-3 lg:col-span-2">
+                    <h5 class="text-slate-900 dark:text-white font-bold mb-7 uppercase tracking-wider text-xs">Services
+                    </h5>
+                    <ul class="space-y-4">
+                        <li><a href="skills_architecture.html"
+                                class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>BI
+                                Strategy</a></li>
+                        <li><a href="skills_architecture.html"
+                                class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Data
+                                Modeling</a></li>
+                        <li><a href="skills_architecture.html"
+                                class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Cloud
+                                Migration</a></li>
+                        <li><a href="skills_architecture.html"
+                                class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>AI
+                                Insights</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="md:col-span-2 lg:col-span-3">
+                    <h5 class="text-slate-900 dark:text-white font-bold mb-7 uppercase tracking-wider text-xs">Location
+                    </h5>
+                    <div
+                        class="bg-slate-50 dark:bg-slate-800/50 rounded-2xl p-6 border border-slate-100 dark:border-slate-700">
+                        <div class="flex items-start gap-4 mb-4">
+                            <span class="material-symbols-outlined text-primary mt-1">location_on</span>
+                            <div>
+                                <p class="text-sm font-bold text-slate-900 dark:text-white mb-1">Hyderabad, India</p>
+                                <p class="text-xs text-slate-500 dark:text-slate-400">Supporting global clients &
+                                    enterprises</p>
+                            </div>
+                        </div>
+                        <a href="contact.html"
+                            class="inline-flex items-center gap-2 text-primary text-sm font-bold hover:underline">
+                            Get Directions <span class="material-symbols-outlined text-xs">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Line -->
+            <div
+                class="pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-slate-500 dark:text-slate-500 font-medium">
+                    © 2026 Abdul Wassay. Built with <span class="text-rose-500">❤</span> and Data Science.
+                </p>
+                <div class="flex gap-8">
+                    <a href="index.html"
+                        class="text-xs text-slate-500 hover:text-primary transition-colors font-medium">Privacy
+                        Policy</a>
+                    <a href="index.html"
+                        class="text-xs text-slate-500 hover:text-primary transition-colors font-medium">Terms of
+                        Service</a>
+                    <a href="index.html"
+                        class="text-xs text-slate-500 hover:text-primary transition-colors font-medium">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bottom Tab Bar -->
+    <div class="md:hidden fixed bottom-6 left-0 right-0 z-40 px-4 pointer-events-none">
+        <div class="max-w-md mx-auto pointer-events-auto">
+            <div
+                class="flex bg-slate-900 border border-slate-800 rounded-full p-1.5 shadow-2xl overflow-x-auto hide-scrollbar">
+                <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white transition-colors"
+                    href="index.html">
+                    <span class="material-symbols-outlined">home</span>
+                    <span class="text-[10px] font-bold">Home</span>
+                </a>
+                <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white transition-colors"
+                    href="projects_experience.html">
+                    <span class="material-symbols-outlined">grid_view</span>
+                    <span class="text-[10px] font-bold">Work</span>
+                </a>
+                <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white transition-colors"
+                    href="professional_resume.html">
+                    <span class="material-symbols-outlined">article</span>
+                    <span class="text-[10px] font-bold">Resume</span>
+                </a>
+                <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-white bg-primary rounded-full transition-colors"
+                    href="skills_architecture.html">
+                    <span class="material-symbols-outlined">psychology</span>
+                    <span class="text-[10px] font-bold">Skills</span>
+                </a>
+                <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white transition-colors"
+                    href="blog.html">
+                    <span class="material-symbols-outlined">menu_book</span>
+                    <span class="text-[10px] font-bold">Blog</span>
+                </a>
+                <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white transition-colors"
+                    href="contact.html">
+                    <span class="material-symbols-outlined">contact_support</span>
+                    <span class="text-[10px] font-bold">Contact</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dark Mode Logic
+        const html = document.documentElement;
+        const themeToggles = document.querySelectorAll('.theme-toggle');
+
+        // Check local storage
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        } else {
+            html.classList.remove('dark');
+        }
+
+        themeToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                html.classList.toggle('dark');
+                if (html.classList.contains('dark')) {
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+        });
+    </script>
+</body>
+
+
+</html>
