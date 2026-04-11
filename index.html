@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html class="light" lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>Abdul Wassay — Senior BI & Analytics Engineer</title>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
   <script id="tailwind-config">
     tailwind.config = {
       darkMode: "class",
@@ -30,77 +33,195 @@
         linear-gradient(to right, rgba(32, 96, 223, 0.05) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(32, 96, 223, 0.05) 1px, transparent 1px);
     }
-    body { min-height: max(884px, 100dvh); }
+
+    body {
+      min-height: max(884px, 100dvh);
+    }
 
     /* Scroll reveal */
-    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 0.2s;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 0.3s;
+    }
+
+    .reveal-delay-4 {
+      transition-delay: 0.4s;
+    }
 
     /* Typewriter cursor */
-    .typewriter::after { content: '|'; animation: blink 0.7s step-end infinite; }
-    @keyframes blink { 50% { opacity: 0; } }
+    .typewriter::after {
+      content: '|';
+      animation: blink 0.7s step-end infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
 
     /* Animated bars */
-    .bar-fill { width: 0%; transition: width 1.2s cubic-bezier(0.25, 1, 0.5, 1); }
+    .bar-fill {
+      width: 0%;
+      transition: width 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+    }
 
     /* Floating badge */
-    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
-    .float { animation: float 3s ease-in-out infinite; }
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-8px)
+      }
+    }
+
+    .float {
+      animation: float 3s ease-in-out infinite;
+    }
 
     /* Gradient text */
-    .gradient-text { background: linear-gradient(135deg, #2060df, #60a5fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .gradient-text {
+      background: linear-gradient(135deg, #2060df, #60a5fa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
 
     /* Shimmer */
-    @keyframes shimmer { 0%{background-position:-200% 0} 100%{background-position:200% 0} }
-    .shimmer { background: linear-gradient(90deg, transparent, rgba(32,96,223,0.08), transparent); background-size: 200% 100%; animation: shimmer 2.5s infinite; }
+    @keyframes shimmer {
+      0% {
+        background-position: -200% 0
+      }
+
+      100% {
+        background-position: 200% 0
+      }
+    }
+
+    .shimmer {
+      background: linear-gradient(90deg, transparent, rgba(32, 96, 223, 0.08), transparent);
+      background-size: 200% 100%;
+      animation: shimmer 2.5s infinite;
+    }
 
     /* Tech pill hover */
-    .tech-pill { transition: all 0.2s; cursor: default; }
-    .tech-pill:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(32,96,223,0.18); }
+    .tech-pill {
+      transition: all 0.2s;
+      cursor: default;
+    }
+
+    .tech-pill:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(32, 96, 223, 0.18);
+    }
 
     /* Mobile menu */
-    #mobile-menu { transition: max-height 0.3s ease, opacity 0.3s ease; max-height: 0; opacity: 0; overflow: hidden; }
-    #mobile-menu.open { max-height: 400px; opacity: 1; }
+    #mobile-menu {
+      transition: max-height 0.3s ease, opacity 0.3s ease;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+    }
+
+    #mobile-menu.open {
+      max-height: 400px;
+      opacity: 1;
+    }
 
     /* Counter */
-    .counter { font-variant-numeric: tabular-nums; }
+    .counter {
+      font-variant-numeric: tabular-nums;
+    }
 
     /* Card hover lift */
-    .lift { transition: transform 0.25s ease, box-shadow 0.25s ease; }
-    .lift:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(32,96,223,0.12); }
+    .lift {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .lift:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(32, 96, 223, 0.12);
+    }
 
     /* Progress ring */
-    .ring-progress { transition: stroke-dashoffset 1.4s cubic-bezier(0.25, 1, 0.5, 1); }
+    .ring-progress {
+      transition: stroke-dashoffset 1.4s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    /* Modal styles */
+    .modal {
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+      display: flex;
+    }
+
+    .modal.active {
+      opacity: 1;
+      pointer-events: auto;
+      visibility: visible;
+    }
   </style>
 </head>
 
-<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-300">
+<body
+  class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-300">
 
   <!-- ═══ NAVBAR ═══ -->
-  <nav class="sticky top-0 z-50 w-full border-b border-primary/10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
+  <nav
+    class="sticky top-0 z-50 w-full border-b border-primary/10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 items-center justify-between">
         <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
-          <div class="bg-primary rounded-lg p-1.5"><span class="material-symbols-outlined text-white text-xl">insights</span></div>
+          <div
+            class="relative w-8 h-8 rounded-full overflow-hidden border-2 border-primary/20 group-hover:border-primary transition-colors duration-300">
+            <img src="./assets/images/profile_photo.jpg" alt="Abdul Wassay" class="w-full h-full object-cover">
+          </div>
           <span class="text-lg font-bold tracking-tight">Abdul Wassay</span>
         </a>
         <div class="hidden md:flex items-baseline space-x-1">
           <a class="text-primary font-semibold px-3 py-2 text-sm transition-colors" href="index.html">Home</a>
-          <a class="text-slate-600 dark:text-slate-400 hover:text-primary px-3 py-2 text-sm font-medium transition-colors" href="projects_experience.html">Work</a>
-          <a class="text-slate-600 dark:text-slate-400 hover:text-primary px-3 py-2 text-sm font-medium transition-colors" href="professional_resume.html">Resume</a>
-          <a class="text-slate-600 dark:text-slate-400 hover:text-primary px-3 py-2 text-sm font-medium transition-colors" href="skills_architecture.html">Skills</a>
-          <a class="text-slate-600 dark:text-slate-400 hover:text-primary px-3 py-2 text-sm font-medium transition-colors" href="blog.html">Blog</a>
-          <a class="text-slate-600 dark:text-slate-400 hover:text-primary px-3 py-2 text-sm font-medium transition-colors" href="contact.html">Contact</a>
+          <a class="text-slate-600 dark:text-slate-400 hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+            href="projects_experience.html">Work</a>
+          <a class="text-slate-600 dark:text-slate-400 hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+            href="professional_resume.html">Resume</a>
+          <a class="text-slate-600 dark:text-slate-400 hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+            href="skills_architecture.html">Skills</a>
+          <a class="text-slate-600 dark:text-slate-400 hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+            href="blog.html">Blog</a>
+          <a class="text-slate-600 dark:text-slate-400 hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+            href="contact.html">Contact</a>
         </div>
         <div class="flex items-center gap-2">
-          <button class="p-2 rounded-full hover:bg-primary/10 transition-colors text-slate-600 dark:text-slate-400 theme-toggle" title="Toggle theme">
+          <button
+            class="p-2 rounded-full hover:bg-primary/10 transition-colors text-slate-600 dark:text-slate-400 theme-toggle"
+            title="Toggle theme">
             <span class="material-symbols-outlined theme-icon">light_mode</span>
           </button>
-          <button id="mob-menu-btn" class="md:hidden p-2 rounded-full text-slate-600 dark:text-slate-400 hover:bg-primary/10 transition-colors">
+          <button id="mob-menu-btn"
+            class="md:hidden p-2 rounded-full text-slate-600 dark:text-slate-400 hover:bg-primary/10 transition-colors">
             <span class="material-symbols-outlined">menu</span>
           </button>
         </div>
@@ -109,11 +230,16 @@
       <div id="mobile-menu">
         <div class="flex flex-col gap-1 pb-4">
           <a class="px-3 py-2 text-sm font-medium text-primary" href="index.html">Home</a>
-          <a class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary" href="projects_experience.html">Work</a>
-          <a class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary" href="professional_resume.html">Resume</a>
-          <a class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary" href="skills_architecture.html">Skills</a>
-          <a class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary" href="blog.html">Blog</a>
-          <a class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary" href="contact.html">Contact</a>
+          <a class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary"
+            href="projects_experience.html">Work</a>
+          <a class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary"
+            href="professional_resume.html">Resume</a>
+          <a class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary"
+            href="skills_architecture.html">Skills</a>
+          <a class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary"
+            href="blog.html">Blog</a>
+          <a class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-primary"
+            href="contact.html">Contact</a>
         </div>
       </div>
     </div>
@@ -122,20 +248,27 @@
   <!-- ═══ HERO ═══ -->
   <main class="relative overflow-hidden bg-background-light dark:bg-background-dark pt-16 pb-24 lg:pt-32 lg:pb-40">
     <div class="absolute inset-0 grid-pattern pointer-events-none opacity-50"></div>
-    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-background-light/50 to-background-light dark:via-background-dark/50 dark:to-background-dark pointer-events-none"></div>
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-transparent via-background-light/50 to-background-light dark:via-background-dark/50 dark:to-background-dark pointer-events-none">
+    </div>
 
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
       <!-- Avatar -->
       <div class="flex justify-center mb-8 reveal">
         <div class="relative p-1 rounded-full bg-gradient-to-tr from-primary to-blue-400 float">
-          <img alt="Abdul Wassay" class="w-32 h-32 rounded-full object-cover border-4 border-white dark:border-slate-900 shadow-xl" src="assets/images/profile_photo.png" onerror="this.src='https://ui-avatars.com/api/?name=AW&background=2060df&color=fff&size=128'" />
-          <div class="absolute bottom-1 right-1 w-6 h-6 bg-emerald-500 border-4 border-white dark:border-slate-900 rounded-full"></div>
+          <img alt="Abdul Wassay"
+            class="w-32 h-32 rounded-full object-cover border-4 border-white dark:border-slate-900 shadow-xl"
+            src="./assets/images/profile_photo.jpg" />
+          <div
+            class="absolute bottom-1 right-1 w-6 h-6 bg-emerald-500 border-4 border-white dark:border-slate-900 rounded-full">
+          </div>
         </div>
       </div>
 
       <!-- Status badge -->
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-8 reveal reveal-delay-1">
+      <div
+        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-8 reveal reveal-delay-1">
         <span class="relative flex h-2 w-2">
           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
           <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
@@ -144,7 +277,8 @@
       </div>
 
       <!-- Heading -->
-      <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-4 leading-[1.1] reveal reveal-delay-2">
+      <h1
+        class="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-4 leading-[1.1] reveal reveal-delay-2">
         Abdul <span class="gradient-text">Wassay</span>
       </h1>
       <div class="text-2xl md:text-3xl font-semibold text-slate-700 dark:text-slate-300 mb-6 reveal reveal-delay-2">
@@ -153,42 +287,62 @@
 
       <!-- Tech pills -->
       <div class="flex flex-wrap justify-center gap-2 mb-8 reveal reveal-delay-3">
-        <span class="tech-pill px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-bold rounded-full border border-blue-200 dark:border-blue-800">Power BI</span>
-        <span class="tech-pill px-3 py-1 bg-cyan-50 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 text-xs font-bold rounded-full border border-cyan-200 dark:border-cyan-800">Microsoft Fabric</span>
-        <span class="tech-pill px-3 py-1 bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-xs font-bold rounded-full border border-purple-200 dark:border-purple-800">Snowflake</span>
-        <span class="tech-pill px-3 py-1 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 text-xs font-bold rounded-full border border-emerald-200 dark:border-emerald-800">DAX</span>
-        <span class="tech-pill px-3 py-1 bg-amber-50 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 text-xs font-bold rounded-full border border-amber-200 dark:border-amber-800">Tableau</span>
-        <span class="tech-pill px-3 py-1 bg-rose-50 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300 text-xs font-bold rounded-full border border-rose-200 dark:border-rose-800">AI / Copilot</span>
-        <span class="tech-pill px-3 py-1 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 text-xs font-bold rounded-full border border-indigo-200 dark:border-indigo-800">SQL</span>
-        <span class="tech-pill px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold rounded-full border border-slate-200 dark:border-slate-700">MCP Server</span>
+        <span
+          class="tech-pill px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-bold rounded-full border border-blue-200 dark:border-blue-800">Power
+          BI</span>
+        <span
+          class="tech-pill px-3 py-1 bg-cyan-50 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 text-xs font-bold rounded-full border border-cyan-200 dark:border-cyan-800">Microsoft
+          Fabric</span>
+        <span
+          class="tech-pill px-3 py-1 bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-xs font-bold rounded-full border border-purple-200 dark:border-purple-800">Snowflake</span>
+        <span
+          class="tech-pill px-3 py-1 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 text-xs font-bold rounded-full border border-emerald-200 dark:border-emerald-800">DAX</span>
+        <span
+          class="tech-pill px-3 py-1 bg-amber-50 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 text-xs font-bold rounded-full border border-amber-200 dark:border-amber-800">Tableau</span>
+        <span
+          class="tech-pill px-3 py-1 bg-rose-50 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300 text-xs font-bold rounded-full border border-rose-200 dark:border-rose-800">AI
+          / Copilot</span>
+        <span
+          class="tech-pill px-3 py-1 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 text-xs font-bold rounded-full border border-indigo-200 dark:border-indigo-800">SQL</span>
+        <span
+          class="tech-pill px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold rounded-full border border-slate-200 dark:border-slate-700">MCP
+          Server</span>
       </div>
 
       <!-- Bio -->
-      <p class="max-w-2xl mx-auto text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed mb-10 reveal reveal-delay-3">
-        8+ years architecting scalable multi-platform BI solutions for global enterprises. Specializing in Microsoft Fabric, AI-powered reporting, and end-to-end analytics delivery from requirements to production.
+      <p
+        class="max-w-2xl mx-auto text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed mb-10 reveal reveal-delay-3">
+        8+ years architecting scalable multi-platform BI solutions for global enterprises. Specializing in Microsoft
+        Fabric, AI-powered reporting, and end-to-end analytics delivery from requirements to production.
       </p>
 
       <!-- CTA Buttons -->
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal reveal-delay-4">
-        <button onclick="window.location.href='projects_experience.html'" class="w-full sm:w-auto px-8 py-4 bg-primary text-white font-bold rounded-xl shadow-lg shadow-primary/25 hover:bg-primary/90 hover:shadow-primary/40 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
+        <button onclick="window.location.href='projects_experience.html'"
+          class="w-full sm:w-auto px-8 py-4 bg-primary text-white font-bold rounded-xl shadow-lg shadow-primary/25 hover:bg-primary/90 hover:shadow-primary/40 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
           View My Work <span class="material-symbols-outlined text-xl">arrow_forward</span>
         </button>
-        <button onclick="window.location.href='professional_resume.html'" class="w-full sm:w-auto px-8 py-4 bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-bold rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
+        <button onclick="window.location.href='professional_resume.html'"
+          class="w-full sm:w-auto px-8 py-4 bg-white dark:bg-slate-800 text-slate-900 dark:text-white font-bold rounded-xl border border-slate-200 dark:border-slate-700 hover:border-primary hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2">
           View Resume <span class="material-symbols-outlined text-xl">description</span>
         </button>
       </div>
 
       <!-- ═══ LIVE DASHBOARD PREVIEW ═══ -->
-      <div class="mt-20 relative max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 reveal">
+      <div
+        class="mt-20 relative max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 reveal">
         <!-- Window chrome -->
-        <div class="bg-slate-50 dark:bg-slate-950 px-4 py-3 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+        <div
+          class="bg-slate-50 dark:bg-slate-950 px-4 py-3 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
           <div class="flex items-center gap-4">
             <div class="flex gap-1.5">
               <div class="w-3 h-3 rounded-full bg-red-400 hover:bg-red-500 transition-colors cursor-pointer"></div>
               <div class="w-3 h-3 rounded-full bg-amber-400 hover:bg-amber-500 transition-colors cursor-pointer"></div>
-              <div class="w-3 h-3 rounded-full bg-emerald-400 hover:bg-emerald-500 transition-colors cursor-pointer"></div>
+              <div class="w-3 h-3 rounded-full bg-emerald-400 hover:bg-emerald-500 transition-colors cursor-pointer">
+              </div>
             </div>
-            <span class="text-sm font-semibold text-slate-400 hidden sm:block">Enterprise Analytics & Optimization — Live Dashboard</span>
+            <span class="text-sm font-semibold text-slate-400 hidden sm:block">Enterprise Analytics & Optimization —
+              Live Dashboard</span>
           </div>
           <div class="flex items-center gap-2">
             <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
@@ -201,79 +355,134 @@
 
           <!-- KPI Row -->
           <div class="md:col-span-4 grid grid-cols-2 lg:grid-cols-4 gap-4">
-            <div class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:-translate-y-1 transition-transform cursor-pointer group" title="200+ dashboards deployed across enterprise clients">
+            <div
+              class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:-translate-y-1 transition-transform cursor-pointer group"
+              title="200+ dashboards deployed across enterprise clients">
               <div class="flex items-center justify-between mb-2">
                 <span class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase">Dashboards</span>
-                <span class="material-symbols-outlined text-blue-500 bg-blue-500/10 rounded-full p-1 text-sm group-hover:scale-110 transition-transform">dashboard</span>
+                <span
+                  class="material-symbols-outlined text-blue-500 bg-blue-500/10 rounded-full p-1 text-sm group-hover:scale-110 transition-transform">dashboard</span>
               </div>
               <span class="text-2xl font-extrabold counter" data-target="200" data-suffix="+">0+</span>
-              <span class="text-xs text-blue-500 font-bold mt-1 flex items-center gap-1"><span class="material-symbols-outlined text-[10px]">arrow_upward</span> Enterprise Scale</span>
+              <span class="text-xs text-blue-500 font-bold mt-1 flex items-center gap-1"><span
+                  class="material-symbols-outlined text-[10px]">arrow_upward</span> Enterprise Scale</span>
             </div>
-            <div class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:-translate-y-1 transition-transform cursor-pointer group" title="Query latency reduced from 18s to 0.8s">
+            <div
+              class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:-translate-y-1 transition-transform cursor-pointer group"
+              title="Query latency reduced from 18s to 0.8s">
               <div class="flex items-center justify-between mb-2">
                 <span class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase">Query Speed</span>
-                <span class="material-symbols-outlined text-emerald-500 bg-emerald-500/10 rounded-full p-1 text-sm group-hover:scale-110 transition-transform">speed</span>
+                <span
+                  class="material-symbols-outlined text-emerald-500 bg-emerald-500/10 rounded-full p-1 text-sm group-hover:scale-110 transition-transform">speed</span>
               </div>
               <span class="text-2xl font-extrabold">0.8s</span>
-              <span class="text-xs text-emerald-500 font-bold mt-1 flex items-center gap-1"><span class="material-symbols-outlined text-[10px]">arrow_downward</span> -95% Latency</span>
+              <span class="text-xs text-emerald-500 font-bold mt-1 flex items-center gap-1"><span
+                  class="material-symbols-outlined text-[10px]">arrow_downward</span> -95% Latency</span>
             </div>
-            <div class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:-translate-y-1 transition-transform cursor-pointer group" title="30% reduction in Snowflake compute costs">
+            <div
+              class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:-translate-y-1 transition-transform cursor-pointer group"
+              title="30% reduction in Snowflake compute costs">
               <div class="flex items-center justify-between mb-2">
                 <span class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase">Cost Reduction</span>
-                <span class="material-symbols-outlined text-purple-500 bg-purple-500/10 rounded-full p-1 text-sm group-hover:scale-110 transition-transform">savings</span>
+                <span
+                  class="material-symbols-outlined text-purple-500 bg-purple-500/10 rounded-full p-1 text-sm group-hover:scale-110 transition-transform">savings</span>
               </div>
               <span class="text-2xl font-extrabold counter" data-target="30" data-suffix="%">0%</span>
-              <span class="text-xs text-purple-500 font-bold mt-1 flex items-center gap-1"><span class="material-symbols-outlined text-[10px]">arrow_downward</span> Snowflake Compute</span>
+              <span class="text-xs text-purple-500 font-bold mt-1 flex items-center gap-1"><span
+                  class="material-symbols-outlined text-[10px]">arrow_downward</span> Snowflake Compute</span>
             </div>
-            <div class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:-translate-y-1 transition-transform cursor-pointer group" title="25% manual effort saved through AI Copilot">
+            <div
+              class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm hover:-translate-y-1 transition-transform cursor-pointer group"
+              title="25% manual effort saved through AI Copilot">
               <div class="flex items-center justify-between mb-2">
                 <span class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase">AI Efficiency</span>
-                <span class="material-symbols-outlined text-rose-500 bg-rose-500/10 rounded-full p-1 text-sm group-hover:scale-110 transition-transform">psychology</span>
+                <span
+                  class="material-symbols-outlined text-rose-500 bg-rose-500/10 rounded-full p-1 text-sm group-hover:scale-110 transition-transform">psychology</span>
               </div>
               <span class="text-2xl font-extrabold counter" data-target="25" data-suffix="%">0%</span>
-              <span class="text-xs text-rose-500 font-bold mt-1 flex items-center gap-1"><span class="material-symbols-outlined text-[10px]">arrow_upward</span> Copilot Savings</span>
+              <span class="text-xs text-rose-500 font-bold mt-1 flex items-center gap-1"><span
+                  class="material-symbols-outlined text-[10px]">arrow_upward</span> Copilot Savings</span>
             </div>
           </div>
 
           <!-- Main Chart -->
-          <div class="md:col-span-3 bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+          <div
+            class="md:col-span-3 bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
             <div class="flex justify-between items-center mb-6">
-              <h3 class="font-bold text-sm text-slate-800 dark:text-slate-200">Query Performance Evolution (seconds)</h3>
+              <h3 class="font-bold text-sm text-slate-800 dark:text-slate-200">Dashboards & Data Models Deployed
+              </h3>
               <div class="flex gap-2">
-                <button onclick="toggleChartView(this, 'bar')" class="chart-btn active text-xs px-2 py-1 rounded bg-primary/10 text-primary font-semibold">Bar</button>
-                <button onclick="toggleChartView(this, 'line')" class="chart-btn text-xs px-2 py-1 rounded text-slate-400 hover:bg-primary/10 hover:text-primary font-semibold transition-colors">Line</button>
+                <button onclick="toggleChartView(this, 'bar')"
+                  class="chart-btn active text-xs px-2 py-1 rounded bg-primary/10 text-primary font-semibold">Bar</button>
+                <button onclick="toggleChartView(this, 'line')"
+                  class="chart-btn text-xs px-2 py-1 rounded text-slate-400 hover:bg-primary/10 hover:text-primary font-semibold transition-colors">Line</button>
               </div>
             </div>
             <!-- Bar view -->
-            <div id="chart-bar" class="flex-1 flex items-end justify-between gap-3 h-40 border-b border-slate-100 dark:border-slate-700 pb-2">
-              <div class="flex-1 flex flex-col items-center gap-1">
-                <span class="text-xs text-rose-500 font-bold">18.5s</span>
-                <div class="w-full bg-rose-400 dark:bg-rose-600/60 rounded-t-md bar-chart-item shimmer" style="height:100%" title="Legacy Oracle: 18.5s"></div>
+            <div id="chart-bar"
+              class="flex-1 flex items-end justify-between gap-3 h-40 border-b border-slate-100 dark:border-slate-700 pb-2">
+              <div class="flex-1 flex flex-col items-center justify-end gap-1 h-full relative group">
+                <span
+                  class="text-xs text-slate-500 font-bold opacity-100 group-hover:-translate-y-1 transition-transform">12</span>
+                <div class="w-full bg-slate-200 dark:bg-slate-700 rounded-t-md bar-chart-item" style="height:6%"
+                  title="2023: 12"></div>
               </div>
-              <div class="flex-1 flex flex-col items-center gap-1">
-                <span class="text-xs text-amber-500 font-bold">8.2s</span>
-                <div class="w-full bg-amber-400 dark:bg-amber-600/50 rounded-t-md bar-chart-item" style="height:44%" title="Initial Power BI: 8.2s"></div>
+              <div class="flex-1 flex flex-col items-center justify-end gap-1 h-full relative group">
+                <span
+                  class="text-xs text-blue-400 font-bold opacity-100 group-hover:-translate-y-1 transition-transform">34</span>
+                <div class="w-full bg-blue-300 dark:bg-blue-500/50 rounded-t-md bar-chart-item" style="height:17%"
+                  title="2024: 34"></div>
               </div>
-              <div class="flex-1 flex flex-col items-center gap-1">
-                <span class="text-xs text-blue-500 font-bold">3.4s</span>
-                <div class="w-full bg-blue-400 dark:bg-blue-600/60 rounded-t-md bar-chart-item" style="height:18%"></div>
+              <div class="flex-1 flex flex-col items-center justify-end gap-1 h-full relative group">
+                <span
+                  class="text-xs text-indigo-500 font-bold opacity-100 group-hover:-translate-y-1 transition-transform">85</span>
+                <div class="w-full bg-indigo-400 dark:bg-indigo-600/60 rounded-t-md bar-chart-item shimmer"
+                  style="height:42%" title="2025: 85">
+                </div>
               </div>
-              <div class="flex-1 flex flex-col items-center gap-1">
-                <span class="text-xs text-emerald-500 font-bold">0.8s</span>
-                <div class="w-full bg-emerald-500 rounded-t-md bar-chart-item" style="height:4%"></div>
+              <div class="flex-1 flex flex-col items-center justify-end gap-1 h-full relative group">
+                <span
+                  class="text-xs text-primary font-bold opacity-100 group-hover:-translate-y-1 transition-transform">200+</span>
+                <div class="w-full bg-primary rounded-t-md bar-chart-item" style="height:100%" title="2026: 200+"></div>
               </div>
+            </div>
+            <!-- Line view -->
+            <div id="chart-line"
+              class="hidden flex-1 flex flex-col justify-end h-40 border-b border-slate-100 dark:border-slate-700 pb-2 pt-7 relative w-full">
+              <svg class="w-full h-full overflow-visible" preserveAspectRatio="none" viewBox="0 0 100 100">
+                <defs>
+                  <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#cbd5e1" />
+                    <stop offset="33%" stop-color="#60a5fa" />
+                    <stop offset="66%" stop-color="#818cf8" />
+                    <stop offset="100%" stop-color="#2060df" />
+                  </linearGradient>
+                </defs>
+                <path fill="none" class="drop-shadow-[0_4px_4px_rgba(32,96,223,0.3)]" stroke="url(#lineGrad)"
+                  stroke-width="4" stroke-linecap="round" stroke-linejoin="round"
+                  d="M 12.5,94 C 25,94 25,83 37.5,83 C 50,83 50,58 62.5,58 C 75,58 80,0 87.5,0" />
+                <circle cx="12.5" cy="94" r="4" class="fill-slate-300 stroke-white dark:stroke-slate-800"
+                  stroke-width="2" />
+                <circle cx="37.5" cy="83" r="4" class="fill-blue-400 stroke-white dark:stroke-slate-800"
+                  stroke-width="2" />
+                <circle cx="62.5" cy="58" r="4" class="fill-indigo-500 stroke-white dark:stroke-slate-800"
+                  stroke-width="2" />
+                <circle cx="87.5" cy="0" r="4" class="fill-primary stroke-white dark:stroke-slate-800"
+                  stroke-width="2" />
+              </svg>
             </div>
             <!-- Labels -->
             <div class="flex justify-between mt-3 text-xs font-semibold text-slate-400 gap-3">
-              <span class="flex-1 text-center truncate">Legacy Oracle</span>
-              <span class="flex-1 text-center truncate hidden sm:block">Initial BI</span>
-              <span class="flex-1 text-center truncate hidden sm:block">Snowflake</span>
-              <span class="flex-1 text-center truncate">Fabric + MV</span>
+              <span class="flex-1 text-center truncate">2023</span>
+              <span class="flex-1 text-center truncate hidden sm:block">2024</span>
+              <span class="flex-1 text-center truncate hidden sm:block">2025</span>
+              <span class="flex-1 text-center truncate">2026</span>
             </div>
           </div>
 
           <!-- Pipeline Map -->
-          <div class="md:col-span-1 bg-white dark:bg-slate-800 p-5 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col">
+          <div
+            class="md:col-span-1 bg-white dark:bg-slate-800 p-5 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col">
             <h3 class="font-bold text-sm text-slate-800 dark:text-slate-200 mb-4">Data Sources</h3>
             <div class="flex flex-col gap-3 flex-1 justify-center">
               <div class="flex items-center gap-3">
@@ -316,48 +525,69 @@
           <h4 class="text-primary font-bold uppercase tracking-[0.2em] text-sm mb-3">Performance Track Record</h4>
           <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Impact by the Numbers</h2>
         </div>
-        <p class="text-slate-500 dark:text-slate-400 max-w-md">Quantifiable outcomes delivered across enterprise-level architectures and global business units.</p>
+        <p class="text-slate-500 dark:text-slate-400 max-w-md">Quantifiable outcomes delivered across enterprise-level
+          architectures and global business units.</p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="group bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm lift reveal reveal-delay-1">
-          <div class="w-14 h-14 rounded-2xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-400 mb-6 group-hover:scale-110 transition-transform">
+        <div
+          class="group bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm lift reveal reveal-delay-1">
+          <div
+            class="w-14 h-14 rounded-2xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-400 mb-6 group-hover:scale-110 transition-transform">
             <span class="material-symbols-outlined text-2xl">monitoring</span>
           </div>
-          <p class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wider mb-2">Dashboards Built</p>
+          <p class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wider mb-2">Dashboards Built
+          </p>
           <div class="flex items-baseline gap-2 mb-3">
-            <span class="text-5xl font-extrabold text-slate-900 dark:text-white counter" data-target="200" data-suffix="+">0+</span>
+            <span class="text-5xl font-extrabold text-slate-900 dark:text-white counter" data-target="200"
+              data-suffix="+">0+</span>
           </div>
-          <p class="text-slate-600 dark:text-slate-400 text-sm">Finance, Sales, Ops & Geospatial dashboards across enterprise clients.</p>
+          <p class="text-slate-600 dark:text-slate-400 text-sm">Finance, Sales, Ops & Geospatial dashboards across
+            enterprise clients.</p>
         </div>
-        <div class="group bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm lift reveal reveal-delay-2">
-          <div class="w-14 h-14 rounded-2xl bg-emerald-50 dark:bg-emerald-900/20 flex items-center justify-center text-emerald-600 dark:text-emerald-400 mb-6 group-hover:scale-110 transition-transform">
+        <div
+          class="group bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm lift reveal reveal-delay-2">
+          <div
+            class="w-14 h-14 rounded-2xl bg-emerald-50 dark:bg-emerald-900/20 flex items-center justify-center text-emerald-600 dark:text-emerald-400 mb-6 group-hover:scale-110 transition-transform">
             <span class="material-symbols-outlined text-2xl">bolt</span>
           </div>
-          <p class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wider mb-2">Processing Faster</p>
+          <p class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wider mb-2">Processing
+            Faster</p>
           <div class="flex items-baseline gap-2 mb-3">
-            <span class="text-5xl font-extrabold text-slate-900 dark:text-white counter" data-target="30" data-suffix="%">0%</span>
+            <span class="text-5xl font-extrabold text-slate-900 dark:text-white counter" data-target="30"
+              data-suffix="%">0%</span>
           </div>
-          <p class="text-slate-600 dark:text-slate-400 text-sm">Oracle to Snowflake migration cut data processing time by 30%.</p>
+          <p class="text-slate-600 dark:text-slate-400 text-sm">Oracle to Snowflake migration cut data processing time
+            by 30%.</p>
         </div>
-        <div class="group bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm lift reveal reveal-delay-3">
-          <div class="w-14 h-14 rounded-2xl bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center text-purple-600 dark:text-purple-400 mb-6 group-hover:scale-110 transition-transform">
+        <div
+          class="group bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm lift reveal reveal-delay-3">
+          <div
+            class="w-14 h-14 rounded-2xl bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center text-purple-600 dark:text-purple-400 mb-6 group-hover:scale-110 transition-transform">
             <span class="material-symbols-outlined text-2xl">psychology</span>
           </div>
-          <p class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wider mb-2">AI Efficiency Gain</p>
+          <p class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wider mb-2">AI Efficiency
+            Gain</p>
           <div class="flex items-baseline gap-2 mb-3">
-            <span class="text-5xl font-extrabold text-slate-900 dark:text-white counter" data-target="25" data-suffix="%">0%</span>
+            <span class="text-5xl font-extrabold text-slate-900 dark:text-white counter" data-target="25"
+              data-suffix="%">0%</span>
           </div>
-          <p class="text-slate-600 dark:text-slate-400 text-sm">AI Prompt Engineering & Copilot reduced manual reporting effort.</p>
+          <p class="text-slate-600 dark:text-slate-400 text-sm">AI Prompt Engineering & Copilot reduced manual reporting
+            effort.</p>
         </div>
-        <div class="group bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm lift reveal reveal-delay-4">
-          <div class="w-14 h-14 rounded-2xl bg-amber-50 dark:bg-amber-900/20 flex items-center justify-center text-amber-600 dark:text-amber-400 mb-6 group-hover:scale-110 transition-transform">
+        <div
+          class="group bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm lift reveal reveal-delay-4">
+          <div
+            class="w-14 h-14 rounded-2xl bg-amber-50 dark:bg-amber-900/20 flex items-center justify-center text-amber-600 dark:text-amber-400 mb-6 group-hover:scale-110 transition-transform">
             <span class="material-symbols-outlined text-2xl">workspace_premium</span>
           </div>
-          <p class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wider mb-2">Years Experience</p>
+          <p class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wider mb-2">Years Experience
+          </p>
           <div class="flex items-baseline gap-2 mb-3">
-            <span class="text-5xl font-extrabold text-slate-900 dark:text-white counter" data-target="8" data-suffix="+">0+</span>
+            <span class="text-5xl font-extrabold text-slate-900 dark:text-white counter" data-target="8"
+              data-suffix="+">0+</span>
           </div>
-          <p class="text-slate-600 dark:text-slate-400 text-sm">Deep industry expertise across BI, analytics, and data engineering.</p>
+          <p class="text-slate-600 dark:text-slate-400 text-sm">Deep industry expertise across BI, analytics, and data
+            engineering.</p>
         </div>
       </div>
     </div>
@@ -371,42 +601,49 @@
         <h2 class="text-3xl font-bold">Tools & Platforms</h2>
       </div>
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-        <div class="bg-white dark:bg-slate-900 rounded-xl p-4 flex flex-col items-center gap-2 border border-slate-100 dark:border-slate-800 lift reveal reveal-delay-1" title="Primary BI tool — 8 years, 200+ dashboards">
+        <div
+          class="bg-white dark:bg-slate-900 rounded-xl p-4 flex flex-col items-center gap-2 border border-slate-100 dark:border-slate-800 lift reveal reveal-delay-1"
+          title="Primary BI tool — 8 years, 200+ dashboards">
           <div class="w-10 h-10 rounded-lg bg-yellow-50 dark:bg-yellow-900/20 flex items-center justify-center">
             <span class="material-symbols-outlined text-yellow-600">bar_chart</span>
           </div>
           <span class="text-xs font-bold text-slate-700 dark:text-slate-300">Power BI</span>
           <span class="text-[10px] text-emerald-500 font-bold">Expert</span>
         </div>
-        <div class="bg-white dark:bg-slate-900 rounded-xl p-4 flex flex-col items-center gap-2 border border-slate-100 dark:border-slate-800 lift reveal reveal-delay-1">
+        <div
+          class="bg-white dark:bg-slate-900 rounded-xl p-4 flex flex-col items-center gap-2 border border-slate-100 dark:border-slate-800 lift reveal reveal-delay-1">
           <div class="w-10 h-10 rounded-lg bg-cyan-50 dark:bg-cyan-900/20 flex items-center justify-center">
             <span class="material-symbols-outlined text-cyan-600">hub</span>
           </div>
           <span class="text-xs font-bold text-slate-700 dark:text-slate-300">MS Fabric</span>
           <span class="text-[10px] text-emerald-500 font-bold">Advanced</span>
         </div>
-        <div class="bg-white dark:bg-slate-900 rounded-xl p-4 flex flex-col items-center gap-2 border border-slate-100 dark:border-slate-800 lift reveal reveal-delay-2">
+        <div
+          class="bg-white dark:bg-slate-900 rounded-xl p-4 flex flex-col items-center gap-2 border border-slate-100 dark:border-slate-800 lift reveal reveal-delay-2">
           <div class="w-10 h-10 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center">
             <span class="material-symbols-outlined text-blue-600">cloud</span>
           </div>
           <span class="text-xs font-bold text-slate-700 dark:text-slate-300">Snowflake</span>
           <span class="text-[10px] text-emerald-500 font-bold">Advanced</span>
         </div>
-        <div class="bg-white dark:bg-slate-900 rounded-xl p-4 flex flex-col items-center gap-2 border border-slate-100 dark:border-slate-800 lift reveal reveal-delay-2">
+        <div
+          class="bg-white dark:bg-slate-900 rounded-xl p-4 flex flex-col items-center gap-2 border border-slate-100 dark:border-slate-800 lift reveal reveal-delay-2">
           <div class="w-10 h-10 rounded-lg bg-orange-50 dark:bg-orange-900/20 flex items-center justify-center">
             <span class="material-symbols-outlined text-orange-600">table_chart</span>
           </div>
           <span class="text-xs font-bold text-slate-700 dark:text-slate-300">Tableau</span>
           <span class="text-[10px] text-emerald-500 font-bold">Expert</span>
         </div>
-        <div class="bg-white dark:bg-slate-900 rounded-xl p-4 flex flex-col items-center gap-2 border border-slate-100 dark:border-slate-800 lift reveal reveal-delay-3">
+        <div
+          class="bg-white dark:bg-slate-900 rounded-xl p-4 flex flex-col items-center gap-2 border border-slate-100 dark:border-slate-800 lift reveal reveal-delay-3">
           <div class="w-10 h-10 rounded-lg bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center">
             <span class="material-symbols-outlined text-purple-600">storage</span>
           </div>
           <span class="text-xs font-bold text-slate-700 dark:text-slate-300">SQL / Oracle</span>
           <span class="text-[10px] text-emerald-500 font-bold">Expert</span>
         </div>
-        <div class="bg-white dark:bg-slate-900 rounded-xl p-4 flex flex-col items-center gap-2 border border-slate-100 dark:border-slate-800 lift reveal reveal-delay-3">
+        <div
+          class="bg-white dark:bg-slate-900 rounded-xl p-4 flex flex-col items-center gap-2 border border-slate-100 dark:border-slate-800 lift reveal reveal-delay-3">
           <div class="w-10 h-10 rounded-lg bg-rose-50 dark:bg-rose-900/20 flex items-center justify-center">
             <span class="material-symbols-outlined text-rose-600">smart_toy</span>
           </div>
@@ -419,91 +656,169 @@
 
   <!-- ═══ FLOATING CTA ═══ -->
   <div class="fixed bottom-6 md:right-8 md:bottom-8 md:left-auto md:translate-x-0 left-1/2 -translate-x-1/2 z-50">
-    <a class="bg-primary text-white px-6 py-3 rounded-full shadow-2xl shadow-primary/40 font-bold flex items-center gap-2 whitespace-nowrap hover:bg-primary/90 hover:-translate-y-0.5 transition-all" href="contact.html">
+    <a class="bg-primary text-white px-6 py-3 rounded-full shadow-2xl shadow-primary/40 font-bold flex items-center gap-2 whitespace-nowrap hover:bg-primary/90 hover:-translate-y-0.5 transition-all"
+      href="contact.html">
       <span class="material-symbols-outlined text-xl">mail</span>
       Let's Talk
     </a>
   </div>
 
   <!-- ═══ FOOTER ═══ -->
-  <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 pt-20 pb-24 md:pb-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+
+  <!-- ═══ RE-DESIGNED MODERN FOOTER ═══ -->
+  <footer
+    class="relative bg-slate-50 dark:bg-[#0a0f1c] pt-10 pb-24 md:pb-8 border-t border-slate-200 dark:border-slate-800/40 overflow-hidden text-slate-600 dark:text-slate-300 transition-colors duration-300">
+    <!-- subtle glow effect -->
+    <div
+      class="hidden dark:block absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent">
+    </div>
+    <div
+      class="hidden dark:block absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-64 bg-primary/10 blur-[100px] rounded-full pointer-events-none">
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-8">
         <div class="md:col-span-4 lg:col-span-5">
-          <div class="flex items-center gap-2 mb-6">
-            <div class="bg-primary rounded-xl p-2"><span class="material-symbols-outlined text-white text-2xl">insights</span></div>
-            <span class="text-xl font-bold">Abdul Wassay</span>
+          <div class="flex items-center gap-3 mb-6 group">
+            <div
+              class="relative w-10 h-10 rounded-full overflow-hidden border-2 border-primary/20 group-hover:border-primary transition-colors duration-300">
+              <img src="./assets/images/profile_photo.jpg" alt="Abdul Wassay" class="w-full h-full object-cover">
+            </div>
+            <span
+              class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-400">Abdul
+              Wassay</span>
           </div>
-          <p class="text-slate-600 dark:text-slate-400 max-w-sm mb-8 text-base leading-relaxed">Architecting high-performance data ecosystems and AI-powered BI strategies for global enterprises.</p>
+          <p class="max-w-sm mb-8 text-base leading-relaxed">Architecting high-performance data ecosystems and
+            AI-powered BI strategies. Transforming complexity into competitive advantage.</p>
           <div class="flex gap-4">
-            <a href="https://linkedin.com/in/wassayknp" target="_blank" class="w-12 h-12 rounded-xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white hover:-translate-y-1 transition-all border border-slate-100 dark:border-slate-700">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            <a href="https://linkedin.com/in/wassayknp" target="_blank"
+              class="w-12 h-12 rounded-xl bg-white dark:bg-slate-900/50 flex items-center justify-center hover:bg-[#0077b5] hover:text-white dark:hover:bg-[#0077b5] hover:-translate-y-1 transition-all border border-slate-200 dark:border-slate-800 shadow-sm">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+              </svg>
             </a>
-            <a href="https://github.com/wassayknp" target="_blank" class="w-12 h-12 rounded-xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white hover:-translate-y-1 transition-all border border-slate-100 dark:border-slate-700">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            <a href="https://github.com/wassayknp" target="_blank"
+              class="w-12 h-12 rounded-xl bg-white dark:bg-slate-900/50 flex items-center justify-center hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 hover:-translate-y-1 transition-all border border-slate-200 dark:border-slate-800 shadow-sm">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+              </svg>
             </a>
-            <a href="contact.html" class="w-12 h-12 rounded-xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white hover:-translate-y-1 transition-all border border-slate-100 dark:border-slate-700">
-              <span class="material-symbols-outlined text-xl">mail</span>
+            <a href="contact.html"
+              class="w-12 h-12 rounded-xl bg-white dark:bg-slate-900/50 flex items-center justify-center hover:bg-primary hover:text-white hover:-translate-y-1 transition-all border border-slate-200 dark:border-slate-800 shadow-sm">
+              <span class="material-symbols-outlined text-xl transition-colors">mail</span>
             </a>
           </div>
         </div>
         <div class="md:col-span-3 lg:col-span-2">
-          <h5 class="text-slate-900 dark:text-white font-bold mb-7 uppercase tracking-wider text-xs">Explore</h5>
-          <ul class="space-y-4">
-            <li><a href="index.html" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Home</a></li>
-            <li><a href="projects_experience.html" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Work</a></li>
-            <li><a href="professional_resume.html" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Resume</a></li>
-            <li><a href="blog.html" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Blog</a></li>
+          <h5 class="text-slate-900 dark:text-white font-bold mb-6 uppercase tracking-widest text-xs opacity-90">Explore
+          </h5>
+          <ul class="space-y-3.5">
+            <li><a href="index.html"
+                class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
+                  class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Home</a>
+            </li>
+            <li><a href="projects_experience.html"
+                class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
+                  class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Work</a>
+            </li>
+            <li><a href="professional_resume.html"
+                class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
+                  class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Resume</a>
+            </li>
+            <li><a href="blog.html"
+                class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
+                  class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Blog</a>
+            </li>
           </ul>
         </div>
         <div class="md:col-span-3 lg:col-span-2">
-          <h5 class="text-slate-900 dark:text-white font-bold mb-7 uppercase tracking-wider text-xs">Expertise</h5>
-          <ul class="space-y-4">
-            <li><a href="skills_architecture.html" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>BI Strategy</a></li>
-            <li><a href="skills_architecture.html" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Data Modeling</a></li>
-            <li><a href="skills_architecture.html" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Fabric Migration</a></li>
-            <li><a href="skills_architecture.html" class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>AI Analytics</a></li>
+          <h5 class="text-slate-900 dark:text-white font-bold mb-6 uppercase tracking-widest text-xs opacity-90">
+            Expertise</h5>
+          <ul class="space-y-3.5">
+            <li><a href="skills_architecture.html"
+                class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
+                  class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>BI
+                Strategy</a></li>
+            <li><a href="skills_architecture.html"
+                class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
+                  class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Data
+                Modeling</a></li>
+            <li><a href="skills_architecture.html"
+                class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
+                  class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Data
+                Architecture</a></li>
+            <li><a href="skills_architecture.html"
+                class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
+                  class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>AI
+                Ecosystems</a></li>
           </ul>
         </div>
         <div class="md:col-span-2 lg:col-span-3">
-          <h5 class="text-slate-900 dark:text-white font-bold mb-7 uppercase tracking-wider text-xs">Location</h5>
-          <div class="bg-slate-50 dark:bg-slate-800/50 rounded-2xl p-6 border border-slate-100 dark:border-slate-700">
-            <div class="flex items-start gap-4 mb-4">
-              <span class="material-symbols-outlined text-primary mt-1">location_on</span>
+          <h5 class="text-slate-900 dark:text-white font-bold mb-6 uppercase tracking-widest text-xs opacity-90">
+            Location</h5>
+          <div
+            class="bg-white dark:bg-slate-900/50 rounded-2xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm relative overflow-hidden group">
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            </div>
+            <div class="flex items-start gap-4 mb-4 relative z-10">
+              <span class="material-symbols-outlined text-primary bg-primary/10 rounded-full p-2">location_on</span>
               <div>
                 <p class="text-sm font-bold text-slate-900 dark:text-white mb-1">Hyderabad, India</p>
-                <p class="text-xs text-slate-500 dark:text-slate-400">Open to remote & global roles</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Open to global roles</p>
               </div>
             </div>
-            <a href="contact.html" class="inline-flex items-center gap-2 text-primary text-sm font-bold hover:underline">Contact Me <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
+            <a href="contact.html"
+              class="inline-flex items-center gap-1.5 text-primary text-sm font-bold hover:underline relative z-10 group-hover:translate-x-1 transition-transform">Contact
+              Me <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
           </div>
         </div>
       </div>
-      <div class="pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p class="text-xs text-slate-500 font-medium">© 2026 Abdul Wassay. Built with <span class="text-rose-500">❤</span> and Data Science.</p>
-        <div class="flex gap-8">
-          <a href="index.html" class="text-xs text-slate-500 hover:text-primary transition-colors font-medium">Privacy Policy</a>
-          <a href="index.html" class="text-xs text-slate-500 hover:text-primary transition-colors font-medium">Terms</a>
-          <a href="index.html" class="text-xs text-slate-500 hover:text-primary transition-colors font-medium">Sitemap</a>
+      <div
+        class="pt-8 border-t border-slate-200 dark:border-slate-800/60 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-xs font-medium">© 2026 Abdul Wassay. Built with <span
+            class="text-rose-500 animate-pulse inline-block">❤</span> in India <img src="https://flagcdn.com/w20/in.png"
+            class="inline-block ml-1 -mt-1 w-4" alt="India"></p>
+        <div class="flex gap-6">
+          <a href="#" class="text-xs hover:text-primary transition-colors font-medium">Privacy</a>
+          <a href="#" class="text-xs hover:text-primary transition-colors font-medium">Terms</a>
+          <a href="#" class="text-xs hover:text-primary transition-colors font-medium">Sitemap</a>
         </div>
       </div>
     </div>
   </footer>
 
+
   <!-- ═══ MOBILE TAB BAR ═══ -->
   <div class="md:hidden fixed bottom-6 left-0 right-0 z-40 px-4 pointer-events-none">
     <div class="max-w-md mx-auto pointer-events-auto">
       <div class="flex bg-slate-900 border border-slate-800 rounded-full p-1.5 shadow-2xl overflow-x-auto">
-        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-white bg-primary rounded-full" href="index.html"><span class="material-symbols-outlined">home</span><span class="text-[10px] font-bold">Home</span></a>
-        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white" href="projects_experience.html"><span class="material-symbols-outlined">grid_view</span><span class="text-[10px] font-bold">Work</span></a>
-        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white" href="professional_resume.html"><span class="material-symbols-outlined">article</span><span class="text-[10px] font-bold">Resume</span></a>
-        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white" href="skills_architecture.html"><span class="material-symbols-outlined">psychology</span><span class="text-[10px] font-bold">Skills</span></a>
-        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white" href="blog.html"><span class="material-symbols-outlined">menu_book</span><span class="text-[10px] font-bold">Blog</span></a>
-        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white" href="contact.html"><span class="material-symbols-outlined">contact_support</span><span class="text-[10px] font-bold">Contact</span></a>
+        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-white bg-primary rounded-full"
+          href="index.html"><span class="material-symbols-outlined">home</span><span
+            class="text-[10px] font-bold">Home</span></a>
+        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white"
+          href="projects_experience.html"><span class="material-symbols-outlined">grid_view</span><span
+            class="text-[10px] font-bold">Work</span></a>
+        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white"
+          href="professional_resume.html"><span class="material-symbols-outlined">article</span><span
+            class="text-[10px] font-bold">Resume</span></a>
+        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white"
+          href="skills_architecture.html"><span class="material-symbols-outlined">psychology</span><span
+            class="text-[10px] font-bold">Skills</span></a>
+        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white"
+          href="blog.html"><span class="material-symbols-outlined">menu_book</span><span
+            class="text-[10px] font-bold">Blog</span></a>
+        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white"
+          href="contact.html"><span class="material-symbols-outlined">contact_support</span><span
+            class="text-[10px] font-bold">Contact</span></a>
       </div>
     </div>
   </div>
 
+
+  <!-- ═══ ANIMATION & LOGIC SCRIPTS ═══ -->
   <script>
     // ── Dark Mode ──
     const html = document.documentElement;
@@ -519,26 +834,32 @@
     });
 
     // ── Mobile Menu ──
-    document.getElementById('mob-menu-btn').addEventListener('click', () => {
-      document.getElementById('mobile-menu').classList.toggle('open');
-    });
+    const mobBtn = document.getElementById('mob-menu-btn');
+    if (mobBtn) {
+      mobBtn.addEventListener('click', () => {
+        const menu = document.getElementById('mobile-menu');
+        if (menu) menu.classList.toggle('open');
+      });
+    }
 
     // ── Typewriter ──
-    const phrases = ['Senior BI & Analytics Engineer', 'Microsoft Fabric Specialist', 'AI-Powered BI Developer', 'Power BI Expert & DAX Architect'];
-    let pi = 0, ci = 0, deleting = false;
     const el = document.getElementById('typewriter');
-    function type() {
-      const phrase = phrases[pi];
-      if (!deleting) {
-        el.textContent = phrase.slice(0, ++ci);
-        if (ci === phrase.length) { deleting = true; setTimeout(type, 2000); return; }
-      } else {
-        el.textContent = phrase.slice(0, --ci);
-        if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; }
+    if (el) {
+      const phrases = ['Senior BI & Analytics Engineer', 'Microsoft Fabric Specialist', 'AI-Powered BI Developer', 'Power BI Expert & DAX Architect'];
+      let pi = 0, ci = 0, deleting = false;
+      function type() {
+        const phrase = phrases[pi];
+        if (!deleting) {
+          el.textContent = phrase.slice(0, ++ci);
+          if (ci === phrase.length) { deleting = true; setTimeout(type, 2000); return; }
+        } else {
+          el.textContent = phrase.slice(0, --ci);
+          if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; }
+        }
+        setTimeout(type, deleting ? 50 : 80);
       }
-      setTimeout(type, deleting ? 50 : 80);
+      setTimeout(type, 800);
     }
-    setTimeout(type, 800);
 
     // ── Scroll Reveal ──
     const observer = new IntersectionObserver(entries => {
@@ -552,6 +873,7 @@
         if (!e.isIntersecting) return;
         const el = e.target;
         const target = parseInt(el.dataset.target);
+        if (isNaN(target)) return;
         const suffix = el.dataset.suffix || '';
         let start = 0;
         const duration = 1500;
@@ -573,7 +895,7 @@
       entries.forEach(e => {
         if (!e.isIntersecting) return;
         e.target.querySelectorAll('.bar-fill').forEach(bar => {
-          setTimeout(() => { bar.style.width = bar.dataset.width + '%'; }, 200);
+          setTimeout(() => { if (bar.dataset.width) bar.style.width = bar.dataset.width + '%'; }, 200);
         });
         barObs.unobserve(e.target);
       });
@@ -588,7 +910,39 @@
       });
       btn.classList.add('active', 'bg-primary/10', 'text-primary');
       btn.classList.remove('text-slate-400');
+
+      const barChart = document.getElementById('chart-bar');
+      const lineChart = document.getElementById('chart-line');
+
+      if (barChart && lineChart) {
+        if (view === 'bar') {
+          barChart.classList.remove('hidden');
+          lineChart.classList.add('hidden');
+        } else {
+          barChart.classList.add('hidden');
+          lineChart.classList.remove('hidden');
+        }
+      }
+    }
+
+    // ── Download Resume ──
+    function downloadResume() {
+      const date = new Date();
+      const timestamp = date.getFullYear().toString() +
+        (date.getMonth() + 1).toString().padStart(2, '0') +
+        date.getDate().toString().padStart(2, '0') + '_' +
+        date.getHours().toString().padStart(2, '0') +
+        date.getMinutes().toString().padStart(2, '0');
+
+      const a = document.createElement('a');
+      a.href = 'assets/Abdul_Wassay_Resume.pdf';
+      a.download = `Abdul_Wassay_Resume_${timestamp}.pdf`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
     }
   </script>
+
 </body>
+
 </html>

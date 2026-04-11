@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>Work & Projects — Abdul Wassay</title>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
   <script id="tailwind-config">
     tailwind.config = {
       darkMode: "class",
@@ -19,65 +22,195 @@
     }
   </script>
   <style>
-    body { min-height: max(884px, 100dvh); }
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s ease, transform 0.55s ease; }
-    .reveal.visible { opacity: 1; transform: none; }
-    .reveal-delay-1 { transition-delay: 0.08s; }
-    .reveal-delay-2 { transition-delay: 0.16s; }
-    .reveal-delay-3 { transition-delay: 0.24s; }
+    .grid-pattern {
+      background-size: 40px 40px;
+      background-image:
+        linear-gradient(to right, rgba(32, 96, 223, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(32, 96, 223, 0.05) 1px, transparent 1px);
+    }
 
-    /* Project card hover */
-    .proj-card { transition: transform 0.25s ease, box-shadow 0.25s ease; }
-    .proj-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(32,96,223,0.1); }
+    body {
+      min-height: max(884px, 100dvh);
+    }
 
-    /* Filter button */
-    .filter-btn { transition: all 0.2s; }
-    .filter-btn.active { background-color: #2060df; color: white; border-color: #2060df; }
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
 
-    /* Tech tag */
-    .tech-tag { display: inline-flex; align-items: center; padding: 2px 10px; border-radius: 9999px; font-size: 11px; font-weight: 600; transition: transform 0.15s; cursor: default; }
-    .tech-tag:hover { transform: translateY(-1px); }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-    /* Timeline dot pulse */
-    .tl-dot-active { position: relative; }
-    .tl-dot-active::before { content:''; position:absolute; inset:-4px; border-radius:9999px; background:rgba(32,96,223,0.2); animation: ripple 2s infinite; }
-    @keyframes ripple { 0%,100%{transform:scale(1);opacity:0.6} 50%{transform:scale(1.5);opacity:0} }
+    .reveal-delay-1 {
+      transition-delay: 0.1s;
+    }
 
-    /* Expand/collapse */
-    .exp-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
-    .exp-body.open { max-height: 600px; }
-    .exp-toggle-icon { transition: transform 0.3s; }
-    .expanded .exp-toggle-icon { transform: rotate(180deg); }
+    .reveal-delay-2 {
+      transition-delay: 0.2s;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 0.3s;
+    }
+
+    .reveal-delay-4 {
+      transition-delay: 0.4s;
+    }
+
+    /* Typewriter cursor */
+    .typewriter::after {
+      content: '|';
+      animation: blink 0.7s step-end infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    /* Animated bars */
+    .bar-fill {
+      width: 0%;
+      transition: width 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    /* Floating badge */
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-8px)
+      }
+    }
+
+    .float {
+      animation: float 3s ease-in-out infinite;
+    }
 
     /* Gradient text */
-    .gradient-text { background: linear-gradient(135deg, #2060df, #60a5fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .gradient-text {
+      background: linear-gradient(135deg, #2060df, #60a5fa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
 
-    /* Progress bars */
-    .impact-bar { height: 6px; border-radius: 3px; background: #e2e8f0; }
-    .impact-fill { height: 100%; border-radius: 3px; width: 0; transition: width 1.2s cubic-bezier(0.25,1,0.5,1); }
-  </style>
+    /* Shimmer */
+    @keyframes shimmer {
+      0% {
+        background-position: -200% 0
+      }
+
+      100% {
+        background-position: 200% 0
+      }
+    }
+
+    .shimmer {
+      background: linear-gradient(90deg, transparent, rgba(32, 96, 223, 0.08), transparent);
+      background-size: 200% 100%;
+      animation: shimmer 2.5s infinite;
+    }
+
+    /* Tech pill hover */
+    .tech-pill {
+      transition: all 0.2s;
+      cursor: default;
+    }
+
+    .tech-pill:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(32, 96, 223, 0.18);
+    }
+
+    /* Mobile menu */
+    #mobile-menu {
+      transition: max-height 0.3s ease, opacity 0.3s ease;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+    }
+
+    #mobile-menu.open {
+      max-height: 400px;
+      opacity: 1;
+    }
+
+    /* Counter */
+    .counter {
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Card hover lift */
+    .lift {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .lift:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(32, 96, 223, 0.12);
+    }
+
+    /* Progress ring */
+    .ring-progress {
+      transition: stroke-dashoffset 1.4s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+  
+    /* Modal styles */
+    .modal {
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+      display: flex;
+    }
+    .modal.active {
+      opacity: 1;
+      pointer-events: auto;
+      visibility: visible;
+    }
+</style>
 </head>
 
-<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased transition-colors duration-300">
+<body
+  class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased transition-colors duration-300">
 
   <!-- ═══ NAVBAR ═══ -->
-  <nav class="sticky top-0 z-50 w-full border-b border-primary/10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
+  <nav
+    class="sticky top-0 z-50 w-full border-b border-primary/10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 items-center justify-between">
         <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
-          <div class="bg-primary rounded-lg p-1.5"><span class="material-symbols-outlined text-white text-xl">insights</span></div>
+          <div class="bg-primary rounded-lg p-1.5"><span
+              class="material-symbols-outlined text-white text-xl">insights</span></div>
           <span class="text-lg font-bold tracking-tight">Abdul Wassay</span>
         </a>
         <div class="hidden md:flex items-baseline space-x-1">
-          <a class="text-slate-600 dark:text-slate-400 hover:text-primary px-3 py-2 text-sm font-medium transition-colors" href="index.html">Home</a>
-          <a class="text-primary font-semibold px-3 py-2 text-sm transition-colors" href="projects_experience.html">Work</a>
-          <a class="text-slate-600 dark:text-slate-400 hover:text-primary px-3 py-2 text-sm font-medium transition-colors" href="professional_resume.html">Resume</a>
-          <a class="text-slate-600 dark:text-slate-400 hover:text-primary px-3 py-2 text-sm font-medium transition-colors" href="skills_architecture.html">Skills</a>
-          <a class="text-slate-600 dark:text-slate-400 hover:text-primary px-3 py-2 text-sm font-medium transition-colors" href="blog.html">Blog</a>
-          <a class="text-slate-600 dark:text-slate-400 hover:text-primary px-3 py-2 text-sm font-medium transition-colors" href="contact.html">Contact</a>
+          <a class="text-slate-600 dark:text-slate-400 hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+            href="index.html">Home</a>
+          <a class="text-primary font-semibold px-3 py-2 text-sm transition-colors"
+            href="projects_experience.html">Work</a>
+          <a class="text-slate-600 dark:text-slate-400 hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+            href="professional_resume.html">Resume</a>
+          <a class="text-slate-600 dark:text-slate-400 hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+            href="skills_architecture.html">Skills</a>
+          <a class="text-slate-600 dark:text-slate-400 hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+            href="blog.html">Blog</a>
+          <a class="text-slate-600 dark:text-slate-400 hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+            href="contact.html">Contact</a>
         </div>
         <div class="flex items-center gap-2">
-          <button class="p-2 rounded-full hover:bg-primary/10 transition-colors text-slate-600 dark:text-slate-400 theme-toggle"><span class="material-symbols-outlined">light_mode</span></button>
+          <button
+            class="p-2 rounded-full hover:bg-primary/10 transition-colors text-slate-600 dark:text-slate-400 theme-toggle"><span
+              class="material-symbols-outlined">light_mode</span></button>
         </div>
       </div>
     </div>
@@ -87,40 +220,51 @@
 
     <!-- ═══ HERO ═══ -->
     <section class="mb-20">
-      <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/5 via-blue-50/50 to-transparent dark:from-primary/10 dark:via-slate-900/50 border border-primary/10 p-8 md:p-16 flex flex-col md:flex-row items-center gap-12">
+      <div
+        class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/5 via-blue-50/50 to-transparent dark:from-primary/10 dark:via-slate-900/50 border border-primary/10 p-8 md:p-16 flex flex-col md:flex-row items-center gap-12">
         <!-- Decorative blobs -->
         <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
         <div class="absolute bottom-0 left-0 w-48 h-48 bg-blue-400/5 rounded-full blur-3xl pointer-events-none"></div>
         <div class="flex-1 space-y-6 relative z-10 reveal">
-          <span class="px-4 py-1.5 bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest rounded-full">Senior BI & Analytics Engineer</span>
-          <h1 class="text-4xl md:text-5xl font-extrabold leading-tight text-slate-900 dark:text-slate-50">
+          <span
+            class="px-4 py-1.5 bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest rounded-full">Senior
+            BI & Analytics Engineer</span>
+          <h1 class="text-4xl md:text-5xl font-extrabold leading-tight text-slate-900 dark:text-slate-50 reveal">
             Real Work. <span class="gradient-text">Real Impact.</span>
           </h1>
-          <p class="text-lg text-slate-600 dark:text-slate-400 max-w-xl">8+ years of end-to-end BI delivery — from Oracle-to-Snowflake migrations to AI-powered reporting with Microsoft Fabric and MCP Server integrations.</p>
+          <p class="text-lg text-slate-600 dark:text-slate-400 max-w-xl">8+ years of end-to-end BI delivery — from
+            Oracle-to-Snowflake migrations to AI-powered reporting with Microsoft Fabric and MCP Server integrations.
+          </p>
           <div class="flex flex-wrap gap-3">
-            <div class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400 bg-white dark:bg-slate-800 px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700">
+            <div
+              class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400 bg-white dark:bg-slate-800 px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700">
               <span class="material-symbols-outlined text-primary text-base">business</span> DEFTeam Solutions
             </div>
-            <div class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400 bg-white dark:bg-slate-800 px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700">
+            <div
+              class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400 bg-white dark:bg-slate-800 px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700">
               <span class="material-symbols-outlined text-primary text-base">corporate_fare</span> Infosys Limited
             </div>
           </div>
         </div>
         <!-- Stats cluster -->
         <div class="grid grid-cols-2 gap-4 md:w-80 relative z-10 reveal">
-          <div class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm text-center">
+          <div
+            class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm text-center">
             <div class="text-3xl font-extrabold text-primary">200+</div>
             <div class="text-xs text-slate-500 mt-1 font-semibold">Dashboards</div>
           </div>
-          <div class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm text-center">
+          <div
+            class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm text-center">
             <div class="text-3xl font-extrabold text-emerald-500">30%</div>
             <div class="text-xs text-slate-500 mt-1 font-semibold">Faster Processing</div>
           </div>
-          <div class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm text-center">
+          <div
+            class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm text-center">
             <div class="text-3xl font-extrabold text-purple-500">25%</div>
             <div class="text-xs text-slate-500 mt-1 font-semibold">Less Manual Work</div>
           </div>
-          <div class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm text-center">
+          <div
+            class="bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-100 dark:border-slate-700 shadow-sm text-center">
             <div class="text-3xl font-extrabold text-amber-500">8+</div>
             <div class="text-xs text-slate-500 mt-1 font-semibold">Years Experience</div>
           </div>
@@ -132,28 +276,36 @@
     <section class="mb-24" id="case-study">
       <div class="flex items-center gap-4 mb-8 reveal">
         <div class="h-1 w-12 bg-primary rounded-full"></div>
-        <h2 class="text-3xl font-bold tracking-tight">Featured Case Study</h2>
+        <h2 class="text-3xl font-bold tracking-tight reveal">Featured Case Study</h2>
       </div>
 
-      <div class="bg-white dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm reveal">
-        <div class="p-8 md:p-12 border-b border-slate-100 dark:border-slate-800 bg-gradient-to-br from-primary/5 to-transparent">
+      <div
+        class="bg-white dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm reveal">
+        <div
+          class="p-8 md:p-12 border-b border-slate-100 dark:border-slate-800 bg-gradient-to-br from-primary/5 to-transparent">
           <div class="flex flex-wrap items-start justify-between gap-4">
             <div>
               <div class="flex flex-wrap gap-2 mb-4">
                 <span class="tech-tag bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300">Snowflake</span>
-                <span class="tech-tag bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300">Microsoft Fabric</span>
-                <span class="tech-tag bg-orange-50 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300">Oracle</span>
-                <span class="tech-tag bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300">Power BI</span>
+                <span class="tech-tag bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300">Microsoft
+                  Fabric</span>
+                <span
+                  class="tech-tag bg-orange-50 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300">Oracle</span>
+                <span class="tech-tag bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300">Power
+                  BI</span>
                 <span class="tech-tag bg-rose-50 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300">DAX</span>
               </div>
-              <h3 class="text-3xl md:text-4xl font-bold mb-3">Oracle → Snowflake + Microsoft Fabric Migration</h3>
-              <p class="text-slate-500 dark:text-slate-400 text-lg max-w-3xl">End-to-end enterprise data platform modernization at DEFTeam Solutions — migrating legacy Oracle ETL to Snowflake and Microsoft Fabric, reducing data processing time by 30% while enabling real-time analytics.</p>
+              <h3 class="text-3xl md:text-4xl font-bold mb-3 reveal">Oracle → Snowflake + Microsoft Fabric Migration</h3>
+              <p class="text-slate-500 dark:text-slate-400 text-lg max-w-3xl">End-to-end enterprise data platform
+                modernization at DEFTeam Solutions — migrating legacy Oracle ETL to Snowflake and Microsoft Fabric,
+                reducing data processing time by 30% while enabling real-time analytics.</p>
             </div>
-            <span class="px-4 py-2 bg-primary/10 text-primary text-sm font-bold rounded-full whitespace-nowrap">2021 – Present</span>
+            <span class="px-4 py-2 bg-primary/10 text-primary text-sm font-bold rounded-full whitespace-nowrap">2021 –
+              Present</span>
           </div>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-px bg-slate-100 dark:bg-slate-800">
+        <div class="grid md:grid-cols-3 gap-px bg-slate-100 dark:bg-slate-800 reveal">
           <!-- Challenge -->
           <div class="bg-white dark:bg-slate-900 p-8">
             <div class="flex items-center gap-3 mb-6 text-rose-500">
@@ -163,9 +315,15 @@
               <h4 class="font-bold text-xl text-slate-900 dark:text-white">The Challenge</h4>
             </div>
             <ul class="space-y-4 text-slate-600 dark:text-slate-400">
-              <li class="flex gap-3"><span class="w-1.5 h-1.5 rounded-full bg-rose-400 mt-2 flex-shrink-0"></span><span>Legacy Oracle ETL pipelines causing slow data refresh cycles and reporting delays.</span></li>
-              <li class="flex gap-3"><span class="w-1.5 h-1.5 rounded-full bg-rose-400 mt-2 flex-shrink-0"></span><span>Fragmented data sources across Oracle, REST APIs, and SharePoint with no unified layer.</span></li>
-              <li class="flex gap-3"><span class="w-1.5 h-1.5 rounded-full bg-rose-400 mt-2 flex-shrink-0"></span><span>Manual reporting workflows consuming 15+ hours per week with no governance framework.</span></li>
+              <li class="flex gap-3"><span
+                  class="w-1.5 h-1.5 rounded-full bg-rose-400 mt-2 flex-shrink-0"></span><span>Legacy Oracle ETL
+                  pipelines causing slow data refresh cycles and reporting delays.</span></li>
+              <li class="flex gap-3"><span
+                  class="w-1.5 h-1.5 rounded-full bg-rose-400 mt-2 flex-shrink-0"></span><span>Fragmented data sources
+                  across Oracle, REST APIs, and SharePoint with no unified layer.</span></li>
+              <li class="flex gap-3"><span
+                  class="w-1.5 h-1.5 rounded-full bg-rose-400 mt-2 flex-shrink-0"></span><span>Manual reporting
+                  workflows consuming 15+ hours per week with no governance framework.</span></li>
             </ul>
           </div>
           <!-- Strategy -->
@@ -177,9 +335,15 @@
               <h4 class="font-bold text-xl text-slate-900 dark:text-white">The Strategy</h4>
             </div>
             <ul class="space-y-4 text-slate-600 dark:text-slate-400">
-              <li class="flex gap-3"><span class="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2 flex-shrink-0"></span><span>Migrated legacy Oracle logic to Snowflake with query optimization and star-schema redesign.</span></li>
-              <li class="flex gap-3"><span class="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2 flex-shrink-0"></span><span>Built new ETL pipelines in Microsoft Fabric / Azure Data Factory sourcing Oracle, Snowflake, APIs & JSON.</span></li>
-              <li class="flex gap-3"><span class="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2 flex-shrink-0"></span><span>Applied AI Copilot to automate insight summarization, cutting manual effort by 25%.</span></li>
+              <li class="flex gap-3"><span
+                  class="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2 flex-shrink-0"></span><span>Migrated legacy Oracle
+                  logic to Snowflake with query optimization and star-schema redesign.</span></li>
+              <li class="flex gap-3"><span
+                  class="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2 flex-shrink-0"></span><span>Built new ETL pipelines
+                  in Microsoft Fabric / Azure Data Factory sourcing Oracle, Snowflake, APIs & JSON.</span></li>
+              <li class="flex gap-3"><span
+                  class="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2 flex-shrink-0"></span><span>Applied AI Copilot to
+                  automate insight summarization, cutting manual effort by 25%.</span></li>
             </ul>
           </div>
           <!-- Outcomes -->
@@ -194,17 +358,23 @@
               <div>
                 <div class="text-4xl font-extrabold mb-1">30%</div>
                 <p class="text-sm opacity-80">Reduction in data processing time via Snowflake optimization</p>
-                <div class="mt-2 h-1.5 rounded-full bg-white/20 overflow-hidden"><div class="h-full bg-white rounded-full impact-fill" data-width="30"></div></div>
+                <div class="mt-2 h-1.5 rounded-full bg-white/20 overflow-hidden">
+                  <div class="h-full bg-white rounded-full impact-fill" data-width="30"></div>
+                </div>
               </div>
               <div>
                 <div class="text-4xl font-extrabold mb-1">25%</div>
                 <p class="text-sm opacity-80">Less manual effort via AI Copilot automation</p>
-                <div class="mt-2 h-1.5 rounded-full bg-white/20 overflow-hidden"><div class="h-full bg-white rounded-full impact-fill" data-width="25"></div></div>
+                <div class="mt-2 h-1.5 rounded-full bg-white/20 overflow-hidden">
+                  <div class="h-full bg-white rounded-full impact-fill" data-width="25"></div>
+                </div>
               </div>
               <div>
                 <div class="text-4xl font-extrabold mb-1">20%</div>
                 <p class="text-sm opacity-80">Reporting efficiency improvement across business teams</p>
-                <div class="mt-2 h-1.5 rounded-full bg-white/20 overflow-hidden"><div class="h-full bg-white rounded-full impact-fill" data-width="20"></div></div>
+                <div class="mt-2 h-1.5 rounded-full bg-white/20 overflow-hidden">
+                  <div class="h-full bg-white rounded-full impact-fill" data-width="20"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -217,165 +387,224 @@
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 reveal">
         <div class="flex items-center gap-4">
           <div class="h-1 w-12 bg-primary rounded-full"></div>
-          <h2 class="text-3xl font-bold tracking-tight">Project Portfolio</h2>
+          <h2 class="text-3xl font-bold tracking-tight reveal">Project Portfolio</h2>
         </div>
         <!-- Filter tabs -->
         <div class="flex flex-wrap gap-2" id="filter-bar">
-          <button class="filter-btn active text-xs font-bold px-4 py-2 rounded-full border border-primary/20 bg-primary text-white" data-filter="all">All</button>
-          <button class="filter-btn text-xs font-bold px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:border-primary hover:text-primary" data-filter="powerbi">Power BI</button>
-          <button class="filter-btn text-xs font-bold px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:border-primary hover:text-primary" data-filter="fabric">Fabric</button>
-          <button class="filter-btn text-xs font-bold px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:border-primary hover:text-primary" data-filter="ai">AI</button>
-          <button class="filter-btn text-xs font-bold px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:border-primary hover:text-primary" data-filter="etl">ETL</button>
+          <button
+            class="filter-btn active text-xs font-bold px-4 py-2 rounded-full border border-primary/20 bg-primary text-white"
+            data-filter="all">All</button>
+          <button
+            class="filter-btn text-xs font-bold px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:border-primary hover:text-primary"
+            data-filter="powerbi">Power BI</button>
+          <button
+            class="filter-btn text-xs font-bold px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:border-primary hover:text-primary"
+            data-filter="fabric">Fabric</button>
+          <button
+            class="filter-btn text-xs font-bold px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:border-primary hover:text-primary"
+            data-filter="ai">AI</button>
+          <button
+            class="filter-btn text-xs font-bold px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:border-primary hover:text-primary"
+            data-filter="etl">ETL</button>
         </div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="project-grid">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 reveal id="project-grid">
 
         <!-- Project 1: BI Dashboard Suite -->
-        <div class="proj-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden reveal reveal-delay-1" data-tags="powerbi fabric">
+        <div
+          class="proj-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden reveal reveal-delay-1"
+          data-tags="powerbi fabric">
           <div class="h-2 bg-gradient-to-r from-blue-500 to-cyan-400"></div>
           <div class="p-6">
             <div class="flex items-start justify-between mb-3">
               <div class="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center">
                 <span class="material-symbols-outlined text-blue-600 text-2xl">dashboard</span>
               </div>
-              <span class="text-xs font-bold text-slate-400 bg-slate-50 dark:bg-slate-800 px-3 py-1 rounded-full">2021–Present</span>
+              <span
+                class="text-xs font-bold text-slate-400 bg-slate-50 dark:bg-slate-800 px-3 py-1 rounded-full">2021–Present</span>
             </div>
-            <h3 class="text-lg font-bold mb-2 text-slate-900 dark:text-white">Enterprise BI Dashboard Suite</h3>
-            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Public, operational, geospatial, and financial dashboards in Power BI for DEFTeam Solutions clients. Leveraged Copilot to enhance data exploration, delivering a 35% reduction in ad-hoc data access requests.</p>
+            <h3 class="text-lg font-bold mb-2 text-slate-900 dark:text-white reveal">Enterprise BI Dashboard Suite</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Public, operational, geospatial,
+              and financial dashboards in Power BI for DEFTeam Solutions clients. Leveraged Copilot to enhance data
+              exploration, delivering a 35% reduction in ad-hoc data access requests.</p>
             <div class="flex flex-wrap gap-1.5 mb-4">
               <span class="tech-tag bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300">Power BI</span>
               <span class="tech-tag bg-cyan-50 dark:bg-cyan-900/20 text-cyan-700 dark:text-cyan-300">MS Fabric</span>
-              <span class="tech-tag bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300">DAX</span>
+              <span
+                class="tech-tag bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300">DAX</span>
               <span class="tech-tag bg-amber-50 dark:bg-amber-900/20 text-amber-700 dark:text-amber-300">Copilot</span>
             </div>
             <div class="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-800">
-              <span class="text-xs font-bold text-emerald-500 flex items-center gap-1"><span class="material-symbols-outlined text-sm">trending_up</span> 35% fewer ad-hoc requests</span>
+              <span class="text-xs font-bold text-emerald-500 flex items-center gap-1"><span
+                  class="material-symbols-outlined text-sm">trending_up</span> 35% fewer ad-hoc requests</span>
               <span class="text-xs text-slate-400 font-semibold">DEFTeam Solutions</span>
             </div>
           </div>
         </div>
 
         <!-- Project 2: ETL & Analytics Pipeline -->
-        <div class="proj-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden reveal reveal-delay-2" data-tags="etl fabric powerbi">
+        <div
+          class="proj-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden reveal reveal-delay-2"
+          data-tags="etl fabric powerbi">
           <div class="h-2 bg-gradient-to-r from-purple-500 to-indigo-400"></div>
           <div class="p-6">
             <div class="flex items-start justify-between mb-3">
               <div class="w-12 h-12 rounded-xl bg-purple-50 dark:bg-purple-900/20 flex items-center justify-center">
                 <span class="material-symbols-outlined text-purple-600 text-2xl">account_tree</span>
               </div>
-              <span class="text-xs font-bold text-slate-400 bg-slate-50 dark:bg-slate-800 px-3 py-1 rounded-full">2022–Present</span>
+              <span
+                class="text-xs font-bold text-slate-400 bg-slate-50 dark:bg-slate-800 px-3 py-1 rounded-full">2022–Present</span>
             </div>
-            <h3 class="text-lg font-bold mb-2 text-slate-900 dark:text-white">BI & Analytics Pipeline (Fabric Migration)</h3>
-            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Migrated legacy Oracle + IBM DataStage ETL to Microsoft Fabric and Azure Data Factory. Built unified pipelines extracting from Oracle, Snowflake, REST APIs, SharePoint, and JSON for real-time lakehouse analytics.</p>
+            <h3 class="text-lg font-bold mb-2 text-slate-900 dark:text-white reveal">BI & Analytics Pipeline (Fabric Migration)
+            </h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Migrated legacy Oracle + IBM
+              DataStage ETL to Microsoft Fabric and Azure Data Factory. Built unified pipelines extracting from Oracle,
+              Snowflake, REST APIs, SharePoint, and JSON for real-time lakehouse analytics.</p>
             <div class="flex flex-wrap gap-1.5 mb-4">
-              <span class="tech-tag bg-purple-50 dark:bg-purple-900/20 text-purple-700 dark:text-purple-300">MS Fabric</span>
-              <span class="tech-tag bg-orange-50 dark:bg-orange-900/20 text-orange-700 dark:text-orange-300">Oracle</span>
+              <span class="tech-tag bg-purple-50 dark:bg-purple-900/20 text-purple-700 dark:text-purple-300">MS
+                Fabric</span>
+              <span
+                class="tech-tag bg-orange-50 dark:bg-orange-900/20 text-orange-700 dark:text-orange-300">Oracle</span>
               <span class="tech-tag bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300">Snowflake</span>
-              <span class="tech-tag bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Azure Data Factory</span>
+              <span class="tech-tag bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Azure Data
+                Factory</span>
             </div>
             <div class="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-800">
-              <span class="text-xs font-bold text-emerald-500 flex items-center gap-1"><span class="material-symbols-outlined text-sm">trending_up</span> 30% faster processing</span>
+              <span class="text-xs font-bold text-emerald-500 flex items-center gap-1"><span
+                  class="material-symbols-outlined text-sm">trending_up</span> 30% faster processing</span>
               <span class="text-xs text-slate-400 font-semibold">DEFTeam Solutions</span>
             </div>
           </div>
         </div>
 
         <!-- Project 3: AI-Powered Reporting -->
-        <div class="proj-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden reveal reveal-delay-3" data-tags="ai powerbi">
+        <div
+          class="proj-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden reveal reveal-delay-3"
+          data-tags="ai powerbi">
           <div class="h-2 bg-gradient-to-r from-rose-500 to-orange-400"></div>
           <div class="p-6">
             <div class="flex items-start justify-between mb-3">
               <div class="w-12 h-12 rounded-xl bg-rose-50 dark:bg-rose-900/20 flex items-center justify-center">
                 <span class="material-symbols-outlined text-rose-600 text-2xl">smart_toy</span>
               </div>
-              <span class="text-xs font-bold text-slate-400 bg-slate-50 dark:bg-slate-800 px-3 py-1 rounded-full">2024–Present</span>
+              <span
+                class="text-xs font-bold text-slate-400 bg-slate-50 dark:bg-slate-800 px-3 py-1 rounded-full">2024–Present</span>
             </div>
-            <h3 class="text-lg font-bold mb-2 text-slate-900 dark:text-white">AI Prompt Engineering & Copilot Automation</h3>
-            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Applied AI Prompt Engineering and Microsoft Copilot to automate insight summarization and reporting workflows across Power BI Service. Reduced manual effort by 25% and cut ad-hoc data requests by 35%.</p>
+            <h3 class="text-lg font-bold mb-2 text-slate-900 dark:text-white reveal">AI Prompt Engineering & Copilot Automation
+            </h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Applied AI Prompt Engineering and
+              Microsoft Copilot to automate insight summarization and reporting workflows across Power BI Service.
+              Reduced manual effort by 25% and cut ad-hoc data requests by 35%.</p>
             <div class="flex flex-wrap gap-1.5 mb-4">
               <span class="tech-tag bg-rose-50 dark:bg-rose-900/20 text-rose-700 dark:text-rose-300">AI Prompting</span>
               <span class="tech-tag bg-amber-50 dark:bg-amber-900/20 text-amber-700 dark:text-amber-300">Copilot</span>
               <span class="tech-tag bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300">Power BI</span>
-              <span class="tech-tag bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Power Automate</span>
+              <span class="tech-tag bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Power
+                Automate</span>
             </div>
             <div class="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-800">
-              <span class="text-xs font-bold text-emerald-500 flex items-center gap-1"><span class="material-symbols-outlined text-sm">trending_up</span> 25% manual effort saved</span>
+              <span class="text-xs font-bold text-emerald-500 flex items-center gap-1"><span
+                  class="material-symbols-outlined text-sm">trending_up</span> 25% manual effort saved</span>
               <span class="text-xs text-slate-400 font-semibold">DEFTeam Solutions</span>
             </div>
           </div>
         </div>
 
         <!-- Project 4: Geospatial Dashboards -->
-        <div class="proj-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden reveal reveal-delay-1" data-tags="powerbi">
+        <div
+          class="proj-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden reveal reveal-delay-1"
+          data-tags="powerbi">
           <div class="h-2 bg-gradient-to-r from-emerald-500 to-teal-400"></div>
           <div class="p-6">
             <div class="flex items-start justify-between mb-3">
               <div class="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-900/20 flex items-center justify-center">
                 <span class="material-symbols-outlined text-emerald-600 text-2xl">map</span>
               </div>
-              <span class="text-xs font-bold text-slate-400 bg-slate-50 dark:bg-slate-800 px-3 py-1 rounded-full">2021–2023</span>
+              <span
+                class="text-xs font-bold text-slate-400 bg-slate-50 dark:bg-slate-800 px-3 py-1 rounded-full">2021–2023</span>
             </div>
-            <h3 class="text-lg font-bold mb-2 text-slate-900 dark:text-white">Geospatial & Location Analytics</h3>
-            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Integrated QGIS geospatial data and custom maps into Power BI and Spotfire dashboards. Enabled location-based operational intelligence for field teams and executive regional reporting.</p>
+            <h3 class="text-lg font-bold mb-2 text-slate-900 dark:text-white reveal">Geospatial & Location Analytics</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Integrated QGIS geospatial data
+              and custom maps into Power BI and Spotfire dashboards. Enabled location-based operational intelligence for
+              field teams and executive regional reporting.</p>
             <div class="flex flex-wrap gap-1.5 mb-4">
-              <span class="tech-tag bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300">QGIS</span>
+              <span
+                class="tech-tag bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300">QGIS</span>
               <span class="tech-tag bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300">Power BI</span>
               <span class="tech-tag bg-teal-50 dark:bg-teal-900/20 text-teal-700 dark:text-teal-300">Spotfire</span>
-              <span class="tech-tag bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Custom Maps</span>
+              <span class="tech-tag bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Custom
+                Maps</span>
             </div>
             <div class="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-800">
-              <span class="text-xs font-bold text-blue-500 flex items-center gap-1"><span class="material-symbols-outlined text-sm">location_on</span> Location Intelligence</span>
+              <span class="text-xs font-bold text-blue-500 flex items-center gap-1"><span
+                  class="material-symbols-outlined text-sm">location_on</span> Location Intelligence</span>
               <span class="text-xs text-slate-400 font-semibold">DEFTeam Solutions</span>
             </div>
           </div>
         </div>
 
         <!-- Project 5: Power BI Governance (Infosys) -->
-        <div class="proj-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden reveal reveal-delay-2" data-tags="powerbi etl">
+        <div
+          class="proj-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden reveal reveal-delay-2"
+          data-tags="powerbi etl">
           <div class="h-2 bg-gradient-to-r from-amber-500 to-yellow-400"></div>
           <div class="p-6">
             <div class="flex items-start justify-between mb-3">
               <div class="w-12 h-12 rounded-xl bg-amber-50 dark:bg-amber-900/20 flex items-center justify-center">
                 <span class="material-symbols-outlined text-amber-600 text-2xl">shield_lock</span>
               </div>
-              <span class="text-xs font-bold text-slate-400 bg-slate-50 dark:bg-slate-800 px-3 py-1 rounded-full">2016–2020</span>
+              <span
+                class="text-xs font-bold text-slate-400 bg-slate-50 dark:bg-slate-800 px-3 py-1 rounded-full">2016–2020</span>
             </div>
-            <h3 class="text-lg font-bold mb-2 text-slate-900 dark:text-white">Enterprise Power BI Governance at Infosys</h3>
-            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Developed and maintained 200+ Power BI and Spotfire dashboards at Infosys for global enterprise clients. Implemented RLS, workspace governance, and Power Automate workflows saving 15+ hours/week.</p>
+            <h3 class="text-lg font-bold mb-2 text-slate-900 dark:text-white reveal">Enterprise Power BI Governance at Infosys
+            </h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Developed and maintained 200+
+              Power BI and Spotfire dashboards at Infosys for global enterprise clients. Implemented RLS, workspace
+              governance, and Power Automate workflows saving 15+ hours/week.</p>
             <div class="flex flex-wrap gap-1.5 mb-4">
               <span class="tech-tag bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300">Power BI</span>
               <span class="tech-tag bg-teal-50 dark:bg-teal-900/20 text-teal-700 dark:text-teal-300">Spotfire</span>
               <span class="tech-tag bg-amber-50 dark:bg-amber-900/20 text-amber-700 dark:text-amber-300">RLS</span>
-              <span class="tech-tag bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Power Automate</span>
+              <span class="tech-tag bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Power
+                Automate</span>
             </div>
             <div class="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-800">
-              <span class="text-xs font-bold text-emerald-500 flex items-center gap-1"><span class="material-symbols-outlined text-sm">trending_up</span> 15+ hrs/week saved</span>
+              <span class="text-xs font-bold text-emerald-500 flex items-center gap-1"><span
+                  class="material-symbols-outlined text-sm">trending_up</span> 15+ hrs/week saved</span>
               <span class="text-xs text-slate-400 font-semibold">Infosys Limited</span>
             </div>
           </div>
         </div>
 
         <!-- Project 6: IBM DataStage ETL -->
-        <div class="proj-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden reveal reveal-delay-3" data-tags="etl">
+        <div
+          class="proj-card bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden reveal reveal-delay-3"
+          data-tags="etl">
           <div class="h-2 bg-gradient-to-r from-indigo-500 to-violet-400"></div>
           <div class="p-6">
             <div class="flex items-start justify-between mb-3">
               <div class="w-12 h-12 rounded-xl bg-indigo-50 dark:bg-indigo-900/20 flex items-center justify-center">
                 <span class="material-symbols-outlined text-indigo-600 text-2xl">sync_alt</span>
               </div>
-              <span class="text-xs font-bold text-slate-400 bg-slate-50 dark:bg-slate-800 px-3 py-1 rounded-full">2016–2020</span>
+              <span
+                class="text-xs font-bold text-slate-400 bg-slate-50 dark:bg-slate-800 px-3 py-1 rounded-full">2016–2020</span>
             </div>
-            <h3 class="text-lg font-bold mb-2 text-slate-900 dark:text-white">IBM DataStage ETL Pipelines</h3>
-            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Designed and implemented ETL workflows using IBM DataStage at Infosys, integrating data from relational databases, REST APIs, and JSON feeds. Authored complex SQL views and stored procedures for ad-hoc analytics.</p>
+            <h3 class="text-lg font-bold mb-2 text-slate-900 dark:text-white reveal">IBM DataStage ETL Pipelines</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Designed and implemented ETL
+              workflows using IBM DataStage at Infosys, integrating data from relational databases, REST APIs, and JSON
+              feeds. Authored complex SQL views and stored procedures for ad-hoc analytics.</p>
             <div class="flex flex-wrap gap-1.5 mb-4">
-              <span class="tech-tag bg-indigo-50 dark:bg-indigo-900/20 text-indigo-700 dark:text-indigo-300">IBM DataStage</span>
-              <span class="tech-tag bg-orange-50 dark:bg-orange-900/20 text-orange-700 dark:text-orange-300">SQL Server</span>
+              <span class="tech-tag bg-indigo-50 dark:bg-indigo-900/20 text-indigo-700 dark:text-indigo-300">IBM
+                DataStage</span>
+              <span class="tech-tag bg-orange-50 dark:bg-orange-900/20 text-orange-700 dark:text-orange-300">SQL
+                Server</span>
               <span class="tech-tag bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">REST APIs</span>
               <span class="tech-tag bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300">JSON</span>
             </div>
             <div class="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-800">
-              <span class="text-xs font-bold text-blue-500 flex items-center gap-1"><span class="material-symbols-outlined text-sm">data_object</span> Multi-source Integration</span>
+              <span class="text-xs font-bold text-blue-500 flex items-center gap-1"><span
+                  class="material-symbols-outlined text-sm">data_object</span> Multi-source Integration</span>
               <span class="text-xs text-slate-400 font-semibold">Infosys Limited</span>
             </div>
           </div>
@@ -393,29 +622,40 @@
     <section class="mb-24" id="experience">
       <div class="flex items-center gap-4 mb-12 reveal">
         <div class="h-1 w-12 bg-primary rounded-full"></div>
-        <h2 class="text-3xl font-bold tracking-tight">Work Experience</h2>
+        <h2 class="text-3xl font-bold tracking-tight reveal">Work Experience</h2>
       </div>
 
       <div class="relative space-y-8">
         <!-- Timeline line -->
-        <div class="absolute left-[19px] md:left-1/2 top-2 bottom-2 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-primary/10"></div>
+        <div
+          class="absolute left-[19px] md:left-1/2 top-2 bottom-2 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-primary/10">
+        </div>
 
         <!-- ── DEFTeam Solutions ── -->
         <div class="relative flex flex-col md:flex-row gap-8 items-start reveal">
-          <div class="flex-shrink-0 z-10 w-10 h-10 rounded-full bg-primary border-4 border-white dark:border-background-dark flex items-center justify-center shadow-lg tl-dot-active">
+          <div
+            class="flex-shrink-0 z-10 w-10 h-10 rounded-full bg-primary border-4 border-white dark:border-background-dark flex items-center justify-center shadow-lg tl-dot-active">
             <span class="material-symbols-outlined text-white text-base">work</span>
           </div>
-          <div class="flex-1 md:ml-8 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm">
+          <div
+            class="flex-1 md:ml-8 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm">
             <!-- Header (always visible, clickable) -->
-            <button class="w-full text-left p-6 flex items-start justify-between gap-4 exp-toggle expanded" onclick="toggleExp(this)">
+            <button class="w-full text-left p-6 flex items-start justify-between gap-4 exp-toggle expanded"
+              onclick="toggleExp(this)">
               <div class="flex-1">
                 <div class="flex flex-wrap items-center gap-3 mb-2">
-                  <span class="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold">May 2021 – Present</span>
-                  <span class="inline-flex items-center px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 text-xs font-bold">Current Role</span>
+                  <span
+                    class="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold">May
+                    2021 – Present</span>
+                  <span
+                    class="inline-flex items-center px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 text-xs font-bold">Current
+                    Role</span>
                 </div>
-                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Lead BI Developer / Software Engineer – BI</h3>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white reveal">Lead BI Developer / Software Engineer – BI
+                </h3>
                 <p class="text-primary font-semibold mt-1">DEFTeam Solutions Pvt. Ltd. · Hyderabad, India</p>
-                <p class="text-sm text-slate-500 mt-1">Power BI · Microsoft Fabric · Snowflake · Oracle · REST APIs · AI Copilot</p>
+                <p class="text-sm text-slate-500 mt-1">Power BI · Microsoft Fabric · Snowflake · Oracle · REST APIs · AI
+                  Copilot</p>
               </div>
               <span class="material-symbols-outlined text-slate-400 exp-toggle-icon mt-1">expand_more</span>
             </button>
@@ -423,21 +663,48 @@
             <div class="exp-body open">
               <div class="px-6 pb-6 pt-0 border-t border-slate-100 dark:border-slate-800">
                 <ul class="space-y-3 mt-4">
-                  <li class="flex gap-3 text-sm text-slate-600 dark:text-slate-400"><span class="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0"></span>Own end-to-end Power BI analytics delivery, designing and deploying dashboards for multiple business teams, improving reporting efficiency by <strong class="text-slate-700 dark:text-slate-300">20%</strong>.</li>
-                  <li class="flex gap-3 text-sm text-slate-600 dark:text-slate-400"><span class="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0"></span>Lead direct client interactions for requirement gathering, KPI definition, and dashboard walkthroughs — translating discussions into SRDs and Power BI mockups.</li>
-                  <li class="flex gap-3 text-sm text-slate-600 dark:text-slate-400"><span class="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0"></span>Migrated legacy Oracle ETL logic to Snowflake, reducing data processing time by <strong class="text-slate-700 dark:text-slate-300">30%</strong> through query optimization and semantic model restructuring.</li>
-                  <li class="flex gap-3 text-sm text-slate-600 dark:text-slate-400"><span class="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0"></span>Built data integration workflows using Microsoft Fabric / Azure Data Factory sourcing from Oracle, Snowflake, REST APIs, and JSON.</li>
-                  <li class="flex gap-3 text-sm text-slate-600 dark:text-slate-400"><span class="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0"></span>Administered Power BI Service with Row-Level Security (RLS), workspace governance, performance tuning, and deployment pipelines.</li>
-                  <li class="flex gap-3 text-sm text-slate-600 dark:text-slate-400"><span class="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0"></span>Applied AI Prompt Engineering and Microsoft Copilot to automate insight summarization, cutting manual effort by <strong class="text-slate-700 dark:text-slate-300">25%</strong>.</li>
-                  <li class="flex gap-3 text-sm text-slate-600 dark:text-slate-400"><span class="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0"></span>Developed geospatial dashboards integrating QGIS and custom maps into Power BI and Spotfire for field team intelligence.</li>
+                  <li class="flex gap-3 text-sm text-slate-600 dark:text-slate-400"><span
+                      class="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0"></span>Own end-to-end Power BI
+                    analytics delivery, designing and deploying dashboards for multiple business teams, improving
+                    reporting efficiency by <strong class="text-slate-700 dark:text-slate-300">20%</strong>.</li>
+                  <li class="flex gap-3 text-sm text-slate-600 dark:text-slate-400"><span
+                      class="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0"></span>Lead direct client
+                    interactions for requirement gathering, KPI definition, and dashboard walkthroughs — translating
+                    discussions into SRDs and Power BI mockups.</li>
+                  <li class="flex gap-3 text-sm text-slate-600 dark:text-slate-400"><span
+                      class="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0"></span>Migrated legacy Oracle ETL
+                    logic to Snowflake, reducing data processing time by <strong
+                      class="text-slate-700 dark:text-slate-300">30%</strong> through query optimization and semantic
+                    model restructuring.</li>
+                  <li class="flex gap-3 text-sm text-slate-600 dark:text-slate-400"><span
+                      class="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0"></span>Built data integration
+                    workflows using Microsoft Fabric / Azure Data Factory sourcing from Oracle, Snowflake, REST APIs,
+                    and JSON.</li>
+                  <li class="flex gap-3 text-sm text-slate-600 dark:text-slate-400"><span
+                      class="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0"></span>Administered Power BI
+                    Service with Row-Level Security (RLS), workspace governance, performance tuning, and deployment
+                    pipelines.</li>
+                  <li class="flex gap-3 text-sm text-slate-600 dark:text-slate-400"><span
+                      class="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0"></span>Applied AI Prompt
+                    Engineering and Microsoft Copilot to automate insight summarization, cutting manual effort by
+                    <strong class="text-slate-700 dark:text-slate-300">25%</strong>.</li>
+                  <li class="flex gap-3 text-sm text-slate-600 dark:text-slate-400"><span
+                      class="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 flex-shrink-0"></span>Developed geospatial
+                    dashboards integrating QGIS and custom maps into Power BI and Spotfire for field team intelligence.
+                  </li>
                 </ul>
                 <div class="flex flex-wrap gap-2 mt-5">
                   <span class="tech-tag bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300">Power BI</span>
-                  <span class="tech-tag bg-cyan-50 dark:bg-cyan-900/20 text-cyan-700 dark:text-cyan-300">MS Fabric</span>
-                  <span class="tech-tag bg-indigo-50 dark:bg-indigo-900/20 text-indigo-700 dark:text-indigo-300">Snowflake</span>
-                  <span class="tech-tag bg-orange-50 dark:bg-orange-900/20 text-orange-700 dark:text-orange-300">Oracle</span>
-                  <span class="tech-tag bg-rose-50 dark:bg-rose-900/20 text-rose-700 dark:text-rose-300">Copilot / AI</span>
-                  <span class="tech-tag bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300">RLS</span>
+                  <span class="tech-tag bg-cyan-50 dark:bg-cyan-900/20 text-cyan-700 dark:text-cyan-300">MS
+                    Fabric</span>
+                  <span
+                    class="tech-tag bg-indigo-50 dark:bg-indigo-900/20 text-indigo-700 dark:text-indigo-300">Snowflake</span>
+                  <span
+                    class="tech-tag bg-orange-50 dark:bg-orange-900/20 text-orange-700 dark:text-orange-300">Oracle</span>
+                  <span class="tech-tag bg-rose-50 dark:bg-rose-900/20 text-rose-700 dark:text-rose-300">Copilot /
+                    AI</span>
+                  <span
+                    class="tech-tag bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300">RLS</span>
                   <span class="tech-tag bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">QGIS</span>
                 </div>
               </div>
@@ -447,16 +714,22 @@
 
         <!-- ── Infosys ── -->
         <div class="relative flex flex-col md:flex-row gap-8 items-start reveal">
-          <div class="flex-shrink-0 z-10 w-10 h-10 rounded-full bg-slate-300 dark:bg-slate-600 border-4 border-white dark:border-background-dark flex items-center justify-center shadow-lg">
+          <div
+            class="flex-shrink-0 z-10 w-10 h-10 rounded-full bg-slate-300 dark:bg-slate-600 border-4 border-white dark:border-background-dark flex items-center justify-center shadow-lg">
             <span class="material-symbols-outlined text-white text-base">work_history</span>
           </div>
-          <div class="flex-1 md:ml-8 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm">
-            <button class="w-full text-left p-6 flex items-start justify-between gap-4 exp-toggle" onclick="toggleExp(this)">
+          <div
+            class="flex-1 md:ml-8 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden shadow-sm">
+            <button class="w-full text-left p-6 flex items-start justify-between gap-4 exp-toggle"
+              onclick="toggleExp(this)">
               <div class="flex-1">
                 <div class="flex flex-wrap items-center gap-3 mb-2">
-                  <span class="inline-flex items-center px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-xs font-bold">Oct 2016 – Apr 2020</span>
+                  <span
+                    class="inline-flex items-center px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 text-xs font-bold">Oct
+                    2016 – Apr 2020</span>
                 </div>
-                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Technology Analyst / Senior Systems Engineer</h3>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white reveal">Technology Analyst / Senior Systems
+                  Engineer</h3>
                 <p class="text-slate-500 font-semibold mt-1">Infosys Limited · Hyderabad, India</p>
                 <p class="text-sm text-slate-400 mt-1">Power BI · Spotfire · IBM DataStage · SQL · Power Automate</p>
               </div>
@@ -465,18 +738,34 @@
             <div class="exp-body">
               <div class="px-6 pb-6 pt-0 border-t border-slate-100 dark:border-slate-800">
                 <ul class="space-y-3 mt-4">
-                  <li class="flex gap-3 text-sm text-slate-600 dark:text-slate-400"><span class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-1.5 flex-shrink-0"></span>Developed and maintained <strong class="text-slate-700 dark:text-slate-300">200+ Power BI and Spotfire dashboards</strong> for global enterprise clients, improving decision-making by 10%.</li>
-                  <li class="flex gap-3 text-sm text-slate-600 dark:text-slate-400"><span class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-1.5 flex-shrink-0"></span>Designed and implemented ETL workflows using IBM DataStage and Power BI Dataflows, integrating data from relational DBs, REST APIs, and JSON feeds.</li>
-                  <li class="flex gap-3 text-sm text-slate-600 dark:text-slate-400"><span class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-1.5 flex-shrink-0"></span>Authored complex SQL queries, views, and stored procedures supporting ad-hoc analytics and standardized enterprise reporting.</li>
-                  <li class="flex gap-3 text-sm text-slate-600 dark:text-slate-400"><span class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-1.5 flex-shrink-0"></span>Automated report refresh and distribution using Power Automate, saving <strong class="text-slate-700 dark:text-slate-300">15+ hours per week</strong>.</li>
-                  <li class="flex gap-3 text-sm text-slate-600 dark:text-slate-400"><span class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-1.5 flex-shrink-0"></span>Trained 20+ business users and junior team members on Power BI and Spotfire, driving self-service BI adoption.</li>
+                  <li class="flex gap-3 text-sm text-slate-600 dark:text-slate-400"><span
+                      class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-1.5 flex-shrink-0"></span>Developed and maintained
+                    <strong class="text-slate-700 dark:text-slate-300">200+ Power BI and Spotfire dashboards</strong>
+                    for global enterprise clients, improving decision-making by 10%.</li>
+                  <li class="flex gap-3 text-sm text-slate-600 dark:text-slate-400"><span
+                      class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-1.5 flex-shrink-0"></span>Designed and implemented
+                    ETL workflows using IBM DataStage and Power BI Dataflows, integrating data from relational DBs, REST
+                    APIs, and JSON feeds.</li>
+                  <li class="flex gap-3 text-sm text-slate-600 dark:text-slate-400"><span
+                      class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-1.5 flex-shrink-0"></span>Authored complex SQL
+                    queries, views, and stored procedures supporting ad-hoc analytics and standardized enterprise
+                    reporting.</li>
+                  <li class="flex gap-3 text-sm text-slate-600 dark:text-slate-400"><span
+                      class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-1.5 flex-shrink-0"></span>Automated report refresh
+                    and distribution using Power Automate, saving <strong class="text-slate-700 dark:text-slate-300">15+
+                      hours per week</strong>.</li>
+                  <li class="flex gap-3 text-sm text-slate-600 dark:text-slate-400"><span
+                      class="w-1.5 h-1.5 rounded-full bg-slate-400 mt-1.5 flex-shrink-0"></span>Trained 20+ business
+                    users and junior team members on Power BI and Spotfire, driving self-service BI adoption.</li>
                 </ul>
                 <div class="flex flex-wrap gap-2 mt-5">
                   <span class="tech-tag bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300">Power BI</span>
                   <span class="tech-tag bg-teal-50 dark:bg-teal-900/20 text-teal-700 dark:text-teal-300">Spotfire</span>
-                  <span class="tech-tag bg-indigo-50 dark:bg-indigo-900/20 text-indigo-700 dark:text-indigo-300">IBM DataStage</span>
+                  <span class="tech-tag bg-indigo-50 dark:bg-indigo-900/20 text-indigo-700 dark:text-indigo-300">IBM
+                    DataStage</span>
                   <span class="tech-tag bg-amber-50 dark:bg-amber-900/20 text-amber-700 dark:text-amber-300">SQL</span>
-                  <span class="tech-tag bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Power Automate</span>
+                  <span class="tech-tag bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Power
+                    Automate</span>
                 </div>
               </div>
             </div>
@@ -485,13 +774,18 @@
 
         <!-- ── Education ── -->
         <div class="relative flex flex-col md:flex-row gap-8 items-start reveal">
-          <div class="flex-shrink-0 z-10 w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 border-4 border-white dark:border-background-dark flex items-center justify-center shadow-lg">
+          <div
+            class="flex-shrink-0 z-10 w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-700 border-4 border-white dark:border-background-dark flex items-center justify-center shadow-lg">
             <span class="material-symbols-outlined text-slate-500 dark:text-slate-400 text-base">school</span>
           </div>
-          <div class="flex-1 md:ml-8 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm">
-            <span class="inline-flex items-center px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 text-xs font-bold mb-2">Jul 2012 – May 2016</span>
-            <h3 class="text-xl font-bold text-slate-900 dark:text-white">B.Tech — Computer Science & Engineering</h3>
-            <p class="text-slate-500 font-semibold mt-1">Dr. APJ Abdul Kalam Technical University (AKTU), Uttar Pradesh, India</p>
+          <div
+            class="flex-1 md:ml-8 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm">
+            <span
+              class="inline-flex items-center px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 text-xs font-bold mb-2">Jul
+              2012 – May 2016</span>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white reveal">B.Tech — Computer Science & Engineering</h3>
+            <p class="text-slate-500 font-semibold mt-1">Dr. APJ Abdul Kalam Technical University (AKTU), Uttar Pradesh,
+              India</p>
           </div>
         </div>
       </div>
@@ -501,33 +795,47 @@
     <section class="mb-16">
       <div class="flex items-center gap-4 mb-8 reveal">
         <div class="h-1 w-12 bg-primary rounded-full"></div>
-        <h2 class="text-3xl font-bold tracking-tight">Certifications</h2>
+        <h2 class="text-3xl font-bold tracking-tight reveal">Certifications</h2>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 flex items-start gap-4 reveal reveal-delay-1 proj-card">
-          <div class="w-10 h-10 rounded-xl bg-rose-50 dark:bg-rose-900/20 flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-rose-500">psychology</span></div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 reveal">
+        <div
+          class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 flex items-start gap-4 reveal reveal-delay-1 proj-card">
+          <div
+            class="w-10 h-10 rounded-xl bg-rose-50 dark:bg-rose-900/20 flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-rose-500">psychology</span></div>
           <div>
             <p class="text-sm font-bold text-slate-900 dark:text-white">AI Prompt Engineering</p>
             <p class="text-xs text-slate-500 mt-0.5">UpGrad · 2025</p>
           </div>
         </div>
-        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 flex items-start gap-4 reveal reveal-delay-2 proj-card">
-          <div class="w-10 h-10 rounded-xl bg-yellow-50 dark:bg-yellow-900/20 flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-yellow-500">bar_chart</span></div>
+        <div
+          class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 flex items-start gap-4 reveal reveal-delay-2 proj-card">
+          <div
+            class="w-10 h-10 rounded-xl bg-yellow-50 dark:bg-yellow-900/20 flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-yellow-500">bar_chart</span></div>
           <div>
             <p class="text-sm font-bold text-slate-900 dark:text-white">Microsoft Power BI — Masterclass</p>
             <p class="text-xs text-slate-500 mt-0.5">Udemy · 2024</p>
           </div>
         </div>
-        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 flex items-start gap-4 reveal reveal-delay-3 proj-card">
-          <div class="w-10 h-10 rounded-xl bg-teal-50 dark:bg-teal-900/20 flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-teal-500">verified</span></div>
+        <div
+          class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 flex items-start gap-4 reveal reveal-delay-3 proj-card">
+          <div
+            class="w-10 h-10 rounded-xl bg-teal-50 dark:bg-teal-900/20 flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-teal-500">verified</span></div>
           <div>
             <p class="text-sm font-bold text-slate-900 dark:text-white">TIBCO Certified — Spotfire</p>
             <p class="text-xs text-slate-500 mt-0.5">TIBCO · 2022</p>
           </div>
         </div>
-        <div class="bg-white dark:bg-slate-900 border border-amber-300 dark:border-amber-700/50 rounded-2xl p-5 flex items-start gap-4 reveal reveal-delay-4 proj-card relative overflow-hidden">
-          <div class="absolute top-3 right-3"><span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-900/30 text-amber-600">In Progress</span></div>
-          <div class="w-10 h-10 rounded-xl bg-cyan-50 dark:bg-cyan-900/20 flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-cyan-500">hub</span></div>
+        <div
+          class="bg-white dark:bg-slate-900 border border-amber-300 dark:border-amber-700/50 rounded-2xl p-5 flex items-start gap-4 reveal reveal-delay-4 proj-card relative overflow-hidden">
+          <div class="absolute top-3 right-3"><span
+              class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-900/30 text-amber-600">In
+              Progress</span></div>
+          <div
+            class="w-10 h-10 rounded-xl bg-cyan-50 dark:bg-cyan-900/20 flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-cyan-500">hub</span></div>
           <div>
             <p class="text-sm font-bold text-slate-900 dark:text-white">Microsoft Fabric DP-600</p>
             <p class="text-xs text-slate-500 mt-0.5">Udemy · 2025</p>
@@ -538,17 +846,24 @@
 
     <!-- ═══ CTA ═══ -->
     <section class="mb-12">
-      <div class="bg-slate-900 dark:bg-slate-950 text-white rounded-3xl p-12 md:p-20 text-center relative overflow-hidden">
+      <div
+        class="bg-white dark:bg-slate-900 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-800 rounded-3xl p-12 md:p-20 text-center relative overflow-hidden shadow-xl">
         <div class="absolute -top-24 -left-24 w-64 h-64 bg-primary/20 blur-[100px] rounded-full"></div>
         <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"></div>
-        <h2 class="text-3xl md:text-5xl font-extrabold mb-6 relative z-10">Let's Build Smarter BI Together.</h2>
-        <p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 relative z-10">Open to Senior BI Engineer, Analytics Engineer, and BI Architect opportunities — India and remote globally.</p>
+        <h2 class="text-3xl md:text-5xl font-extrabold mb-6 relative z-10 reveal">Let's Build Smarter BI Together.</h2>
+        <p class="text-slate-600 dark:text-slate-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 relative z-10">Open to Senior BI Engineer,
+          Analytics Engineer, and BI Architect opportunities — India and remote globally.</p>
         <div class="flex flex-wrap justify-center gap-4 relative z-10">
-          <a class="flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-bold transition-all hover:scale-105" href="contact.html">
+          <a class="flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-bold transition-all hover:scale-105"
+            href="contact.html">
             <span class="material-symbols-outlined">mail</span> Contact Me
           </a>
-          <a class="flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white px-8 py-4 rounded-full font-bold transition-all" href="https://linkedin.com/in/wassayknp" target="_blank">
-            <svg class="w-5 h-5 fill-white" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          <a class="flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white px-8 py-4 rounded-full font-bold transition-all"
+            href="https://linkedin.com/in/wassayknp" target="_blank">
+            <svg class="w-5 h-5 fill-white" viewBox="0 0 24 24">
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+            </svg>
             LinkedIn
           </a>
         </div>
@@ -557,38 +872,117 @@
   </main>
 
   <!-- ═══ FOOTER ═══ -->
-  <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 pt-16 pb-24 md:pb-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p class="text-xs text-slate-500 font-medium">© 2026 Abdul Wassay. Built with <span class="text-rose-500">❤</span> and Data Science.</p>
+  
+  <!-- ═══ RE-DESIGNED MODERN FOOTER ═══ -->
+  <footer class="relative bg-slate-50 dark:bg-[#0a0f1c] pt-10 pb-24 md:pb-8 border-t border-slate-200 dark:border-slate-800/40 overflow-hidden text-slate-600 dark:text-slate-300 transition-colors duration-300">
+    <!-- subtle glow effect -->
+    <div class="hidden dark:block absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
+    <div class="hidden dark:block absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-64 bg-primary/10 blur-[100px] rounded-full pointer-events-none"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-8 reveal">
+        <div class="md:col-span-4 lg:col-span-5">
+          <div class="flex items-center gap-3 mb-6 group">
+            <div class="relative w-10 h-10 rounded-full overflow-hidden border-2 border-primary/20 group-hover:border-primary transition-colors duration-300">
+                <img src="./assets/images/profile_photo.jpg" alt="Abdul Wassay" class="w-full h-full object-cover">
+            </div>
+            <span class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-400">Abdul Wassay</span>
+          </div>
+          <p class="max-w-sm mb-8 text-base leading-relaxed">Architecting high-performance data ecosystems and AI-powered BI strategies. Transforming complexity into competitive advantage.</p>
+          <div class="flex gap-4">
+            <a href="https://linkedin.com/in/wassayknp" target="_blank"
+              class="w-12 h-12 rounded-xl bg-white dark:bg-slate-900/50 flex items-center justify-center hover:bg-[#0077b5] hover:text-white dark:hover:bg-[#0077b5] hover:-translate-y-1 transition-all border border-slate-200 dark:border-slate-800 shadow-sm lift transition-all">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
+            </a>
+            <a href="https://github.com/wassayknp" target="_blank"
+              class="w-12 h-12 rounded-xl bg-white dark:bg-slate-900/50 flex items-center justify-center hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 hover:-translate-y-1 transition-all border border-slate-200 dark:border-slate-800 shadow-sm lift transition-all">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" /></svg>
+            </a>
+            <a href="contact.html" class="w-12 h-12 rounded-xl bg-white dark:bg-slate-900/50 flex items-center justify-center hover:bg-primary hover:text-white hover:-translate-y-1 transition-all border border-slate-200 dark:border-slate-800 shadow-sm lift transition-all">
+              <span class="material-symbols-outlined text-xl transition-colors">mail</span>
+            </a>
+          </div>
+        </div>
+        <div class="md:col-span-3 lg:col-span-2">
+          <h5 class="text-slate-900 dark:text-white font-bold mb-6 uppercase tracking-widest text-xs opacity-90">Explore</h5>
+          <ul class="space-y-3.5">
+            <li><a href="index.html" class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Home</a></li>
+            <li><a href="projects_experience.html" class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Work</a></li>
+            <li><a href="professional_resume.html" class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Resume</a></li>
+            <li><a href="blog.html" class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Blog</a></li>
+          </ul>
+        </div>
+        <div class="md:col-span-3 lg:col-span-2">
+          <h5 class="text-slate-900 dark:text-white font-bold mb-6 uppercase tracking-widest text-xs opacity-90">Expertise</h5>
+          <ul class="space-y-3.5">
+            <li><a href="skills_architecture.html" class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>BI Strategy</a></li>
+            <li><a href="skills_architecture.html" class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Data Modeling</a></li>
+            <li><a href="skills_architecture.html" class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Data Architecture</a></li>
+            <li><a href="skills_architecture.html" class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>AI Ecosystems</a></li>
+          </ul>
+        </div>
+        <div class="md:col-span-2 lg:col-span-3">
+          <h5 class="text-slate-900 dark:text-white font-bold mb-6 uppercase tracking-widest text-xs opacity-90">Location</h5>
+          <div class="bg-white dark:bg-slate-900/50 rounded-2xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm relative overflow-hidden group">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="flex items-start gap-4 mb-4 relative z-10">
+              <span class="material-symbols-outlined text-primary bg-primary/10 rounded-full p-2">location_on</span>
+              <div>
+                <p class="text-sm font-bold text-slate-900 dark:text-white mb-1">Hyderabad, India</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Open to global roles</p>
+              </div>
+            </div>
+            <a href="contact.html" class="inline-flex items-center gap-1.5 text-primary text-sm font-bold hover:underline relative z-10 group-hover:translate-x-1 transition-transform">Contact Me <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="pt-8 border-t border-slate-200 dark:border-slate-800/60 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-xs font-medium">© 2026 Abdul Wassay. Built with <span class="text-rose-500 animate-pulse inline-block">❤</span> in India <img src="https://flagcdn.com/w20/in.png" class="inline-block ml-1 -mt-1 w-4" alt="India"></p>
         <div class="flex gap-6">
-          <a href="index.html" class="text-xs text-slate-500 hover:text-primary transition-colors font-medium">Home</a>
-          <a href="contact.html" class="text-xs text-slate-500 hover:text-primary transition-colors font-medium">Contact</a>
-          <a href="skills_architecture.html" class="text-xs text-slate-500 hover:text-primary transition-colors font-medium">Skills</a>
+          <a href="#" class="text-xs hover:text-primary transition-colors font-medium">Privacy</a>
+          <a href="#" class="text-xs hover:text-primary transition-colors font-medium">Terms</a>
+          <a href="#" class="text-xs hover:text-primary transition-colors font-medium">Sitemap</a>
         </div>
       </div>
     </div>
   </footer>
 
+
   <!-- ═══ MOBILE TAB BAR ═══ -->
   <div class="md:hidden fixed bottom-6 left-0 right-0 z-40 px-4 pointer-events-none">
     <div class="max-w-md mx-auto pointer-events-auto">
       <div class="flex bg-slate-900 border border-slate-800 rounded-full p-1.5 shadow-2xl overflow-x-auto">
-        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white" href="index.html"><span class="material-symbols-outlined">home</span><span class="text-[10px] font-bold">Home</span></a>
-        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-white bg-primary rounded-full" href="projects_experience.html"><span class="material-symbols-outlined">grid_view</span><span class="text-[10px] font-bold">Work</span></a>
-        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white" href="professional_resume.html"><span class="material-symbols-outlined">article</span><span class="text-[10px] font-bold">Resume</span></a>
-        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white" href="skills_architecture.html"><span class="material-symbols-outlined">psychology</span><span class="text-[10px] font-bold">Skills</span></a>
-        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white" href="blog.html"><span class="material-symbols-outlined">menu_book</span><span class="text-[10px] font-bold">Blog</span></a>
-        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white" href="contact.html"><span class="material-symbols-outlined">contact_support</span><span class="text-[10px] font-bold">Contact</span></a>
+        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white"
+          href="index.html"><span class="material-symbols-outlined">home</span><span
+            class="text-[10px] font-bold">Home</span></a>
+        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-white bg-primary rounded-full"
+          href="projects_experience.html"><span class="material-symbols-outlined">grid_view</span><span
+            class="text-[10px] font-bold">Work</span></a>
+        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white"
+          href="professional_resume.html"><span class="material-symbols-outlined">article</span><span
+            class="text-[10px] font-bold">Resume</span></a>
+        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white"
+          href="skills_architecture.html"><span class="material-symbols-outlined">psychology</span><span
+            class="text-[10px] font-bold">Skills</span></a>
+        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white"
+          href="blog.html"><span class="material-symbols-outlined">menu_book</span><span
+            class="text-[10px] font-bold">Blog</span></a>
+        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white"
+          href="contact.html"><span class="material-symbols-outlined">contact_support</span><span
+            class="text-[10px] font-bold">Contact</span></a>
       </div>
     </div>
   </div>
 
+  
+  <!-- ═══ ANIMATION & LOGIC SCRIPTS ═══ -->
   <script>
     // ── Dark Mode ──
     const html = document.documentElement;
-    const saved = localStorage.getItem('theme');
-    if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) html.classList.add('dark');
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+    }
     document.querySelectorAll('.theme-toggle').forEach(btn => {
       btn.addEventListener('click', () => {
         html.classList.toggle('dark');
@@ -596,50 +990,116 @@
       });
     });
 
-    // ── Scroll Reveal ──
-    const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    // ── Mobile Menu ──
+    const mobBtn = document.getElementById('mob-menu-btn');
+    if(mobBtn) {
+        mobBtn.addEventListener('click', () => {
+        const menu = document.getElementById('mobile-menu');
+        if(menu) menu.classList.toggle('open');
+        });
+    }
 
-    // ── Impact bar fills ──
+    // ── Typewriter ──
+    const el = document.getElementById('typewriter');
+    if(el) {
+        const phrases = ['Senior BI & Analytics Engineer', 'Microsoft Fabric Specialist', 'AI-Powered BI Developer', 'Power BI Expert & DAX Architect'];
+        let pi = 0, ci = 0, deleting = false;
+        function type() {
+            const phrase = phrases[pi];
+            if (!deleting) {
+                el.textContent = phrase.slice(0, ++ci);
+                if (ci === phrase.length) { deleting = true; setTimeout(type, 2000); return; }
+            } else {
+                el.textContent = phrase.slice(0, --ci);
+                if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; }
+            }
+            setTimeout(type, deleting ? 50 : 80);
+        }
+        setTimeout(type, 800);
+    }
+
+    // ── Scroll Reveal ──
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ── Animated Counters ──
+    const counterObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        const target = parseInt(el.dataset.target);
+        if(isNaN(target)) return;
+        const suffix = el.dataset.suffix || '';
+        let start = 0;
+        const duration = 1500;
+        const step = timestamp => {
+          if (!start) start = timestamp;
+          const progress = Math.min((timestamp - start) / duration, 1);
+          const ease = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.floor(ease * target) + suffix;
+          if (progress < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+        counterObs.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.counter').forEach(el => counterObs.observe(el));
+
+    // ── Bar fills ──
     const barObs = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (!e.isIntersecting) return;
-        e.target.querySelectorAll('.impact-fill').forEach(b => setTimeout(() => b.style.width = b.dataset.width + '%', 300));
+        e.target.querySelectorAll('.bar-fill').forEach(bar => {
+          setTimeout(() => { if(bar.dataset.width) bar.style.width = bar.dataset.width + '%'; }, 200);
+        });
         barObs.unobserve(e.target);
       });
     }, { threshold: 0.3 });
-    document.querySelectorAll('.impact-fill').forEach(b => barObs.observe(b.closest('section')));
+    document.querySelectorAll('.bar-fill').forEach(b => barObs.observe(b.closest('div')));
 
-    // ── Project Filter ──
-    document.getElementById('filter-bar').addEventListener('click', e => {
-      const btn = e.target.closest('.filter-btn');
-      if (!btn) return;
-      const filter = btn.dataset.filter;
-      document.querySelectorAll('.filter-btn').forEach(b => {
-        b.classList.remove('active');
-        b.style.backgroundColor = '';
-        b.style.color = '';
-        b.style.borderColor = '';
+    // ── Chart toggle (bar/line) ──
+    function toggleChartView(btn, view) {
+      document.querySelectorAll('.chart-btn').forEach(b => {
+        b.classList.remove('active', 'bg-primary/10', 'text-primary');
+        b.classList.add('text-slate-400');
       });
-      btn.classList.add('active');
-      const cards = document.querySelectorAll('#project-grid .proj-card');
-      let visible = 0;
-      cards.forEach(card => {
-        const tags = card.dataset.tags || '';
-        const show = filter === 'all' || tags.includes(filter);
-        card.style.display = show ? '' : 'none';
-        if (show) visible++;
-      });
-      document.getElementById('no-results').style.display = visible === 0 ? '' : 'none';
-    });
-
-    // ── Expand/collapse timeline ──
-    function toggleExp(btn) {
-      const body = btn.nextElementSibling;
-      const isOpen = body.classList.contains('open');
-      btn.classList.toggle('expanded', !isOpen);
-      body.classList.toggle('open', !isOpen);
+      btn.classList.add('active', 'bg-primary/10', 'text-primary');
+      btn.classList.remove('text-slate-400');
+      
+      const barChart = document.getElementById('chart-bar');
+      const lineChart = document.getElementById('chart-line');
+      
+      if(barChart && lineChart) {
+          if (view === 'bar') {
+              barChart.classList.remove('hidden');
+              lineChart.classList.add('hidden');
+          } else {
+              barChart.classList.add('hidden');
+              lineChart.classList.remove('hidden');
+          }
+      }
+    }
+    
+    // ── Download Resume ──
+    function downloadResume() {
+        const date = new Date();
+        const timestamp = date.getFullYear().toString() + 
+                         (date.getMonth() + 1).toString().padStart(2, '0') + 
+                         date.getDate().toString().padStart(2, '0') + '_' + 
+                         date.getHours().toString().padStart(2, '0') + 
+                         date.getMinutes().toString().padStart(2, '0');
+        
+        const a = document.createElement('a');
+        a.href = 'assets/Abdul_Wassay_Resume.pdf';
+        a.download = `Abdul_Wassay_Resume_${timestamp}.pdf`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
     }
   </script>
+
 </body>
+
 </html>

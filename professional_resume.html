@@ -30,10 +30,162 @@
         }
     </script>
     <style>
-        body {
-            min-height: max(884px, 100dvh);
-        }
-    </style>
+    .grid-pattern {
+      background-size: 40px 40px;
+      background-image:
+        linear-gradient(to right, rgba(32, 96, 223, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(32, 96, 223, 0.05) 1px, transparent 1px);
+    }
+
+    body {
+      min-height: max(884px, 100dvh);
+    }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 0.2s;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 0.3s;
+    }
+
+    .reveal-delay-4 {
+      transition-delay: 0.4s;
+    }
+
+    /* Typewriter cursor */
+    .typewriter::after {
+      content: '|';
+      animation: blink 0.7s step-end infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    /* Animated bars */
+    .bar-fill {
+      width: 0%;
+      transition: width 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    /* Floating badge */
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-8px)
+      }
+    }
+
+    .float {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    /* Gradient text */
+    .gradient-text {
+      background: linear-gradient(135deg, #2060df, #60a5fa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Shimmer */
+    @keyframes shimmer {
+      0% {
+        background-position: -200% 0
+      }
+
+      100% {
+        background-position: 200% 0
+      }
+    }
+
+    .shimmer {
+      background: linear-gradient(90deg, transparent, rgba(32, 96, 223, 0.08), transparent);
+      background-size: 200% 100%;
+      animation: shimmer 2.5s infinite;
+    }
+
+    /* Tech pill hover */
+    .tech-pill {
+      transition: all 0.2s;
+      cursor: default;
+    }
+
+    .tech-pill:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(32, 96, 223, 0.18);
+    }
+
+    /* Mobile menu */
+    #mobile-menu {
+      transition: max-height 0.3s ease, opacity 0.3s ease;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+    }
+
+    #mobile-menu.open {
+      max-height: 400px;
+      opacity: 1;
+    }
+
+    /* Counter */
+    .counter {
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Card hover lift */
+    .lift {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .lift:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(32, 96, 223, 0.12);
+    }
+
+    /* Progress ring */
+    .ring-progress {
+      transition: stroke-dashoffset 1.4s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+  
+    /* Modal styles */
+    .modal {
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+      display: flex;
+    }
+    .modal.active {
+      opacity: 1;
+      pointer-events: auto;
+      visibility: visible;
+    }
+</style>
 </head>
 
 <body
@@ -45,10 +197,10 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex h-16 items-center justify-between">
                 <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                    <div class="bg-primary rounded-lg p-1.5 flex items-center justify-center">
-                        <span class="material-symbols-outlined text-white text-xl">insights</span>
+                    <div class="relative w-8 h-8 rounded-full overflow-hidden border-2 border-primary/20 group-hover:border-primary transition-colors duration-300">
+                        <img src="./assets/images/profile_photo.jpg" alt="Abdul Wassay" class="w-full h-full object-cover">
                     </div>
-                    <span class="text-lg font-bold tracking-tight text-slate-900 dark:text-white">Portfolio</span>
+                    <span class="text-lg font-bold tracking-tight text-slate-900 dark:text-white">Abdul Wassay</span>
                 </a>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
@@ -68,7 +220,7 @@
                 </div>
                 <div class="flex items-center gap-4">
                     <button
-                        class="p-2 rounded-full hover:bg-primary/10 transition-colors text-slate-600 dark:text-slate-400 theme-toggle"><span
+                        class="p-2 rounded-full hover:bg-primary/10 transition-colors text-slate-600 dark:text-slate-400 theme-toggle" onclick="downloadResume()"><span
                             class="material-symbols-outlined">light_mode</span></button>
                 </div>
             </div>
@@ -87,7 +239,7 @@
                 <span class="ml-1 text-xs font-bold uppercase">Back</span>
             </a>
             <h2
-                class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight flex-1 text-center">
+                class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-tight flex-1 text-center reveal">
                 Executive Resume
             </h2>
             <div class="flex items-center justify-end">
@@ -103,9 +255,9 @@
             <div class="flex w-full flex-col gap-4 items-center">
                 <div class="flex gap-4 flex-col items-center">
                     <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full ring-4 ring-primary min-h-32 min-w-[8rem] w-32 shadow-xl shadow-primary/20"
-                        style="background-image: url('assets/images/profile_photo.png');"></div>
+                        style="background-image: url('./assets/images/profile_photo.jpg');"></div>
                     <div class="flex flex-col items-center text-center">
-                        <h1 class="text-slate-900 dark:text-white text-2xl md:text-4xl font-extrabold tracking-tight">
+                        <h1 class="text-slate-900 dark:text-white text-2xl md:text-4xl font-extrabold tracking-tight reveal">
                             Abdul Wassay</h1>
                         <p class="text-primary text-lg md:text-xl font-semibold mt-1">Lead BI & Analytics Specialist</p>
                         <div
@@ -122,7 +274,7 @@
 
         <!-- Action Grid -->
         <div
-            class="grid grid-cols-3 gap-px bg-slate-200 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-800">
+            class="grid grid-cols-3 gap-px bg-slate-200 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-800 reveal">
             <a href="contact.html"
                 class="flex flex-col items-center gap-1.5 py-4 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer text-center">
                 <div class="text-primary mb-1"><span class="material-symbols-outlined">mail</span></div>
@@ -144,13 +296,13 @@
         <div class="p-5 md:p-8 space-y-8 bg-white dark:bg-background-dark">
             <!-- Professional Summary -->
             <section>
-                <h2 class="text-slate-900 dark:text-white text-xl md:text-2xl font-bold mb-4 flex items-center gap-2">
+                <h2 class="text-slate-900 dark:text-white text-xl md:text-2xl font-bold mb-4 flex items-center gap-2 reveal">
                     <span
                         class="material-symbols-outlined text-primary p-1 bg-primary/10 dark:bg-primary/20 rounded">description</span>
                     Executive Summary
                 </h2>
                 <div
-                    class="bg-slate-50 dark:bg-slate-800/30 p-5 md:p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm relative overflow-hidden">
+                    class="bg-slate-50 dark:bg-slate-800/30 p-5 md:p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm relative overflow-hidden lift transition-all">
                     <div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent pointer-events-none">
                     </div>
                     <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-sm md:text-base relative z-10">
@@ -165,7 +317,7 @@
 
             <!-- Technical Skills -->
             <section>
-                <h2 class="text-slate-900 dark:text-white text-xl md:text-2xl font-bold mb-4 flex items-center gap-2">
+                <h2 class="text-slate-900 dark:text-white text-xl md:text-2xl font-bold mb-4 flex items-center gap-2 reveal">
                     <span
                         class="material-symbols-outlined text-primary p-1 bg-primary/10 dark:bg-primary/20 rounded">terminal</span>
                     Technical Cloud & BI
@@ -197,12 +349,12 @@
 
             <!-- Language Proficiency -->
             <section>
-                <h2 class="text-slate-900 dark:text-white text-xl md:text-2xl font-bold mb-4 flex items-center gap-2">
+                <h2 class="text-slate-900 dark:text-white text-xl md:text-2xl font-bold mb-4 flex items-center gap-2 reveal">
                     <span
                         class="material-symbols-outlined text-primary p-1 bg-primary/10 dark:bg-primary/20 rounded">translate</span>
                     Languages
                 </h2>
-                <div class="grid grid-cols-2 gap-4">
+                <div class="grid grid-cols-2 gap-4 reveal">
                     <div
                         class="bg-slate-50 dark:bg-slate-800/40 p-4 border border-slate-200 dark:border-slate-800 rounded-xl flex items-center justify-between">
                         <span class="font-bold text-slate-700 dark:text-slate-200">English</span>
@@ -226,7 +378,7 @@
 
             <!-- Professional Experience -->
             <section>
-                <h2 class="text-slate-900 dark:text-white text-xl md:text-2xl font-bold mb-4 flex items-center gap-2">
+                <h2 class="text-slate-900 dark:text-white text-xl md:text-2xl font-bold mb-4 flex items-center gap-2 reveal">
                     <span
                         class="material-symbols-outlined text-primary p-1 bg-primary/10 dark:bg-primary/20 rounded">history</span>
                     Professional History
@@ -238,10 +390,10 @@
                         <span
                             class="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-primary border-4 border-white dark:border-background-dark"></span>
                         <div
-                            class="bg-slate-50 dark:bg-slate-800/30 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-primary/50 transition-colors">
+                            class="bg-slate-50 dark:bg-slate-800/30 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-primary/50 transition-colors lift transition-all">
                             <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4 gap-2">
                                 <div>
-                                    <h3 class="font-bold text-slate-900 dark:text-white text-lg">Lead BI / Software
+                                    <h3 class="font-bold text-slate-900 dark:text-white text-lg reveal">Lead BI / Software
                                         Engineer</h3>
                                     <p class="text-primary font-medium text-sm">DEFTeam Solutions Pvt. Ltd.</p>
                                 </div>
@@ -279,10 +431,10 @@
                         <span
                             class="absolute left-0 top-1.5 w-4 h-4 rounded-full bg-slate-600 border-4 border-white dark:border-background-dark"></span>
                         <div
-                            class="bg-slate-50 dark:bg-slate-800/30 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-primary/50 transition-colors">
+                            class="bg-slate-50 dark:bg-slate-800/30 p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm hover:border-primary/50 transition-colors lift transition-all">
                             <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4 gap-2">
                                 <div>
-                                    <h3 class="font-bold text-slate-900 dark:text-white text-lg">Tech Analyst / Senior
+                                    <h3 class="font-bold text-slate-900 dark:text-white text-lg reveal">Tech Analyst / Senior
                                         Systems Engineer</h3>
                                     <p
                                         class="text-slate-500 dark:text-slate-500 dark:text-slate-400 font-medium text-sm">
@@ -312,15 +464,15 @@
             </section>
 
             <!-- Education & Certs -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 reveal">
                 <section>
-                    <h2 class="text-slate-900 dark:text-white text-lg font-bold mb-4 flex items-center gap-2">
+                    <h2 class="text-slate-900 dark:text-white text-lg font-bold mb-4 flex items-center gap-2 reveal">
                         <span
                             class="material-symbols-outlined text-primary p-1 bg-primary/10 dark:bg-primary/20 rounded">workspace_premium</span>
                         Certifications
                     </h2>
                     <div
-                        class="bg-slate-50 dark:bg-slate-800/30 p-4 rounded-xl border border-slate-200 dark:border-slate-800 space-y-4">
+                        class="bg-slate-50 dark:bg-slate-800/30 p-4 rounded-xl border border-slate-200 dark:border-slate-800 space-y-4 lift transition-all">
                         <div class="flex items-center gap-3">
                             <div
                                 class="size-10 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-primary rounded-lg flex items-center justify-center shrink-0">
@@ -347,13 +499,13 @@
                     </div>
                 </section>
                 <section>
-                    <h2 class="text-slate-900 dark:text-white text-lg font-bold mb-4 flex items-center gap-2">
+                    <h2 class="text-slate-900 dark:text-white text-lg font-bold mb-4 flex items-center gap-2 reveal">
                         <span
                             class="material-symbols-outlined text-primary p-1 bg-primary/10 dark:bg-primary/20 rounded">school</span>
                         Education
                     </h2>
                     <div
-                        class="bg-slate-50 dark:bg-slate-800/30 p-5 rounded-xl border border-slate-200 dark:border-slate-800 h-[calc(100%-2.5rem)] flex flex-col justify-center">
+                        class="bg-slate-50 dark:bg-slate-800/30 p-5 rounded-xl border border-slate-200 dark:border-slate-800 h-[calc(100%-2.5rem)] flex flex-col justify-center lift transition-all">
                         <div
                             class="size-10 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-500 dark:text-slate-400 rounded-lg flex items-center justify-center mb-4">
                             <span class="material-symbols-outlined text-xl">menu_book</span>
@@ -374,12 +526,12 @@
         <div
             class="hidden md:flex p-6 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 justify-end gap-4 rounded-b-2xl">
             <button onclick="shareResume()"
-                class="bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold py-3 px-6 rounded-xl border border-slate-200 dark:border-slate-700 transition-colors flex items-center gap-2">
+                class="bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-bold py-3 px-6 rounded-xl border border-slate-200 dark:border-slate-700 transition-colors flex items-center gap-2 lift transition-all">
                 <span class="material-symbols-outlined">share</span>
                 Share Link
             </button>
             <button
-                class="bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-primary/25 transition-transform hover:-translate-y-0.5 flex items-center gap-2">
+                class="bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-xl shadow-lg shadow-primary/25 transition-transform hover:-translate-y-0.5 flex items-center gap-2" onclick="downloadResume()">
                 <span class="material-symbols-outlined">download</span>
                 Download PDF
             </button>
@@ -391,7 +543,7 @@
         class="md:hidden fixed bottom-20 left-0 right-0 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md p-4 border-t border-slate-200 dark:border-slate-800 z-50 shadow-lg">
         <div class="max-w-md mx-auto flex gap-3">
             <button
-                class="flex-1 bg-primary text-white font-bold py-3.5 rounded-xl shadow-lg shadow-primary/25 flex items-center justify-center gap-2 active:scale-95 transition-transform">
+                class="flex-1 bg-primary text-white font-bold py-3.5 rounded-xl shadow-lg shadow-primary/25 flex items-center justify-center gap-2 active:scale-95 transition-transform" onclick="downloadResume()">
                 <span class="material-symbols-outlined">download</span>
                 Download PDF
             </button>
@@ -401,138 +553,81 @@
     <!-- Bottom Mobile Tab Bar Overlay Fix (keeping the global menu structure but hiding behind sticky footer or stacking) -->
     <!-- Let's just rely on the native back arrow at the top for specific app views, otherwise we crowd the footer -->
 
-    <footer
-        class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 pt-20 pb-24 md:pb-12 mt-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
-                <!-- Brand Section -->
-                <div class="md:col-span-4 lg:col-span-5">
-                    <div class="flex items-center gap-2 mb-6">
-                        <div
-                            class="bg-primary rounded-xl p-2 flex items-center justify-center shadow-lg shadow-primary/20">
-                            <span
-                                class="material-symbols-outlined text-slate-900 dark:text-white text-2xl">insights</span>
-                        </div>
-                        <span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Abdul
-                            Wassay</span>
-                    </div>
-                    <p class="text-slate-600 dark:text-slate-400 max-w-sm mb-8 text-base leading-relaxed">
-                        Architecting high-performance data ecosystems and executive BI strategies. Helping organizations
-                        turn complex data into competitive advantages.
-                    </p>
-                    <div class="flex gap-4">
-                        <a href="https://linkedin.com/in/wassayknp" target="_blank"
-                            class="w-12 h-12 rounded-xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white hover:-translate-y-1 transition-all duration-300 shadow-sm border border-slate-100 dark:border-slate-700">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z">
-                                </path>
-                            </svg>
-                        </a>
-                        <a href="https://github.com/wassayknp" target="_blank"
-                            class="w-12 h-12 rounded-xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white hover:-translate-y-1 transition-all duration-300 shadow-sm border border-slate-100 dark:border-slate-700">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12">
-                                </path>
-                            </svg>
-                        </a>
-                        <a href="contact.html"
-                            class="w-12 h-12 rounded-xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-white hover:-translate-y-1 transition-all duration-300 shadow-sm border border-slate-100 dark:border-slate-700">
-                            <span class="material-symbols-outlined text-xl">mail</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Navigation -->
-                <div class="md:col-span-3 lg:col-span-2">
-                    <h5 class="text-slate-900 dark:text-white font-bold mb-7 uppercase tracking-wider text-xs">Explore
-                    </h5>
-                    <ul class="space-y-4">
-                        <li><a href="index.html"
-                                class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
-                                    class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Home</a>
-                        </li>
-                        <li><a href="projects_experience.html"
-                                class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
-                                    class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Work</a>
-                        </li>
-                        <li><a href="professional_resume.html"
-                                class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
-                                    class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Resume</a>
-                        </li>
-                        <li><a href="blog.html"
-                                class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
-                                    class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Blog</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Services -->
-                <div class="md:col-span-3 lg:col-span-2">
-                    <h5 class="text-slate-900 dark:text-white font-bold mb-7 uppercase tracking-wider text-xs">Services
-                    </h5>
-                    <ul class="space-y-4">
-                        <li><a href="skills_architecture.html"
-                                class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
-                                    class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>BI
-                                Strategy</a></li>
-                        <li><a href="skills_architecture.html"
-                                class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
-                                    class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Data
-                                Modeling</a></li>
-                        <li><a href="skills_architecture.html"
-                                class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
-                                    class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Cloud
-                                Migration</a></li>
-                        <li><a href="skills_architecture.html"
-                                class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
-                                    class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>AI
-                                Insights</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact Info -->
-                <div class="md:col-span-2 lg:col-span-3">
-                    <h5 class="text-slate-900 dark:text-white font-bold mb-7 uppercase tracking-wider text-xs">Location
-                    </h5>
-                    <div
-                        class="bg-slate-50 dark:bg-slate-800/50 rounded-2xl p-6 border border-slate-100 dark:border-slate-700">
-                        <div class="flex items-start gap-4 mb-4">
-                            <span class="material-symbols-outlined text-primary mt-1">location_on</span>
-                            <div>
-                                <p class="text-sm font-bold text-slate-900 dark:text-white mb-1">Hyderabad, India</p>
-                                <p class="text-xs text-slate-500 dark:text-slate-400">Supporting global clients &
-                                    enterprises</p>
-                            </div>
-                        </div>
-                        <a href="contact.html"
-                            class="inline-flex items-center gap-2 text-primary text-sm font-bold hover:underline">
-                            Get Directions <span class="material-symbols-outlined text-xs">arrow_forward</span>
-                        </a>
-                    </div>
-                </div>
+    
+  <!-- ═══ RE-DESIGNED MODERN FOOTER ═══ -->
+  <footer class="relative bg-slate-50 dark:bg-[#0a0f1c] pt-10 pb-24 md:pb-8 border-t border-slate-200 dark:border-slate-800/40 overflow-hidden text-slate-600 dark:text-slate-300 transition-colors duration-300">
+    <!-- subtle glow effect -->
+    <div class="hidden dark:block absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
+    <div class="hidden dark:block absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-64 bg-primary/10 blur-[100px] rounded-full pointer-events-none"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-8 reveal">
+        <div class="md:col-span-4 lg:col-span-5">
+          <div class="flex items-center gap-3 mb-6 group">
+            <div class="relative w-10 h-10 rounded-full overflow-hidden border-2 border-primary/20 group-hover:border-primary transition-colors duration-300">
+                <img src="./assets/images/profile_photo.jpg" alt="Abdul Wassay" class="w-full h-full object-cover">
             </div>
-
-            <!-- Bottom Line -->
-            <div
-                class="pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-xs text-slate-500 dark:text-slate-500 font-medium">
-                    © 2026 Abdul Wassay. Built with <span class="text-rose-500">❤</span> and Data Science.
-                </p>
-                <div class="flex gap-8">
-                    <a href="index.html"
-                        class="text-xs text-slate-500 hover:text-primary transition-colors font-medium">Privacy
-                        Policy</a>
-                    <a href="index.html"
-                        class="text-xs text-slate-500 hover:text-primary transition-colors font-medium">Terms of
-                        Service</a>
-                    <a href="index.html"
-                        class="text-xs text-slate-500 hover:text-primary transition-colors font-medium">Sitemap</a>
-                </div>
-            </div>
+            <span class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-400">Abdul Wassay</span>
+          </div>
+          <p class="max-w-sm mb-8 text-base leading-relaxed">Architecting high-performance data ecosystems and AI-powered BI strategies. Transforming complexity into competitive advantage.</p>
+          <div class="flex gap-4">
+            <a href="https://linkedin.com/in/wassayknp" target="_blank"
+              class="w-12 h-12 rounded-xl bg-white dark:bg-slate-900/50 flex items-center justify-center hover:bg-[#0077b5] hover:text-white dark:hover:bg-[#0077b5] hover:-translate-y-1 transition-all border border-slate-200 dark:border-slate-800 shadow-sm lift transition-all">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
+            </a>
+            <a href="https://github.com/wassayknp" target="_blank"
+              class="w-12 h-12 rounded-xl bg-white dark:bg-slate-900/50 flex items-center justify-center hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 hover:-translate-y-1 transition-all border border-slate-200 dark:border-slate-800 shadow-sm lift transition-all">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" /></svg>
+            </a>
+            <a href="contact.html" class="w-12 h-12 rounded-xl bg-white dark:bg-slate-900/50 flex items-center justify-center hover:bg-primary hover:text-white hover:-translate-y-1 transition-all border border-slate-200 dark:border-slate-800 shadow-sm lift transition-all">
+              <span class="material-symbols-outlined text-xl transition-colors">mail</span>
+            </a>
+          </div>
         </div>
-    </footer>
+        <div class="md:col-span-3 lg:col-span-2">
+          <h5 class="text-slate-900 dark:text-white font-bold mb-6 uppercase tracking-widest text-xs opacity-90">Explore</h5>
+          <ul class="space-y-3.5">
+            <li><a href="index.html" class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Home</a></li>
+            <li><a href="projects_experience.html" class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Work</a></li>
+            <li><a href="professional_resume.html" class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Resume</a></li>
+            <li><a href="blog.html" class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Blog</a></li>
+          </ul>
+        </div>
+        <div class="md:col-span-3 lg:col-span-2">
+          <h5 class="text-slate-900 dark:text-white font-bold mb-6 uppercase tracking-widest text-xs opacity-90">Expertise</h5>
+          <ul class="space-y-3.5">
+            <li><a href="skills_architecture.html" class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>BI Strategy</a></li>
+            <li><a href="skills_architecture.html" class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Data Modeling</a></li>
+            <li><a href="skills_architecture.html" class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Data Architecture</a></li>
+            <li><a href="skills_architecture.html" class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>AI Ecosystems</a></li>
+          </ul>
+        </div>
+        <div class="md:col-span-2 lg:col-span-3">
+          <h5 class="text-slate-900 dark:text-white font-bold mb-6 uppercase tracking-widest text-xs opacity-90">Location</h5>
+          <div class="bg-white dark:bg-slate-900/50 rounded-2xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm relative overflow-hidden group">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="flex items-start gap-4 mb-4 relative z-10">
+              <span class="material-symbols-outlined text-primary bg-primary/10 rounded-full p-2">location_on</span>
+              <div>
+                <p class="text-sm font-bold text-slate-900 dark:text-white mb-1">Hyderabad, India</p>
+                <p class="text-xs text-slate-500 dark:text-slate-400">Open to global roles</p>
+              </div>
+            </div>
+            <a href="contact.html" class="inline-flex items-center gap-1.5 text-primary text-sm font-bold hover:underline relative z-10 group-hover:translate-x-1 transition-transform">Contact Me <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="pt-8 border-t border-slate-200 dark:border-slate-800/60 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-xs font-medium">© 2026 Abdul Wassay. Built with <span class="text-rose-500 animate-pulse inline-block">❤</span> in India <img src="https://flagcdn.com/w20/in.png" class="inline-block ml-1 -mt-1 w-4" alt="India"></p>
+        <div class="flex gap-6">
+          <a href="#" class="text-xs hover:text-primary transition-colors font-medium">Privacy</a>
+          <a href="#" class="text-xs hover:text-primary transition-colors font-medium">Terms</a>
+          <a href="#" class="text-xs hover:text-primary transition-colors font-medium">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
 
     <!-- Bottom Tab Bar -->
     <div class="md:hidden fixed bottom-6 left-0 right-0 z-40 px-4 pointer-events-none">
@@ -574,60 +669,132 @@
     </div>
 
 
-    <script>
-        // Dark Mode Logic
-        const html = document.documentElement;
-        const themeToggles = document.querySelectorAll('.theme-toggle');
+    
+  <!-- ═══ ANIMATION & LOGIC SCRIPTS ═══ -->
+  <script>
+    // ── Dark Mode ──
+    const html = document.documentElement;
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+    }
+    document.querySelectorAll('.theme-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        html.classList.toggle('dark');
+        localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+      });
+    });
 
-        function updateIcons(isDark) {
-            themeToggles.forEach(toggle => {
-                const icon = toggle.querySelector('.material-symbols-outlined');
-                if (icon) {
-                    icon.textContent = isDark ? 'light_mode' : 'dark_mode';
-                }
-            });
-        }
-
-        // Check local storage
-        const isDark = localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
-        if (isDark) {
-            html.classList.add('dark');
-            updateIcons(true);
-        } else {
-            html.classList.remove('dark');
-            updateIcons(false);
-        }
-
-        themeToggles.forEach(toggle => {
-            toggle.addEventListener('click', () => {
-                const willBeDark = html.classList.toggle('dark');
-                updateIcons(willBeDark);
-                localStorage.setItem('theme', willBeDark ? 'dark' : 'light');
-            });
+    // ── Mobile Menu ──
+    const mobBtn = document.getElementById('mob-menu-btn');
+    if(mobBtn) {
+        mobBtn.addEventListener('click', () => {
+        const menu = document.getElementById('mobile-menu');
+        if(menu) menu.classList.toggle('open');
         });
+    }
 
-        function shareResume() {
-            const shareData = {
-                title: 'Abdul Wassay - Executive Resume',
-                text: 'Check out Abdul Wassay\'s Senior BI & Analytics portfolio and resume.',
-                url: window.location.href
-            };
-
-            // Use the native Web Share API ideally (trigger native dialog on iOS/Android)
-            if (navigator.share && /Mobi|Android/i.test(navigator.userAgent)) {
-                navigator.share(shareData)
-                    .then(() => console.log('Successfully shared'))
-                    .catch((error) => console.log('Error sharing:', error));
+    // ── Typewriter ──
+    const el = document.getElementById('typewriter');
+    if(el) {
+        const phrases = ['Senior BI & Analytics Engineer', 'Microsoft Fabric Specialist', 'AI-Powered BI Developer', 'Power BI Expert & DAX Architect'];
+        let pi = 0, ci = 0, deleting = false;
+        function type() {
+            const phrase = phrases[pi];
+            if (!deleting) {
+                el.textContent = phrase.slice(0, ++ci);
+                if (ci === phrase.length) { deleting = true; setTimeout(type, 2000); return; }
             } else {
-                // Fallback for desktops
-                navigator.clipboard.writeText(shareData.url).then(() => {
-                    alert('Resume link copied to clipboard!');
-                }).catch(err => {
-                    alert('Failed to copy link.');
-                });
+                el.textContent = phrase.slice(0, --ci);
+                if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; }
             }
+            setTimeout(type, deleting ? 50 : 80);
         }
-    </script>
+        setTimeout(type, 800);
+    }
+
+    // ── Scroll Reveal ──
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ── Animated Counters ──
+    const counterObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        const target = parseInt(el.dataset.target);
+        if(isNaN(target)) return;
+        const suffix = el.dataset.suffix || '';
+        let start = 0;
+        const duration = 1500;
+        const step = timestamp => {
+          if (!start) start = timestamp;
+          const progress = Math.min((timestamp - start) / duration, 1);
+          const ease = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.floor(ease * target) + suffix;
+          if (progress < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+        counterObs.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.counter').forEach(el => counterObs.observe(el));
+
+    // ── Bar fills ──
+    const barObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.querySelectorAll('.bar-fill').forEach(bar => {
+          setTimeout(() => { if(bar.dataset.width) bar.style.width = bar.dataset.width + '%'; }, 200);
+        });
+        barObs.unobserve(e.target);
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.bar-fill').forEach(b => barObs.observe(b.closest('div')));
+
+    // ── Chart toggle (bar/line) ──
+    function toggleChartView(btn, view) {
+      document.querySelectorAll('.chart-btn').forEach(b => {
+        b.classList.remove('active', 'bg-primary/10', 'text-primary');
+        b.classList.add('text-slate-400');
+      });
+      btn.classList.add('active', 'bg-primary/10', 'text-primary');
+      btn.classList.remove('text-slate-400');
+      
+      const barChart = document.getElementById('chart-bar');
+      const lineChart = document.getElementById('chart-line');
+      
+      if(barChart && lineChart) {
+          if (view === 'bar') {
+              barChart.classList.remove('hidden');
+              lineChart.classList.add('hidden');
+          } else {
+              barChart.classList.add('hidden');
+              lineChart.classList.remove('hidden');
+          }
+      }
+    }
+    
+    // ── Download Resume ──
+    function downloadResume() {
+        const date = new Date();
+        const timestamp = date.getFullYear().toString() + 
+                         (date.getMonth() + 1).toString().padStart(2, '0') + 
+                         date.getDate().toString().padStart(2, '0') + '_' + 
+                         date.getHours().toString().padStart(2, '0') + 
+                         date.getMinutes().toString().padStart(2, '0');
+        
+        const a = document.createElement('a');
+        a.href = 'assets/Abdul_Wassay_Resume.pdf';
+        a.download = `Abdul_Wassay_Resume_${timestamp}.pdf`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    }
+  </script>
+
 </body>
 
 </html>
