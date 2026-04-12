@@ -5,9 +5,12 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Skills & Architecture — Abdul Wassay</title>
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -32,18 +35,52 @@
                 linear-gradient(to bottom, rgba(32, 96, 223, 0.05) 1px, transparent 1px);
         }
 
-        body { min-height: max(884px, 100dvh); }
+        body {
+            min-height: max(884px, 100dvh);
+        }
 
-        .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-        .reveal-delay-1 { transition-delay: 0.08s; }
-        .reveal-delay-2 { transition-delay: 0.16s; }
-        .reveal-delay-3 { transition-delay: 0.24s; }
-        .reveal-delay-4 { transition-delay: 0.32s; }
-        .reveal-delay-5 { transition-delay: 0.40s; }
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
 
-        .bar-fill { width: 0%; transition: width 1.2s cubic-bezier(0.25, 1, 0.5, 1); }
-        .gradient-text { background: linear-gradient(135deg, #2060df, #60a5fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 {
+            transition-delay: 0.08s;
+        }
+
+        .reveal-delay-2 {
+            transition-delay: 0.16s;
+        }
+
+        .reveal-delay-3 {
+            transition-delay: 0.24s;
+        }
+
+        .reveal-delay-4 {
+            transition-delay: 0.32s;
+        }
+
+        .reveal-delay-5 {
+            transition-delay: 0.40s;
+        }
+
+        .bar-fill {
+            width: 0%;
+            transition: width 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #2060df, #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
         /* ── ARCHITECTURE SECTION ── */
 
@@ -51,6 +88,7 @@
         .arch-connector {
             position: relative;
         }
+
         .arch-connector::before {
             content: '';
             position: absolute;
@@ -61,6 +99,7 @@
             height: 24px;
             background: linear-gradient(to bottom, transparent, #2060df60);
         }
+
         .arch-connector::after {
             content: '';
             position: absolute;
@@ -82,7 +121,10 @@
             border: 1px solid;
             transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
-        .arch-layer:hover { transform: translateY(-4px); }
+
+        .arch-layer:hover {
+            transform: translateY(-4px);
+        }
 
         /* Tool chip */
         .tool-chip {
@@ -98,8 +140,15 @@
             cursor: default;
             white-space: nowrap;
         }
-        .tool-chip:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        .tool-chip .material-symbols-outlined { font-size: 14px; }
+
+        .tool-chip:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .tool-chip .material-symbols-outlined {
+            font-size: 14px;
+        }
 
         /* Step badge */
         .step-badge {
@@ -122,11 +171,13 @@
             gap: 4px;
             padding: 8px 0;
         }
+
         .flow-arrow .arrow-line {
             width: 2px;
             height: 32px;
             background: linear-gradient(to bottom, #2060df40, #2060df);
         }
+
         .flow-arrow .arrow-head {
             width: 0;
             height: 0;
@@ -134,6 +185,7 @@
             border-right: 6px solid transparent;
             border-top: 8px solid #2060df;
         }
+
         .flow-arrow .flow-label {
             font-size: 10px;
             font-weight: 700;
@@ -152,25 +204,54 @@
             border: 1px solid;
             transition: transform 0.2s;
         }
-        .outcome-pill:hover { transform: translateX(4px); }
+
+        .outcome-pill:hover {
+            transform: translateX(4px);
+        }
 
         /* Skill bar */
-        .skill-bar-track { height: 6px; border-radius: 3px; overflow: hidden; background: rgba(0,0,0,0.07); }
-        .dark .skill-bar-track { background: rgba(255,255,255,0.08); }
-        .skill-bar-fill { height: 100%; border-radius: 3px; width: 0; transition: width 1.3s cubic-bezier(0.25,1,0.5,1); }
+        .skill-bar-track {
+            height: 6px;
+            border-radius: 3px;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.07);
+        }
+
+        .dark .skill-bar-track {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .skill-bar-fill {
+            height: 100%;
+            border-radius: 3px;
+            width: 0;
+            transition: width 1.3s cubic-bezier(0.25, 1, 0.5, 1);
+        }
 
         /* Glowing node */
         .glow-node {
-            box-shadow: 0 0 0 0 rgba(32,96,223,0.4);
+            box-shadow: 0 0 0 0 rgba(32, 96, 223, 0.4);
             animation: glow-pulse 2.5s ease-in-out infinite;
         }
+
         @keyframes glow-pulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(32,96,223,0.3); }
-            50% { box-shadow: 0 0 0 8px rgba(32,96,223,0); }
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(32, 96, 223, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 0 0 8px rgba(32, 96, 223, 0);
+            }
         }
 
         /* Horizontal scroll chips on mobile */
-        .chips-row { display: flex; flex-wrap: wrap; gap: 8px; }
+        .chips-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
 
         /* Dashed connecting border between layers */
         .layer-group-connector {
@@ -179,16 +260,22 @@
             width: 2px;
             height: 40px;
         }
+
         .layer-group-connector::before {
             content: '';
             position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: repeating-linear-gradient(to bottom, #2060df 0px, #2060df 6px, transparent 6px, transparent 12px);
         }
 
         /* Tooltip */
-        .has-tooltip { position: relative; }
+        .has-tooltip {
+            position: relative;
+        }
+
         .tooltip-box {
             position: absolute;
             bottom: calc(100% + 8px);
@@ -206,43 +293,66 @@
             transition: opacity 0.15s;
             z-index: 20;
         }
+
         .tooltip-box::after {
             content: '';
             position: absolute;
-            top: 100%; left: 50%;
+            top: 100%;
+            left: 50%;
             transform: translateX(-50%);
             border: 5px solid transparent;
             border-top-color: #1e293b;
         }
-        .has-tooltip:hover .tooltip-box { opacity: 1; }
+
+        .has-tooltip:hover .tooltip-box {
+            opacity: 1;
+        }
 
         /* Lift card */
-        .lift { transition: transform 0.25s ease, box-shadow 0.25s ease; }
-        .lift:hover { transform: translateY(-5px); box-shadow: 0 16px 36px rgba(32,96,223,0.12); }
+        .lift {
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 36px rgba(32, 96, 223, 0.12);
+        }
     </style>
 </head>
 
-<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-300">
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-300">
 
     <!-- ═══ NAVBAR ═══ -->
-    <nav class="sticky top-0 z-50 w-full border-b border-primary/10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
+    <nav
+        class="sticky top-0 z-50 w-full border-b border-primary/10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex h-16 items-center justify-between">
                 <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
                     <div class="relative w-8 h-8 rounded-full overflow-hidden border-2 border-primary/20">
-                        <img src="./assets/images/profile_photo.jpg" alt="Abdul Wassay" class="w-full h-full object-cover" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'w-full h-full bg-primary flex items-center justify-center text-white text-xs font-bold\'>AW</div>'">
+                        <img src="./assets/images/profile_photo.jpg" alt="Abdul Wassay"
+                            class="w-full h-full object-cover"
+                            onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'w-full h-full bg-primary flex items-center justify-center text-white text-xs font-bold\'>AW</div>'">
                     </div>
                     <span class="text-lg font-bold tracking-tight text-slate-900 dark:text-white">Abdul Wassay</span>
                 </a>
                 <div class="hidden md:flex items-baseline space-x-1">
-                    <a class="text-slate-600 dark:text-slate-400 hover:text-primary px-3 py-2 text-sm font-medium transition-colors" href="index.html">Home</a>
-                    <a class="text-slate-600 dark:text-slate-400 hover:text-primary px-3 py-2 text-sm font-medium transition-colors" href="projects_experience.html">Work</a>
-                    <a class="text-slate-600 dark:text-slate-400 hover:text-primary px-3 py-2 text-sm font-medium transition-colors" href="professional_resume.html">Resume</a>
-                    <a class="text-primary font-semibold px-3 py-2 text-sm transition-colors" href="skills_architecture.html">Skills</a>
-                    <a class="text-slate-600 dark:text-slate-400 hover:text-primary px-3 py-2 text-sm font-medium transition-colors" href="blog.html">Blog</a>
-                    <a class="text-slate-600 dark:text-slate-400 hover:text-primary px-3 py-2 text-sm font-medium transition-colors" href="contact.html">Contact</a>
+                    <a class="text-slate-600 dark:text-slate-400 hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+                        href="index.html">Home</a>
+                    <a class="text-slate-600 dark:text-slate-400 hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+                        href="projects_experience.html">Work</a>
+                    <a class="text-slate-600 dark:text-slate-400 hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+                        href="professional_resume.html">Resume</a>
+                    <a class="text-primary font-semibold px-3 py-2 text-sm transition-colors"
+                        href="skills_architecture.html">Skills</a>
+                    <a class="text-slate-600 dark:text-slate-400 hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+                        href="blog.html">Blog</a>
+                    <a class="text-slate-600 dark:text-slate-400 hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+                        href="contact.html">Contact</a>
                 </div>
-                <button class="p-2 rounded-full hover:bg-primary/10 transition-colors text-slate-600 dark:text-slate-400 theme-toggle" title="Toggle theme">
+                <button
+                    class="p-2 rounded-full hover:bg-primary/10 transition-colors text-slate-600 dark:text-slate-400 theme-toggle"
+                    title="Toggle theme">
                     <span class="material-symbols-outlined">light_mode</span>
                 </button>
             </div>
@@ -256,63 +366,82 @@
         ═══════════════════════════════════════════ -->
         <section>
             <div class="flex items-center gap-3 mb-8 reveal">
-                <span class="material-symbols-outlined text-primary p-2 bg-primary/10 rounded-xl text-2xl">deployed_code</span>
+                <span
+                    class="material-symbols-outlined text-primary p-2 bg-primary/10 rounded-xl text-2xl">deployed_code</span>
                 <div>
                     <h2 class="text-2xl font-extrabold tracking-tight">Modern Skills & Expertise</h2>
-                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-0.5">8+ years across BI, data engineering, and AI-powered analytics</p>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-0.5">8+ years across BI, data engineering,
+                        and AI-powered analytics</p>
                 </div>
             </div>
 
             <div class="space-y-10">
                 <!-- Analytics & Visualization -->
                 <div class="reveal">
-                    <h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Analytics & Visualization</h3>
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Analytics &
+                        Visualization</h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <div class="flex items-center justify-between bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-3 rounded-xl shadow-sm">
+                        <div
+                            class="flex items-center justify-between bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-3 rounded-xl shadow-sm">
                             <div class="flex items-center gap-3">
-                                <div class="w-9 h-9 rounded-lg bg-yellow-50 dark:bg-yellow-900/20 flex items-center justify-center">
+                                <div
+                                    class="w-9 h-9 rounded-lg bg-yellow-50 dark:bg-yellow-900/20 flex items-center justify-center">
                                     <span class="material-symbols-outlined text-yellow-500 text-xl">bar_chart</span>
                                 </div>
                                 <span class="text-sm font-semibold">Power BI (DAX · Power Query)</span>
                             </div>
                             <div class="flex items-center gap-2 min-w-[100px]">
-                                <div class="skill-bar-track flex-1"><div class="skill-bar-fill bg-yellow-400" data-width="95"></div></div>
+                                <div class="skill-bar-track flex-1">
+                                    <div class="skill-bar-fill bg-yellow-400" data-width="95"></div>
+                                </div>
                                 <span class="text-xs font-bold text-slate-400 w-8 text-right">95%</span>
                             </div>
                         </div>
-                        <div class="flex items-center justify-between bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-3 rounded-xl shadow-sm">
+                        <div
+                            class="flex items-center justify-between bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-3 rounded-xl shadow-sm">
                             <div class="flex items-center gap-3">
-                                <div class="w-9 h-9 rounded-lg bg-orange-50 dark:bg-orange-900/20 flex items-center justify-center">
+                                <div
+                                    class="w-9 h-9 rounded-lg bg-orange-50 dark:bg-orange-900/20 flex items-center justify-center">
                                     <span class="material-symbols-outlined text-orange-500 text-xl">table_chart</span>
                                 </div>
                                 <span class="text-sm font-semibold">Tableau</span>
                             </div>
                             <div class="flex items-center gap-2 min-w-[100px]">
-                                <div class="skill-bar-track flex-1"><div class="skill-bar-fill bg-orange-400" data-width="82"></div></div>
+                                <div class="skill-bar-track flex-1">
+                                    <div class="skill-bar-fill bg-orange-400" data-width="82"></div>
+                                </div>
                                 <span class="text-xs font-bold text-slate-400 w-8 text-right">82%</span>
                             </div>
                         </div>
-                        <div class="flex items-center justify-between bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-3 rounded-xl shadow-sm">
+                        <div
+                            class="flex items-center justify-between bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-3 rounded-xl shadow-sm">
                             <div class="flex items-center gap-3">
-                                <div class="w-9 h-9 rounded-lg bg-teal-50 dark:bg-teal-900/20 flex items-center justify-center">
+                                <div
+                                    class="w-9 h-9 rounded-lg bg-teal-50 dark:bg-teal-900/20 flex items-center justify-center">
                                     <span class="material-symbols-outlined text-teal-500 text-xl">scatter_plot</span>
                                 </div>
                                 <span class="text-sm font-semibold">Spotfire (TIBCO Certified)</span>
                             </div>
                             <div class="flex items-center gap-2 min-w-[100px]">
-                                <div class="skill-bar-track flex-1"><div class="skill-bar-fill bg-teal-400" data-width="85"></div></div>
+                                <div class="skill-bar-track flex-1">
+                                    <div class="skill-bar-fill bg-teal-400" data-width="85"></div>
+                                </div>
                                 <span class="text-xs font-bold text-slate-400 w-8 text-right">85%</span>
                             </div>
                         </div>
-                        <div class="flex items-center justify-between bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-3 rounded-xl shadow-sm">
+                        <div
+                            class="flex items-center justify-between bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-3 rounded-xl shadow-sm">
                             <div class="flex items-center gap-3">
-                                <div class="w-9 h-9 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center">
+                                <div
+                                    class="w-9 h-9 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center">
                                     <span class="material-symbols-outlined text-blue-500 text-xl">schema</span>
                                 </div>
                                 <span class="text-sm font-semibold">Semantic Modeling</span>
                             </div>
                             <div class="flex items-center gap-2 min-w-[100px]">
-                                <div class="skill-bar-track flex-1"><div class="skill-bar-fill bg-blue-400" data-width="90"></div></div>
+                                <div class="skill-bar-track flex-1">
+                                    <div class="skill-bar-fill bg-blue-400" data-width="90"></div>
+                                </div>
                                 <span class="text-xs font-bold text-slate-400 w-8 text-right">90%</span>
                             </div>
                         </div>
@@ -321,53 +450,70 @@
 
                 <!-- Data Engineering -->
                 <div class="reveal reveal-delay-1">
-                    <h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Data Engineering & Cloud</h3>
+                    <h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Data Engineering & Cloud
+                    </h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <div class="flex items-center justify-between bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-3 rounded-xl shadow-sm">
+                        <div
+                            class="flex items-center justify-between bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-3 rounded-xl shadow-sm">
                             <div class="flex items-center gap-3">
-                                <div class="w-9 h-9 rounded-lg bg-cyan-50 dark:bg-cyan-900/20 flex items-center justify-center">
+                                <div
+                                    class="w-9 h-9 rounded-lg bg-cyan-50 dark:bg-cyan-900/20 flex items-center justify-center">
                                     <span class="material-symbols-outlined text-cyan-500 text-xl">hub</span>
                                 </div>
                                 <span class="text-sm font-semibold">Microsoft Fabric</span>
                             </div>
                             <div class="flex items-center gap-2 min-w-[100px]">
-                                <div class="skill-bar-track flex-1"><div class="skill-bar-fill bg-cyan-400" data-width="80"></div></div>
+                                <div class="skill-bar-track flex-1">
+                                    <div class="skill-bar-fill bg-cyan-400" data-width="80"></div>
+                                </div>
                                 <span class="text-xs font-bold text-slate-400 w-8 text-right">80%</span>
                             </div>
                         </div>
-                        <div class="flex items-center justify-between bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-3 rounded-xl shadow-sm">
+                        <div
+                            class="flex items-center justify-between bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-3 rounded-xl shadow-sm">
                             <div class="flex items-center gap-3">
-                                <div class="w-9 h-9 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center">
+                                <div
+                                    class="w-9 h-9 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center">
                                     <span class="material-symbols-outlined text-blue-500 text-xl">cloud</span>
                                 </div>
                                 <span class="text-sm font-semibold">Snowflake</span>
                             </div>
                             <div class="flex items-center gap-2 min-w-[100px]">
-                                <div class="skill-bar-track flex-1"><div class="skill-bar-fill bg-blue-400" data-width="85"></div></div>
+                                <div class="skill-bar-track flex-1">
+                                    <div class="skill-bar-fill bg-blue-400" data-width="85"></div>
+                                </div>
                                 <span class="text-xs font-bold text-slate-400 w-8 text-right">85%</span>
                             </div>
                         </div>
-                        <div class="flex items-center justify-between bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-3 rounded-xl shadow-sm">
+                        <div
+                            class="flex items-center justify-between bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-3 rounded-xl shadow-sm">
                             <div class="flex items-center gap-3">
-                                <div class="w-9 h-9 rounded-lg bg-orange-50 dark:bg-orange-900/20 flex items-center justify-center">
+                                <div
+                                    class="w-9 h-9 rounded-lg bg-orange-50 dark:bg-orange-900/20 flex items-center justify-center">
                                     <span class="material-symbols-outlined text-orange-500 text-xl">storage</span>
                                 </div>
                                 <span class="text-sm font-semibold">Oracle / SQL Server</span>
                             </div>
                             <div class="flex items-center gap-2 min-w-[100px]">
-                                <div class="skill-bar-track flex-1"><div class="skill-bar-fill bg-orange-400" data-width="90"></div></div>
+                                <div class="skill-bar-track flex-1">
+                                    <div class="skill-bar-fill bg-orange-400" data-width="90"></div>
+                                </div>
                                 <span class="text-xs font-bold text-slate-400 w-8 text-right">90%</span>
                             </div>
                         </div>
-                        <div class="flex items-center justify-between bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-3 rounded-xl shadow-sm">
+                        <div
+                            class="flex items-center justify-between bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-3 rounded-xl shadow-sm">
                             <div class="flex items-center gap-3">
-                                <div class="w-9 h-9 rounded-lg bg-indigo-50 dark:bg-indigo-900/20 flex items-center justify-center">
+                                <div
+                                    class="w-9 h-9 rounded-lg bg-indigo-50 dark:bg-indigo-900/20 flex items-center justify-center">
                                     <span class="material-symbols-outlined text-indigo-500 text-xl">sync_alt</span>
                                 </div>
                                 <span class="text-sm font-semibold">IBM DataStage / ADF</span>
                             </div>
                             <div class="flex items-center gap-2 min-w-[100px]">
-                                <div class="skill-bar-track flex-1"><div class="skill-bar-fill bg-indigo-400" data-width="78"></div></div>
+                                <div class="skill-bar-track flex-1">
+                                    <div class="skill-bar-fill bg-indigo-400" data-width="78"></div>
+                                </div>
                                 <span class="text-xs font-bold text-slate-400 w-8 text-right">78%</span>
                             </div>
                         </div>
@@ -376,30 +522,56 @@
 
                 <!-- Three-column: AI, Governance, Geospatial -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal reveal-delay-2">
-                    <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-5 shadow-sm">
+                    <div
+                        class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-5 shadow-sm">
                         <h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">AI & Automation</h3>
                         <div class="chips-row">
-                            <span class="tool-chip bg-rose-50 dark:bg-rose-900/20 text-rose-700 dark:text-rose-300 border-rose-200 dark:border-rose-800"><span class="material-symbols-outlined">psychology</span>AI Prompting</span>
-                            <span class="tool-chip bg-amber-50 dark:bg-amber-900/20 text-amber-700 dark:text-amber-300 border-amber-200 dark:border-amber-800"><span class="material-symbols-outlined">auto_awesome</span>Copilot</span>
-                            <span class="tool-chip bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-600"><span class="material-symbols-outlined">memory</span>MCP Server</span>
-                            <span class="tool-chip bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-600"><span class="material-symbols-outlined">bolt</span>Power Automate</span>
+                            <span
+                                class="tool-chip bg-rose-50 dark:bg-rose-900/20 text-rose-700 dark:text-rose-300 border-rose-200 dark:border-rose-800"><span
+                                    class="material-symbols-outlined">psychology</span>AI Prompting</span>
+                            <span
+                                class="tool-chip bg-amber-50 dark:bg-amber-900/20 text-amber-700 dark:text-amber-300 border-amber-200 dark:border-amber-800"><span
+                                    class="material-symbols-outlined">auto_awesome</span>Copilot</span>
+                            <span
+                                class="tool-chip bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-600"><span
+                                    class="material-symbols-outlined">memory</span>MCP Server</span>
+                            <span
+                                class="tool-chip bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-600"><span
+                                    class="material-symbols-outlined">bolt</span>Power Automate</span>
                         </div>
                     </div>
-                    <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-5 shadow-sm">
-                        <h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Governance & DevOps</h3>
+                    <div
+                        class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-5 shadow-sm">
+                        <h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Governance & DevOps
+                        </h3>
                         <div class="chips-row">
-                            <span class="tool-chip bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800"><span class="material-symbols-outlined">shield</span>RLS</span>
-                            <span class="tool-chip bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 border-green-200 dark:border-green-800"><span class="material-symbols-outlined">fork_right</span>Git / CI-CD</span>
-                            <span class="tool-chip bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-800"><span class="material-symbols-outlined">folder_code</span>PBIP / PBIR</span>
-                            <span class="tool-chip bg-purple-50 dark:bg-purple-900/20 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-800"><span class="material-symbols-outlined">verified_user</span>Compliance</span>
+                            <span
+                                class="tool-chip bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800"><span
+                                    class="material-symbols-outlined">shield</span>RLS</span>
+                            <span
+                                class="tool-chip bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 border-green-200 dark:border-green-800"><span
+                                    class="material-symbols-outlined">fork_right</span>Git / CI-CD</span>
+                            <span
+                                class="tool-chip bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-800"><span
+                                    class="material-symbols-outlined">folder_code</span>PBIP / PBIR</span>
+                            <span
+                                class="tool-chip bg-purple-50 dark:bg-purple-900/20 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-800"><span
+                                    class="material-symbols-outlined">verified_user</span>Compliance</span>
                         </div>
                     </div>
-                    <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-5 shadow-sm">
+                    <div
+                        class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-5 shadow-sm">
                         <h3 class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Geospatial</h3>
                         <div class="chips-row">
-                            <span class="tool-chip bg-teal-50 dark:bg-teal-900/20 text-teal-700 dark:text-teal-300 border-teal-200 dark:border-teal-800"><span class="material-symbols-outlined">map</span>QGIS</span>
-                            <span class="tool-chip bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800"><span class="material-symbols-outlined">location_on</span>Custom Maps</span>
-                            <span class="tool-chip bg-cyan-50 dark:bg-cyan-900/20 text-cyan-700 dark:text-cyan-300 border-cyan-200 dark:border-cyan-800"><span class="material-symbols-outlined">satellite_alt</span>Spatial Analytics</span>
+                            <span
+                                class="tool-chip bg-teal-50 dark:bg-teal-900/20 text-teal-700 dark:text-teal-300 border-teal-200 dark:border-teal-800"><span
+                                    class="material-symbols-outlined">map</span>QGIS</span>
+                            <span
+                                class="tool-chip bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800"><span
+                                    class="material-symbols-outlined">location_on</span>Custom Maps</span>
+                            <span
+                                class="tool-chip bg-cyan-50 dark:bg-cyan-900/20 text-cyan-700 dark:text-cyan-300 border-cyan-200 dark:border-cyan-800"><span
+                                    class="material-symbols-outlined">satellite_alt</span>Spatial Analytics</span>
                         </div>
                     </div>
                 </div>
@@ -411,17 +583,23 @@
         ═══════════════════════════════════════════ -->
         <section id="architecture">
             <div class="flex items-center gap-3 mb-3 reveal">
-                <span class="material-symbols-outlined text-primary p-2 bg-primary/10 rounded-xl text-2xl">account_tree</span>
+                <span
+                    class="material-symbols-outlined text-primary p-2 bg-primary/10 rounded-xl text-2xl">account_tree</span>
                 <div>
                     <h2 class="text-2xl font-extrabold tracking-tight">Architecture Thinking</h2>
-                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-0.5">How I approach every enterprise BI engagement — from raw requirement to AI-powered delivery</p>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mt-0.5">How I approach every enterprise BI
+                        engagement — from raw requirement to AI-powered delivery</p>
                 </div>
             </div>
 
             <!-- Mode toggle -->
             <div class="flex items-center gap-3 mb-8 reveal reveal-delay-1">
-                <button onclick="setView('flow')" id="btn-flow" class="arch-view-btn active text-xs font-bold px-4 py-2 rounded-full border border-primary bg-primary text-white transition-all">Flow View</button>
-                <button onclick="setView('layers')" id="btn-layers" class="arch-view-btn text-xs font-bold px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 hover:border-primary hover:text-primary transition-all">Layer View</button>
+                <button onclick="setView('flow')" id="btn-flow"
+                    class="arch-view-btn active text-xs font-bold px-4 py-2 rounded-full border border-primary bg-primary text-white transition-all">Flow
+                    View</button>
+                <button onclick="setView('layers')" id="btn-layers"
+                    class="arch-view-btn text-xs font-bold px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 hover:border-primary hover:text-primary transition-all">Layer
+                    View</button>
                 <span class="text-xs text-slate-400 hidden sm:block">Click any card for details</span>
             </div>
 
@@ -430,60 +608,83 @@
 
                 <!-- ┌─ LAYER A: BUSINESS INPUT ─┐ -->
                 <div class="arch-layer reveal reveal-delay-1 bg-gradient-to-br from-violet-50 to-purple-50 dark:from-violet-900/20 dark:to-purple-900/10 border-violet-200 dark:border-violet-800/50 hover:shadow-lg hover:shadow-violet-100 dark:hover:shadow-violet-900/20"
-                     onclick="openDetail('req')">
+                    onclick="openDetail('req')">
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                         <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-2xl bg-violet-100 dark:bg-violet-900/40 flex items-center justify-center flex-shrink-0 glow-node">
-                                <span class="material-symbols-outlined text-violet-600 dark:text-violet-400 text-2xl">lightbulb</span>
+                            <div
+                                class="w-12 h-12 rounded-2xl bg-violet-100 dark:bg-violet-900/40 flex items-center justify-center flex-shrink-0 glow-node">
+                                <span
+                                    class="material-symbols-outlined text-violet-600 dark:text-violet-400 text-2xl">lightbulb</span>
                             </div>
                             <div>
                                 <div class="flex items-center gap-2 mb-1">
-                                    <span class="step-badge bg-violet-100 dark:bg-violet-900/50 text-violet-700 dark:text-violet-300">01</span>
-                                    <span class="text-xs font-bold uppercase tracking-wider text-violet-500">Business Input</span>
+                                    <span
+                                        class="step-badge bg-violet-100 dark:bg-violet-900/50 text-violet-700 dark:text-violet-300">01</span>
+                                    <span class="text-xs font-bold uppercase tracking-wider text-violet-500">Business
+                                        Input</span>
                                 </div>
                                 <h4 class="font-bold text-lg text-slate-900 dark:text-white">Requirement Discovery</h4>
-                                <p class="text-sm text-slate-500 dark:text-slate-400 mt-0.5">Stakeholder workshops, KPI definition, SRDs & wireframes</p>
+                                <p class="text-sm text-slate-500 dark:text-slate-400 mt-0.5">Stakeholder workshops, KPI
+                                    definition, SRDs & wireframes</p>
                             </div>
                         </div>
                         <div class="chips-row sm:justify-end">
-                            <span class="tool-chip bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 border-violet-200 dark:border-violet-700"><span class="material-symbols-outlined">groups</span>Stakeholders</span>
-                            <span class="tool-chip bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-700"><span class="material-symbols-outlined">document_scanner</span>SRD / Wireframes</span>
+                            <span
+                                class="tool-chip bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 border-violet-200 dark:border-violet-700"><span
+                                    class="material-symbols-outlined">groups</span>Stakeholders</span>
+                            <span
+                                class="tool-chip bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-700"><span
+                                    class="material-symbols-outlined">document_scanner</span>SRD / Wireframes</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Connector -->
-                <div class="flow-arrow"><div class="arrow-line"></div><div class="flow-label">Ingest</div><div class="arrow-head"></div></div>
+                <div class="flow-arrow">
+                    <div class="arrow-line"></div>
+                    <div class="flow-label">Ingest</div>
+                    <div class="arrow-head"></div>
+                </div>
 
                 <!-- ┌─ LAYER B: DATA SOURCES ─┐ -->
                 <div class="arch-layer reveal reveal-delay-2 bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/10 border-blue-200 dark:border-blue-800/50 hover:shadow-lg hover:shadow-blue-100 dark:hover:shadow-blue-900/20"
-                     onclick="openDetail('sources')">
+                    onclick="openDetail('sources')">
                     <div class="mb-4 flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center flex-shrink-0">
-                            <span class="material-symbols-outlined text-blue-600 dark:text-blue-400 text-xl">database</span>
+                        <div
+                            class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center flex-shrink-0">
+                            <span
+                                class="material-symbols-outlined text-blue-600 dark:text-blue-400 text-xl">database</span>
                         </div>
                         <div>
-                            <div class="flex items-center gap-2"><span class="step-badge bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300">02</span><span class="text-xs font-bold uppercase tracking-wider text-blue-500">Source Layer</span></div>
-                            <h4 class="font-bold text-base text-slate-900 dark:text-white">Multi-Source Data Ingestion</h4>
+                            <div class="flex items-center gap-2"><span
+                                    class="step-badge bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300">02</span><span
+                                    class="text-xs font-bold uppercase tracking-wider text-blue-500">Source Layer</span>
+                            </div>
+                            <h4 class="font-bold text-base text-slate-900 dark:text-white">Multi-Source Data Ingestion
+                            </h4>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                        <div class="has-tooltip flex flex-col items-center gap-2 p-3 rounded-xl bg-white dark:bg-slate-800/60 border border-blue-100 dark:border-blue-900/40 text-center hover:border-blue-400 transition-colors cursor-default">
+                        <div
+                            class="has-tooltip flex flex-col items-center gap-2 p-3 rounded-xl bg-white dark:bg-slate-800/60 border border-blue-100 dark:border-blue-900/40 text-center hover:border-blue-400 transition-colors cursor-default">
                             <span class="material-symbols-outlined text-orange-500 text-2xl">storage</span>
                             <span class="text-xs font-bold text-slate-700 dark:text-slate-300">Oracle DB</span>
                             <span class="tooltip-box">Legacy transactional data, views & stored procedures</span>
                         </div>
-                        <div class="has-tooltip flex flex-col items-center gap-2 p-3 rounded-xl bg-white dark:bg-slate-800/60 border border-blue-100 dark:border-blue-900/40 text-center hover:border-cyan-400 transition-colors cursor-default">
+                        <div
+                            class="has-tooltip flex flex-col items-center gap-2 p-3 rounded-xl bg-white dark:bg-slate-800/60 border border-blue-100 dark:border-blue-900/40 text-center hover:border-cyan-400 transition-colors cursor-default">
                             <span class="material-symbols-outlined text-cyan-500 text-2xl">cloud</span>
                             <span class="text-xs font-bold text-slate-700 dark:text-slate-300">Snowflake</span>
                             <span class="tooltip-box">Cloud DWH — optimized queries, materialized views</span>
                         </div>
-                        <div class="has-tooltip flex flex-col items-center gap-2 p-3 rounded-xl bg-white dark:bg-slate-800/60 border border-blue-100 dark:border-blue-900/40 text-center hover:border-blue-400 transition-colors cursor-default">
+                        <div
+                            class="has-tooltip flex flex-col items-center gap-2 p-3 rounded-xl bg-white dark:bg-slate-800/60 border border-blue-100 dark:border-blue-900/40 text-center hover:border-blue-400 transition-colors cursor-default">
                             <span class="material-symbols-outlined text-blue-500 text-2xl">api</span>
                             <span class="text-xs font-bold text-slate-700 dark:text-slate-300">REST APIs</span>
                             <span class="tooltip-box">Real-time feeds — JSON, OAuth 2.0, pagination handling</span>
                         </div>
-                        <div class="has-tooltip flex flex-col items-center gap-2 p-3 rounded-xl bg-white dark:bg-slate-800/60 border border-blue-100 dark:border-blue-900/40 text-center hover:border-green-400 transition-colors cursor-default">
+                        <div
+                            class="has-tooltip flex flex-col items-center gap-2 p-3 rounded-xl bg-white dark:bg-slate-800/60 border border-blue-100 dark:border-blue-900/40 text-center hover:border-green-400 transition-colors cursor-default">
                             <span class="material-symbols-outlined text-green-500 text-2xl">folder_open</span>
                             <span class="text-xs font-bold text-slate-700 dark:text-slate-300">SharePoint / Files</span>
                             <span class="tooltip-box">Excel, CSV, SharePoint lists via Power Query connectors</span>
@@ -492,79 +693,128 @@
                 </div>
 
                 <!-- Connector -->
-                <div class="flow-arrow"><div class="arrow-line"></div><div class="flow-label">Transform</div><div class="arrow-head"></div></div>
+                <div class="flow-arrow">
+                    <div class="arrow-line"></div>
+                    <div class="flow-label">Transform</div>
+                    <div class="arrow-head"></div>
+                </div>
 
                 <!-- ┌─ LAYER C: ETL / FABRIC ─┐ -->
                 <div class="arch-layer reveal reveal-delay-3 bg-gradient-to-br from-indigo-50 to-blue-50 dark:from-indigo-900/20 dark:to-blue-900/10 border-indigo-200 dark:border-indigo-800/50 hover:shadow-lg hover:shadow-indigo-100 dark:hover:shadow-indigo-900/20"
-                     onclick="openDetail('etl')">
+                    onclick="openDetail('etl')">
                     <div class="flex flex-col sm:flex-row gap-6">
                         <div class="flex-shrink-0">
                             <div class="flex items-center gap-3 mb-3">
-                                <div class="w-10 h-10 rounded-xl bg-indigo-100 dark:bg-indigo-900/40 flex items-center justify-center">
-                                    <span class="material-symbols-outlined text-indigo-600 dark:text-indigo-400 text-xl">sync_alt</span>
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-indigo-100 dark:bg-indigo-900/40 flex items-center justify-center">
+                                    <span
+                                        class="material-symbols-outlined text-indigo-600 dark:text-indigo-400 text-xl">sync_alt</span>
                                 </div>
                                 <div>
-                                    <div class="flex items-center gap-2"><span class="step-badge bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300">03</span><span class="text-xs font-bold uppercase tracking-wider text-indigo-500">ETL / ELT Layer</span></div>
-                                    <h4 class="font-bold text-base text-slate-900 dark:text-white">Pipeline & Transformation</h4>
+                                    <div class="flex items-center gap-2"><span
+                                            class="step-badge bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300">03</span><span
+                                            class="text-xs font-bold uppercase tracking-wider text-indigo-500">ETL / ELT
+                                            Layer</span></div>
+                                    <h4 class="font-bold text-base text-slate-900 dark:text-white">Pipeline &
+                                        Transformation</h4>
                                 </div>
                             </div>
-                            <p class="text-sm text-slate-500 dark:text-slate-400 max-w-xs">Microsoft Fabric Pipelines, Azure Data Factory, IBM DataStage — orchestrating data from raw to refined.</p>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 max-w-xs">Microsoft Fabric Pipelines,
+                                Azure Data Factory, IBM DataStage — orchestrating data from raw to refined.</p>
                         </div>
                         <div class="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-3">
-                            <div class="bg-white dark:bg-slate-800/60 border border-indigo-100 dark:border-indigo-900/40 rounded-xl p-3">
-                                <div class="flex items-center gap-2 mb-2"><span class="material-symbols-outlined text-amber-500 text-base">layers</span><span class="text-xs font-bold text-amber-600 dark:text-amber-400">Bronze</span></div>
-                                <p class="text-xs text-slate-500 dark:text-slate-400">Raw ingestion — full fidelity, no transformations</p>
+                            <div
+                                class="bg-white dark:bg-slate-800/60 border border-indigo-100 dark:border-indigo-900/40 rounded-xl p-3">
+                                <div class="flex items-center gap-2 mb-2"><span
+                                        class="material-symbols-outlined text-amber-500 text-base">layers</span><span
+                                        class="text-xs font-bold text-amber-600 dark:text-amber-400">Bronze</span></div>
+                                <p class="text-xs text-slate-500 dark:text-slate-400">Raw ingestion — full fidelity, no
+                                    transformations</p>
                             </div>
-                            <div class="bg-white dark:bg-slate-800/60 border border-indigo-100 dark:border-indigo-900/40 rounded-xl p-3">
-                                <div class="flex items-center gap-2 mb-2"><span class="material-symbols-outlined text-slate-400 text-base">layers</span><span class="text-xs font-bold text-slate-500 dark:text-slate-400">Silver</span></div>
-                                <p class="text-xs text-slate-500 dark:text-slate-400">Cleansed, deduplicated, typed & validated</p>
+                            <div
+                                class="bg-white dark:bg-slate-800/60 border border-indigo-100 dark:border-indigo-900/40 rounded-xl p-3">
+                                <div class="flex items-center gap-2 mb-2"><span
+                                        class="material-symbols-outlined text-slate-400 text-base">layers</span><span
+                                        class="text-xs font-bold text-slate-500 dark:text-slate-400">Silver</span></div>
+                                <p class="text-xs text-slate-500 dark:text-slate-400">Cleansed, deduplicated, typed &
+                                    validated</p>
                             </div>
-                            <div class="bg-white dark:bg-slate-800/60 border border-indigo-100 dark:border-indigo-900/40 rounded-xl p-3">
-                                <div class="flex items-center gap-2 mb-2"><span class="material-symbols-outlined text-yellow-500 text-base">workspace_premium</span><span class="text-xs font-bold text-yellow-600 dark:text-yellow-400">Gold</span></div>
-                                <p class="text-xs text-slate-500 dark:text-slate-400">Business-ready, aggregated, ready for BI layer</p>
+                            <div
+                                class="bg-white dark:bg-slate-800/60 border border-indigo-100 dark:border-indigo-900/40 rounded-xl p-3">
+                                <div class="flex items-center gap-2 mb-2"><span
+                                        class="material-symbols-outlined text-yellow-500 text-base">workspace_premium</span><span
+                                        class="text-xs font-bold text-yellow-600 dark:text-yellow-400">Gold</span></div>
+                                <p class="text-xs text-slate-500 dark:text-slate-400">Business-ready, aggregated, ready
+                                    for BI layer</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Connector -->
-                <div class="flow-arrow"><div class="arrow-line"></div><div class="flow-label">Model</div><div class="arrow-head"></div></div>
+                <div class="flow-arrow">
+                    <div class="arrow-line"></div>
+                    <div class="flow-label">Model</div>
+                    <div class="arrow-head"></div>
+                </div>
 
                 <!-- ┌─ LAYER D: SEMANTIC MODEL ─┐ -->
                 <div class="arch-layer reveal reveal-delay-4 bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/10 border-emerald-200 dark:border-emerald-800/50 hover:shadow-lg hover:shadow-emerald-100 dark:hover:shadow-emerald-900/20"
-                     onclick="openDetail('model')">
+                    onclick="openDetail('model')">
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                         <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center flex-shrink-0">
-                                <span class="material-symbols-outlined text-emerald-600 dark:text-emerald-400 text-xl">schema</span>
+                            <div
+                                class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center flex-shrink-0">
+                                <span
+                                    class="material-symbols-outlined text-emerald-600 dark:text-emerald-400 text-xl">schema</span>
                             </div>
                             <div>
-                                <div class="flex items-center gap-2"><span class="step-badge bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300">04</span><span class="text-xs font-bold uppercase tracking-wider text-emerald-500">Semantic Layer</span></div>
-                                <h4 class="font-bold text-base text-slate-900 dark:text-white">Star Schema · DAX · Semantic Model</h4>
-                                <p class="text-sm text-slate-500 dark:text-slate-400 mt-0.5">Power BI semantic model — measures, hierarchies, RLS, TMDL, PBIP version control</p>
+                                <div class="flex items-center gap-2"><span
+                                        class="step-badge bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300">04</span><span
+                                        class="text-xs font-bold uppercase tracking-wider text-emerald-500">Semantic
+                                        Layer</span></div>
+                                <h4 class="font-bold text-base text-slate-900 dark:text-white">Star Schema · DAX ·
+                                    Semantic Model</h4>
+                                <p class="text-sm text-slate-500 dark:text-slate-400 mt-0.5">Power BI semantic model —
+                                    measures, hierarchies, RLS, TMDL, PBIP version control</p>
                             </div>
                         </div>
                         <div class="chips-row sm:justify-end">
-                            <span class="tool-chip bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-700"><span class="material-symbols-outlined">calculate</span>DAX</span>
-                            <span class="tool-chip bg-teal-100 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300 border-teal-200 dark:border-teal-700"><span class="material-symbols-outlined">account_tree</span>Star Schema</span>
-                            <span class="tool-chip bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 border-green-200 dark:border-green-700"><span class="material-symbols-outlined">shield</span>RLS</span>
+                            <span
+                                class="tool-chip bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-700"><span
+                                    class="material-symbols-outlined">calculate</span>DAX</span>
+                            <span
+                                class="tool-chip bg-teal-100 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300 border-teal-200 dark:border-teal-700"><span
+                                    class="material-symbols-outlined">account_tree</span>Star Schema</span>
+                            <span
+                                class="tool-chip bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 border-green-200 dark:border-green-700"><span
+                                    class="material-symbols-outlined">shield</span>RLS</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Connector -->
-                <div class="flow-arrow"><div class="arrow-line"></div><div class="flow-label">Deliver</div><div class="arrow-head"></div></div>
+                <div class="flow-arrow">
+                    <div class="arrow-line"></div>
+                    <div class="flow-label">Deliver</div>
+                    <div class="arrow-head"></div>
+                </div>
 
                 <!-- ┌─ LAYER E: BI DELIVERY ─┐ -->
                 <div class="arch-layer reveal reveal-delay-5 bg-gradient-to-br from-primary/10 to-blue-100/60 dark:from-primary/20 dark:to-blue-900/10 border-primary/40 dark:border-primary/30 hover:shadow-lg hover:shadow-primary/10"
-                     onclick="openDetail('delivery')">
+                    onclick="openDetail('delivery')">
                     <div class="mb-4 flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-primary/15 dark:bg-primary/30 flex items-center justify-center flex-shrink-0">
+                        <div
+                            class="w-10 h-10 rounded-xl bg-primary/15 dark:bg-primary/30 flex items-center justify-center flex-shrink-0">
                             <span class="material-symbols-outlined text-primary text-xl">bar_chart</span>
                         </div>
                         <div>
-                            <div class="flex items-center gap-2"><span class="step-badge bg-primary/15 text-primary">05</span><span class="text-xs font-bold uppercase tracking-wider text-primary">BI Delivery</span></div>
-                            <h4 class="font-bold text-base text-slate-900 dark:text-white">Multi-Platform Dashboard Delivery</h4>
+                            <div class="flex items-center gap-2"><span
+                                    class="step-badge bg-primary/15 text-primary">05</span><span
+                                    class="text-xs font-bold uppercase tracking-wider text-primary">BI Delivery</span>
+                            </div>
+                            <h4 class="font-bold text-base text-slate-900 dark:text-white">Multi-Platform Dashboard
+                                Delivery</h4>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -574,7 +824,8 @@
                             <span class="text-[10px] text-slate-400 block">Operational & Exec</span>
                         </div>
                         <div class="bg-white dark:bg-slate-800/60 border border-primary/20 rounded-xl p-3 text-center">
-                            <span class="material-symbols-outlined text-orange-500 text-xl block mb-1">table_chart</span>
+                            <span
+                                class="material-symbols-outlined text-orange-500 text-xl block mb-1">table_chart</span>
                             <span class="text-xs font-bold text-slate-700 dark:text-slate-300">Tableau</span>
                             <span class="text-[10px] text-slate-400 block">Self-Service BI</span>
                         </div>
@@ -592,45 +843,69 @@
                 </div>
 
                 <!-- Connector -->
-                <div class="flow-arrow"><div class="arrow-line"></div><div class="flow-label">Govern</div><div class="arrow-head"></div></div>
+                <div class="flow-arrow">
+                    <div class="arrow-line"></div>
+                    <div class="flow-label">Govern</div>
+                    <div class="arrow-head"></div>
+                </div>
 
                 <!-- ┌─ LAYER F: GOVERNANCE ─┐ -->
                 <div class="arch-layer reveal bg-gradient-to-br from-slate-50 to-slate-100/80 dark:from-slate-800/50 dark:to-slate-900/30 border-slate-200 dark:border-slate-700 hover:shadow-lg"
-                     onclick="openDetail('gov')">
+                    onclick="openDetail('gov')">
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                         <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-slate-200 dark:bg-slate-700 flex items-center justify-center flex-shrink-0">
-                                <span class="material-symbols-outlined text-slate-600 dark:text-slate-300 text-xl">verified_user</span>
+                            <div
+                                class="w-10 h-10 rounded-xl bg-slate-200 dark:bg-slate-700 flex items-center justify-center flex-shrink-0">
+                                <span
+                                    class="material-symbols-outlined text-slate-600 dark:text-slate-300 text-xl">verified_user</span>
                             </div>
                             <div>
-                                <div class="flex items-center gap-2"><span class="step-badge bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300">06</span><span class="text-xs font-bold uppercase tracking-wider text-slate-500">Governance</span></div>
-                                <h4 class="font-bold text-base text-slate-900 dark:text-white">Security · RLS · CI/CD · PBIP</h4>
-                                <p class="text-sm text-slate-500 dark:text-slate-400 mt-0.5">Row-Level Security, workspace policies, deployment pipelines, Git version control</p>
+                                <div class="flex items-center gap-2"><span
+                                        class="step-badge bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300">06</span><span
+                                        class="text-xs font-bold uppercase tracking-wider text-slate-500">Governance</span>
+                                </div>
+                                <h4 class="font-bold text-base text-slate-900 dark:text-white">Security · RLS · CI/CD ·
+                                    PBIP</h4>
+                                <p class="text-sm text-slate-500 dark:text-slate-400 mt-0.5">Row-Level Security,
+                                    workspace policies, deployment pipelines, Git version control</p>
                             </div>
                         </div>
                         <div class="chips-row sm:justify-end">
-                            <span class="tool-chip bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 border-green-200 dark:border-green-700"><span class="material-symbols-outlined">fork_right</span>Git / PBIP</span>
-                            <span class="tool-chip bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-700"><span class="material-symbols-outlined">deployed_code</span>CI/CD</span>
-                            <span class="tool-chip bg-purple-50 dark:bg-purple-900/20 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-700"><span class="material-symbols-outlined">manage_accounts</span>TMDL</span>
+                            <span
+                                class="tool-chip bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 border-green-200 dark:border-green-700"><span
+                                    class="material-symbols-outlined">fork_right</span>Git / PBIP</span>
+                            <span
+                                class="tool-chip bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-700"><span
+                                    class="material-symbols-outlined">deployed_code</span>CI/CD</span>
+                            <span
+                                class="tool-chip bg-purple-50 dark:bg-purple-900/20 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-700"><span
+                                    class="material-symbols-outlined">manage_accounts</span>TMDL</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Connector -->
-                <div class="flow-arrow"><div class="arrow-line"></div><div class="flow-label">Augment</div><div class="arrow-head"></div></div>
+                <div class="flow-arrow">
+                    <div class="arrow-line"></div>
+                    <div class="flow-label">Augment</div>
+                    <div class="arrow-head"></div>
+                </div>
 
                 <!-- ┌─ LAYER G: AI OUTCOME (FINAL) ─┐ -->
                 <div class="arch-layer reveal bg-gradient-to-br from-slate-900 to-slate-800 dark:from-slate-950 dark:to-slate-900 border-primary/50 hover:shadow-2xl hover:shadow-primary/20 cursor-pointer"
-                     onclick="openDetail('ai')">
+                    onclick="openDetail('ai')">
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
                         <div class="flex items-center gap-4">
-                            <div class="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center flex-shrink-0 glow-node">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center flex-shrink-0 glow-node">
                                 <span class="material-symbols-outlined text-white text-2xl">auto_awesome</span>
                             </div>
                             <div>
-                                <span class="text-xs font-bold uppercase tracking-widest text-primary">Final Outcome</span>
+                                <span class="text-xs font-bold uppercase tracking-widest text-primary">Final
+                                    Outcome</span>
                                 <h4 class="font-bold text-xl text-white mt-0.5">AI-Powered BI Ecosystem</h4>
-                                <p class="text-sm text-slate-400 mt-0.5">Copilot narration · MCP natural language queries · AI-generated DAX · automated insight summaries</p>
+                                <p class="text-sm text-slate-400 mt-0.5">Copilot narration · MCP natural language
+                                    queries · AI-generated DAX · automated insight summaries</p>
                             </div>
                         </div>
                         <!-- Outcome pills -->
@@ -656,42 +931,69 @@
             <div id="view-layers" class="hidden">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                     <!-- Each architecture domain as a card -->
-                    <div class="lift bg-white dark:bg-slate-900 border border-violet-200 dark:border-violet-800/40 rounded-2xl p-6 cursor-pointer" onclick="openDetail('req')">
-                        <div class="w-11 h-11 rounded-xl bg-violet-100 dark:bg-violet-900/40 flex items-center justify-center mb-4"><span class="material-symbols-outlined text-violet-600 text-xl">lightbulb</span></div>
+                    <div class="lift bg-white dark:bg-slate-900 border border-violet-200 dark:border-violet-800/40 rounded-2xl p-6 cursor-pointer"
+                        onclick="openDetail('req')">
+                        <div
+                            class="w-11 h-11 rounded-xl bg-violet-100 dark:bg-violet-900/40 flex items-center justify-center mb-4">
+                            <span class="material-symbols-outlined text-violet-600 text-xl">lightbulb</span></div>
                         <h4 class="font-bold text-slate-900 dark:text-white mb-1">Requirement Discovery</h4>
-                        <p class="text-xs text-slate-500 dark:text-slate-400">Stakeholder workshops, KPI definition, SRDs & wireframes</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Stakeholder workshops, KPI definition,
+                            SRDs & wireframes</p>
                     </div>
-                    <div class="lift bg-white dark:bg-slate-900 border border-blue-200 dark:border-blue-800/40 rounded-2xl p-6 cursor-pointer" onclick="openDetail('sources')">
-                        <div class="w-11 h-11 rounded-xl bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center mb-4"><span class="material-symbols-outlined text-blue-600 text-xl">database</span></div>
+                    <div class="lift bg-white dark:bg-slate-900 border border-blue-200 dark:border-blue-800/40 rounded-2xl p-6 cursor-pointer"
+                        onclick="openDetail('sources')">
+                        <div
+                            class="w-11 h-11 rounded-xl bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center mb-4">
+                            <span class="material-symbols-outlined text-blue-600 text-xl">database</span></div>
                         <h4 class="font-bold text-slate-900 dark:text-white mb-1">Multi-Source Ingestion</h4>
-                        <p class="text-xs text-slate-500 dark:text-slate-400">Oracle, Snowflake, REST APIs, SharePoint, JSON feeds</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Oracle, Snowflake, REST APIs, SharePoint,
+                            JSON feeds</p>
                     </div>
-                    <div class="lift bg-white dark:bg-slate-900 border border-indigo-200 dark:border-indigo-800/40 rounded-2xl p-6 cursor-pointer" onclick="openDetail('etl')">
-                        <div class="w-11 h-11 rounded-xl bg-indigo-100 dark:bg-indigo-900/40 flex items-center justify-center mb-4"><span class="material-symbols-outlined text-indigo-600 text-xl">sync_alt</span></div>
+                    <div class="lift bg-white dark:bg-slate-900 border border-indigo-200 dark:border-indigo-800/40 rounded-2xl p-6 cursor-pointer"
+                        onclick="openDetail('etl')">
+                        <div
+                            class="w-11 h-11 rounded-xl bg-indigo-100 dark:bg-indigo-900/40 flex items-center justify-center mb-4">
+                            <span class="material-symbols-outlined text-indigo-600 text-xl">sync_alt</span></div>
                         <h4 class="font-bold text-slate-900 dark:text-white mb-1">ETL / Medallion Pipeline</h4>
-                        <p class="text-xs text-slate-500 dark:text-slate-400">Bronze → Silver → Gold via Fabric, ADF, DataStage</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Bronze → Silver → Gold via Fabric, ADF,
+                            DataStage</p>
                     </div>
-                    <div class="lift bg-white dark:bg-slate-900 border border-emerald-200 dark:border-emerald-800/40 rounded-2xl p-6 cursor-pointer" onclick="openDetail('model')">
-                        <div class="w-11 h-11 rounded-xl bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center mb-4"><span class="material-symbols-outlined text-emerald-600 text-xl">schema</span></div>
+                    <div class="lift bg-white dark:bg-slate-900 border border-emerald-200 dark:border-emerald-800/40 rounded-2xl p-6 cursor-pointer"
+                        onclick="openDetail('model')">
+                        <div
+                            class="w-11 h-11 rounded-xl bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center mb-4">
+                            <span class="material-symbols-outlined text-emerald-600 text-xl">schema</span></div>
                         <h4 class="font-bold text-slate-900 dark:text-white mb-1">Semantic Model</h4>
-                        <p class="text-xs text-slate-500 dark:text-slate-400">Star schema, DAX measures, RLS, TMDL, PBIP versioning</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Star schema, DAX measures, RLS, TMDL, PBIP
+                            versioning</p>
                     </div>
-                    <div class="lift bg-white dark:bg-slate-900 border border-primary/30 dark:border-primary/20 rounded-2xl p-6 cursor-pointer" onclick="openDetail('delivery')">
-                        <div class="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-4"><span class="material-symbols-outlined text-primary text-xl">bar_chart</span></div>
+                    <div class="lift bg-white dark:bg-slate-900 border border-primary/30 dark:border-primary/20 rounded-2xl p-6 cursor-pointer"
+                        onclick="openDetail('delivery')">
+                        <div class="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-4"><span
+                                class="material-symbols-outlined text-primary text-xl">bar_chart</span></div>
                         <h4 class="font-bold text-slate-900 dark:text-white mb-1">Dashboard Delivery</h4>
-                        <p class="text-xs text-slate-500 dark:text-slate-400">Power BI, Tableau, Spotfire, Geospatial — multi-platform</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Power BI, Tableau, Spotfire, Geospatial —
+                            multi-platform</p>
                     </div>
-                    <div class="lift bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 cursor-pointer" onclick="openDetail('gov')">
-                        <div class="w-11 h-11 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-4"><span class="material-symbols-outlined text-slate-500 text-xl">verified_user</span></div>
+                    <div class="lift bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-2xl p-6 cursor-pointer"
+                        onclick="openDetail('gov')">
+                        <div
+                            class="w-11 h-11 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-4">
+                            <span class="material-symbols-outlined text-slate-500 text-xl">verified_user</span></div>
                         <h4 class="font-bold text-slate-900 dark:text-white mb-1">Governance & CI/CD</h4>
-                        <p class="text-xs text-slate-500 dark:text-slate-400">RLS, Git/PBIP, deployment pipelines, workspace policies</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">RLS, Git/PBIP, deployment pipelines,
+                            workspace policies</p>
                     </div>
-                    <div class="lift md:col-span-2 lg:col-span-3 bg-gradient-to-br from-slate-900 to-slate-800 border border-primary/50 rounded-2xl p-6 cursor-pointer" onclick="openDetail('ai')">
+                    <div class="lift md:col-span-2 lg:col-span-3 bg-gradient-to-br from-slate-900 to-slate-800 border border-primary/50 rounded-2xl p-6 cursor-pointer"
+                        onclick="openDetail('ai')">
                         <div class="flex items-center gap-4 mb-3">
-                            <div class="w-11 h-11 rounded-xl bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-white text-xl">auto_awesome</span></div>
+                            <div class="w-11 h-11 rounded-xl bg-primary flex items-center justify-center"><span
+                                    class="material-symbols-outlined text-white text-xl">auto_awesome</span></div>
                             <h4 class="font-bold text-white text-lg">AI-Powered BI Ecosystem — Final Outcome</h4>
                         </div>
-                        <p class="text-sm text-slate-400">Copilot narration, MCP natural language queries, automated DAX generation, insight summarization — 20% efficiency ↑, 30% faster processing, 25% less manual work.</p>
+                        <p class="text-sm text-slate-400">Copilot narration, MCP natural language queries, automated DAX
+                            generation, insight summarization — 20% efficiency ↑, 30% faster processing, 25% less manual
+                            work.</p>
                     </div>
                 </div>
             </div>
@@ -699,10 +1001,14 @@
     </main>
 
     <!-- ═══ DETAIL MODAL ═══ -->
-    <div id="detail-modal" class="fixed inset-0 z-[100] flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-200" onclick="closeDetail(event)">
+    <div id="detail-modal"
+        class="fixed inset-0 z-[100] flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-200"
+        onclick="closeDetail(event)">
         <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"></div>
-        <div id="modal-panel" class="relative bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 max-w-lg w-full p-8 transform scale-95 transition-transform duration-200 max-h-[85vh] overflow-y-auto">
-            <button onclick="closeDetail()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+        <div id="modal-panel"
+            class="relative bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 max-w-lg w-full p-8 transform scale-95 transition-transform duration-200 max-h-[85vh] overflow-y-auto">
+            <button onclick="closeDetail()"
+                class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
                 <span class="material-symbols-outlined text-sm">close</span>
             </button>
             <div id="modal-content"></div>
@@ -710,16 +1016,23 @@
     </div>
 
     <!-- ═══ FOOTER ═══ -->
-    <footer class="relative bg-slate-50 dark:bg-[#0a0f1c] pt-10 pb-24 md:pb-8 border-t border-slate-200 dark:border-slate-800/40 overflow-hidden text-slate-600 dark:text-slate-300 transition-colors duration-300">
-        <div class="hidden dark:block absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
-        <div class="hidden dark:block absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-64 bg-primary/10 blur-[100px] rounded-full pointer-events-none"></div>
+    <footer
+        class="relative bg-slate-50 dark:bg-[#0a0f1c] pt-10 pb-24 md:pb-8 border-t border-slate-200 dark:border-slate-800/40 overflow-hidden text-slate-600 dark:text-slate-300 transition-colors duration-300">
+        <div
+            class="hidden dark:block absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent">
+        </div>
+        <div
+            class="hidden dark:block absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-64 bg-primary/10 blur-[100px] rounded-full pointer-events-none">
+        </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-xs font-medium">© 2026 Abdul Wassay. Built with <span class="text-rose-500 animate-pulse inline-block">❤</span> in India</p>
+                <p class="text-xs font-medium">© 2026 Abdul Wassay. Built with <span
+                        class="text-rose-500 animate-pulse inline-block">❤</span> in India</p>
                 <div class="flex gap-6">
                     <a href="index.html" class="text-xs hover:text-primary transition-colors font-medium">Home</a>
                     <a href="contact.html" class="text-xs hover:text-primary transition-colors font-medium">Contact</a>
-                    <a href="projects_experience.html" class="text-xs hover:text-primary transition-colors font-medium">Work</a>
+                    <a href="projects_experience.html"
+                        class="text-xs hover:text-primary transition-colors font-medium">Work</a>
                 </div>
             </div>
         </div>
@@ -729,12 +1042,24 @@
     <div class="md:hidden fixed bottom-6 left-0 right-0 z-40 px-4 pointer-events-none">
         <div class="max-w-md mx-auto pointer-events-auto">
             <div class="flex bg-slate-900 border border-slate-800 rounded-full p-1.5 shadow-2xl overflow-x-auto">
-                <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white" href="index.html"><span class="material-symbols-outlined">home</span><span class="text-[10px] font-bold">Home</span></a>
-                <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white" href="projects_experience.html"><span class="material-symbols-outlined">grid_view</span><span class="text-[10px] font-bold">Work</span></a>
-                <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white" href="professional_resume.html"><span class="material-symbols-outlined">article</span><span class="text-[10px] font-bold">Resume</span></a>
-                <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-white bg-primary rounded-full" href="skills_architecture.html"><span class="material-symbols-outlined">psychology</span><span class="text-[10px] font-bold">Skills</span></a>
-                <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white" href="blog.html"><span class="material-symbols-outlined">menu_book</span><span class="text-[10px] font-bold">Blog</span></a>
-                <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white" href="contact.html"><span class="material-symbols-outlined">contact_support</span><span class="text-[10px] font-bold">Contact</span></a>
+                <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white"
+                    href="index.html"><span class="material-symbols-outlined">home</span><span
+                        class="text-[10px] font-bold">Home</span></a>
+                <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white"
+                    href="projects_experience.html"><span class="material-symbols-outlined">grid_view</span><span
+                        class="text-[10px] font-bold">Work</span></a>
+                <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white"
+                    href="professional_resume.html"><span class="material-symbols-outlined">article</span><span
+                        class="text-[10px] font-bold">Resume</span></a>
+                <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-white bg-primary rounded-full"
+                    href="skills_architecture.html"><span class="material-symbols-outlined">psychology</span><span
+                        class="text-[10px] font-bold">Skills</span></a>
+                <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white"
+                    href="blog.html"><span class="material-symbols-outlined">menu_book</span><span
+                        class="text-[10px] font-bold">Blog</span></a>
+                <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white"
+                    href="contact.html"><span class="material-symbols-outlined">contact_support</span><span
+                        class="text-[10px] font-bold">Contact</span></a>
             </div>
         </div>
     </div>
@@ -904,4 +1229,5 @@
         document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDetail({}); });
     </script>
 </body>
+
 </html>

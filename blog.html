@@ -2,33 +2,34 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Senior BI & Analytics Portfolio | Insights & Blog</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-        rel="stylesheet" />
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#2060df",
-                        "background-light": "#f6f6f8",
-                        "background-dark": "#0B1120",
-                    },
-                    fontFamily: {
-                        "display": ["Inter"]
-                    },
-                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
-                },
-            },
-        }
-    </script>
-    <style>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Senior BI & Analytics Portfolio | Insights & Blog</title>
+  <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#2060df",
+            "background-light": "#f6f6f8",
+            "background-dark": "#0B1120",
+          },
+          fontFamily: {
+            "display": ["Inter"]
+          },
+          borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <style>
     .grid-pattern {
       background-size: 40px 40px;
       background-image:
@@ -171,7 +172,7 @@
     .ring-progress {
       transition: stroke-dashoffset 1.4s cubic-bezier(0.25, 1, 0.5, 1);
     }
-  
+
     /* Modal styles */
     .modal {
       opacity: 0;
@@ -179,369 +180,418 @@
       visibility: hidden;
       display: flex;
     }
+
     .modal.active {
       opacity: 1;
       pointer-events: auto;
       visibility: visible;
     }
-</style>
+  </style>
 </head>
 
 <body
-    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-300 pb-20">
+  class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-300 pb-20">
 
-    <!-- Top Navbar -->
-    <nav
-        class="sticky top-0 z-50 w-full border-b border-primary/10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex h-16 items-center justify-between">
-                <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                    <div class="relative w-8 h-8 rounded-full overflow-hidden border-2 border-primary/20 group-hover:border-primary transition-colors duration-300">
-                        <img src="./assets/images/profile_photo.jpg" alt="Abdul Wassay" class="w-full h-full object-cover">
-                    </div>
-                    <span class="text-lg font-bold tracking-tight text-slate-900 dark:text-white">Abdul Wassay</span>
-                </a>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
-                            href="index.html">Home</a>
-                        <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
-                            href="projects_experience.html">Work</a>
-                        <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
-                            href="professional_resume.html">Resume</a>
-                        <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
-                            href="skills_architecture.html">Skills</a>
-                        <a class="text-primary font-semibold px-3 py-2 text-sm font-medium transition-colors"
-                            href="blog.html">Blog</a>
-                        <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
-                            href="contact.html">Contact</a>
-                    </div>
-                </div>
-                <div class="flex items-center gap-4">
-                    <button
-                        class="p-2 rounded-full hover:bg-primary/10 transition-colors text-slate-600 dark:text-slate-400 theme-toggle">
-                        <span class="material-symbols-outlined">light_mode</span>
-                    </button>
-                </div>
-            </div>
+  <!-- Top Navbar -->
+  <nav
+    class="sticky top-0 z-50 w-full border-b border-primary/10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+          <div
+            class="relative w-8 h-8 rounded-full overflow-hidden border-2 border-primary/20 group-hover:border-primary transition-colors duration-300">
+            <img src="./assets/images/profile_photo.jpg" alt="Abdul Wassay" class="w-full h-full object-cover">
+          </div>
+          <span class="text-lg font-bold tracking-tight text-slate-900 dark:text-white">Abdul Wassay</span>
+        </a>
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-8">
+            <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+              href="index.html">Home</a>
+            <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+              href="projects_experience.html">Work</a>
+            <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+              href="professional_resume.html">Resume</a>
+            <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+              href="skills_architecture.html">Skills</a>
+            <a class="text-primary font-semibold px-3 py-2 text-sm font-medium transition-colors"
+              href="blog.html">Blog</a>
+            <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+              href="contact.html">Contact</a>
+          </div>
         </div>
-    </nav>
+        <div class="flex items-center gap-4">
+          <button
+            class="p-2 rounded-full hover:bg-primary/10 transition-colors text-slate-600 dark:text-slate-400 theme-toggle">
+            <span class="material-symbols-outlined">light_mode</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Hero Section -->
-    <header class="py-16 px-4 max-w-5xl mx-auto text-center">
-        <div
-            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6">
-            <span class="relative flex h-2 w-2">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-            </span>
-            Insights & Thought Leadership
-        </div>
-        <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-6 reveal">
-            Strategic Insights & <span class="text-primary">BI Thought Leadership</span>
-        </h2>
-        <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
-            Exploring the intersection of data architecture, AI, and business value. Building scalable solutions for the
-            modern data stack.
-        </p>
-    </header>
+  <!-- Hero Section -->
+  <header class="py-16 px-4 max-w-5xl mx-auto text-center">
+    <div
+      class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6">
+      <span class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+      </span>
+      Insights & Thought Leadership
+    </div>
+    <h2
+      class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-6 reveal">
+      Strategic Insights & <span class="text-primary">BI Thought Leadership</span>
+    </h2>
+    <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
+      Exploring the intersection of data architecture, AI, and business value. Building scalable solutions for the
+      modern data stack.
+    </p>
+  </header>
 
-    <!-- Filters/Categories -->
-    <div class="max-w-5xl mx-auto px-4 mb-12">
-        <div class="flex flex-wrap items-center justify-center gap-3">
-            <button
-                class="px-5 py-2 rounded-full bg-primary text-white text-sm font-bold transition-transform active:scale-95 shadow-lg shadow-primary/25">All
-                Topics</button>
-            <button
-                class="px-5 py-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm font-semibold hover:border-primary/50 transition-colors">Data
-                Engineering</button>
-            <button
-                class="px-5 py-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm font-semibold hover:border-primary/50 transition-colors">Governance</button>
-            <button
-                class="px-5 py-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm font-semibold hover:border-primary/50 transition-colors">AI
-                & Analytics</button>
+  <!-- Filters/Categories -->
+  <div class="max-w-5xl mx-auto px-4 mb-12">
+    <div class="flex flex-wrap items-center justify-center gap-3">
+      <button
+        class="px-5 py-2 rounded-full bg-primary text-white text-sm font-bold transition-transform active:scale-95 shadow-lg shadow-primary/25">All
+        Topics</button>
+      <button
+        class="px-5 py-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm font-semibold hover:border-primary/50 transition-colors">Data
+        Engineering</button>
+      <button
+        class="px-5 py-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm font-semibold hover:border-primary/50 transition-colors">Governance</button>
+      <button
+        class="px-5 py-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 text-sm font-semibold hover:border-primary/50 transition-colors">AI
+        & Analytics</button>
+    </div>
+  </div>
+
+  <!-- Articles Grid -->
+  <main class="max-w-5xl mx-auto px-4 pb-24">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal">
+      <!-- Article Card 1 -->
+      <article
+        class="group flex flex-col bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/60 dark:border-slate-800/60 lift transition-all">
+        <div class="aspect-video relative overflow-hidden">
+          <img alt="Snowflake data processing visualization"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2BIYUWlQ2W0gWs392-I2TtNefRLheoPc8VFMN-06ddiAl7AKnCjYJcRVd-K44a1S5yu7e5T4AfWnHQFqcR9AsuDjP6aPqsGH-ZQC9VI--pjyByNvO2IRZHqZL8vM9UD2gzGZadn2cvVaQNSmYU-vucAaYyu83G3sIO-KxZ57gq8N61xMbj_VxyYbh5X3ARJFk4hFASQvACNya73J8zuRGuh9G_0HFRoVp3x9CsE0ajn-96LbjeiBMqL3d_pFmqyYXGATjMkZOimg" />
+          <div class="absolute top-4 left-4">
+            <span
+              class="px-3 py-1 rounded-lg bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm text-primary text-[10px] font-bold uppercase tracking-widest shadow-sm">Data
+              Engineering</span>
+          </div>
         </div>
+        <div class="p-6 flex flex-col flex-1">
+          <time class="text-xs text-slate-400 dark:text-slate-500 mb-2">March 15, 2026 • 8 min read</time>
+          <h3
+            class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-primary transition-colors reveal">
+            How I Reduced Snowflake Processing by 30%</h3>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 flex-1">
+            Optimizing warehouse usage and query performance for enterprise scale through materialization
+            and cluster tuning.
+          </p>
+          <div class="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-800">
+            <button onclick="openModal('modal1')"
+              class="text-primary font-bold text-sm flex items-center gap-1 group/btn">
+              Read More
+              <span
+                class="material-symbols-outlined text-sm transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article Card 2 -->
+      <article
+        class="group flex flex-col bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/60 dark:border-slate-800/60 lift transition-all">
+        <div class="aspect-video relative overflow-hidden">
+          <img alt="Enterprise dashboard interface"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuASrKc4DqC9JHXxd_qopOeL0ZzddVFlNqKzPPKEAAzgD8TAIys9BRB3PQSWNat4dsyX8nXaEj4FZgDj9icOegq2E_V4TqL9KVGa4thYyPcC7Wh-ylsWu8qYt-xm4osV9wAvr86TC7lz0wMk-lFR_woDCSFb8SaezeqGtRgacxqYUJ1t1IrS3hNDFFmILe5zPNg03kR9mpyRg6Z5iVNNR1HJdGEVOv7Bz_UUDViBgz7OOAaNUebXepsQ9Cj5vnM3FGusn7ENqZUkICY" />
+          <div class="absolute top-4 left-4">
+            <span
+              class="px-3 py-1 rounded-lg bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm text-primary text-[10px] font-bold uppercase tracking-widest shadow-sm">Governance</span>
+          </div>
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <time class="text-xs text-slate-400 dark:text-slate-500 mb-2">Feb 28, 2026 • 12 min read</time>
+          <h3
+            class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-primary transition-colors reveal">
+            Implementing RLS in Enterprise Power BI</h3>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 flex-1">
+            A deep dive into dynamic Row-Level Security patterns for multi-tenant global organizations.
+          </p>
+          <div class="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-800">
+            <button onclick="openModal('modal2')"
+              class="text-primary font-bold text-sm flex items-center gap-1 group/btn">
+              Read More
+              <span
+                class="material-symbols-outlined text-sm transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Article Card 3 -->
+      <article
+        class="group flex flex-col bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/60 dark:border-slate-800/60 lift transition-all">
+        <div class="aspect-video relative overflow-hidden">
+          <img alt="AI and Neural Networks abstract"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB9qSkWTznJfxXPzauCMn_EnIeC0KOHSDeFAJsdoaMeL8guwGDEOxRrFHHsWz9byGoXxp527l2fhkY15XtrTij6wXKIfdWDSIwWh4GToPWieQA1okDXtXPI7uvajbHTGJDoNNaugpIdrz2eES6L7ZpSCz_qxIxRvIQAsHt6-zseJ_mzSXlYf7N4WzQMvQuAR0pM5XcJUaEqOd4kuW7_zavnxp6L-s_kDQA7OxoWO-TupUH2DSI_FIHAvPgxZKyw8EKX3NT7EhuloI" />
+          <div class="absolute top-4 left-4">
+            <span
+              class="px-3 py-1 rounded-lg bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm text-primary text-[10px] font-bold uppercase tracking-widest shadow-sm">AI
+              & Analytics</span>
+          </div>
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <time class="text-xs text-slate-400 dark:text-slate-500 mb-2">Jan 12, 2026 • 6 min read</time>
+          <h3
+            class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-primary transition-colors reveal">
+            AI Prompt Engineering in Reporting Workflows</h3>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 flex-1">
+            How to leverage LLMs to automate DAX creation and SQL query generation without compromising
+            quality.
+          </p>
+          <div class="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-800">
+            <button onclick="openModal('modal3')"
+              class="text-primary font-bold text-sm flex items-center gap-1 group/btn">
+              Read More
+              <span
+                class="material-symbols-outlined text-sm transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+            </button>
+          </div>
+        </div>
+      </article>
     </div>
 
-    <!-- Articles Grid -->
-    <main class="max-w-5xl mx-auto px-4 pb-24">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal">
-            <!-- Article Card 1 -->
-            <article
-                class="group flex flex-col bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/60 dark:border-slate-800/60 lift transition-all">
-                <div class="aspect-video relative overflow-hidden">
-                    <img alt="Snowflake data processing visualization"
-                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2BIYUWlQ2W0gWs392-I2TtNefRLheoPc8VFMN-06ddiAl7AKnCjYJcRVd-K44a1S5yu7e5T4AfWnHQFqcR9AsuDjP6aPqsGH-ZQC9VI--pjyByNvO2IRZHqZL8vM9UD2gzGZadn2cvVaQNSmYU-vucAaYyu83G3sIO-KxZ57gq8N61xMbj_VxyYbh5X3ARJFk4hFASQvACNya73J8zuRGuh9G_0HFRoVp3x9CsE0ajn-96LbjeiBMqL3d_pFmqyYXGATjMkZOimg" />
-                    <div class="absolute top-4 left-4">
-                        <span
-                            class="px-3 py-1 rounded-lg bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm text-primary text-[10px] font-bold uppercase tracking-widest shadow-sm">Data
-                            Engineering</span>
-                    </div>
-                </div>
-                <div class="p-6 flex flex-col flex-1">
-                    <time class="text-xs text-slate-400 dark:text-slate-500 mb-2">March 15, 2026 • 8 min read</time>
-                    <h3
-                        class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-primary transition-colors reveal">
-                        How I Reduced Snowflake Processing by 30%</h3>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 flex-1">
-                        Optimizing warehouse usage and query performance for enterprise scale through materialization
-                        and cluster tuning.
-                    </p>
-                    <div class="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-800">
-                        <button onclick="openModal('modal1')"
-                            class="text-primary font-bold text-sm flex items-center gap-1 group/btn">
-                            Read More
-                            <span
-                                class="material-symbols-outlined text-sm transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
-                        </button>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Article Card 2 -->
-            <article
-                class="group flex flex-col bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/60 dark:border-slate-800/60 lift transition-all">
-                <div class="aspect-video relative overflow-hidden">
-                    <img alt="Enterprise dashboard interface"
-                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuASrKc4DqC9JHXxd_qopOeL0ZzddVFlNqKzPPKEAAzgD8TAIys9BRB3PQSWNat4dsyX8nXaEj4FZgDj9icOegq2E_V4TqL9KVGa4thYyPcC7Wh-ylsWu8qYt-xm4osV9wAvr86TC7lz0wMk-lFR_woDCSFb8SaezeqGtRgacxqYUJ1t1IrS3hNDFFmILe5zPNg03kR9mpyRg6Z5iVNNR1HJdGEVOv7Bz_UUDViBgz7OOAaNUebXepsQ9Cj5vnM3FGusn7ENqZUkICY" />
-                    <div class="absolute top-4 left-4">
-                        <span
-                            class="px-3 py-1 rounded-lg bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm text-primary text-[10px] font-bold uppercase tracking-widest shadow-sm">Governance</span>
-                    </div>
-                </div>
-                <div class="p-6 flex flex-col flex-1">
-                    <time class="text-xs text-slate-400 dark:text-slate-500 mb-2">Feb 28, 2026 • 12 min read</time>
-                    <h3
-                        class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-primary transition-colors reveal">
-                        Implementing RLS in Enterprise Power BI</h3>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 flex-1">
-                        A deep dive into dynamic Row-Level Security patterns for multi-tenant global organizations.
-                    </p>
-                    <div class="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-800">
-                        <button onclick="openModal('modal2')"
-                            class="text-primary font-bold text-sm flex items-center gap-1 group/btn">
-                            Read More
-                            <span
-                                class="material-symbols-outlined text-sm transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
-                        </button>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Article Card 3 -->
-            <article
-                class="group flex flex-col bg-white dark:bg-slate-900 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/60 dark:border-slate-800/60 lift transition-all">
-                <div class="aspect-video relative overflow-hidden">
-                    <img alt="AI and Neural Networks abstract"
-                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB9qSkWTznJfxXPzauCMn_EnIeC0KOHSDeFAJsdoaMeL8guwGDEOxRrFHHsWz9byGoXxp527l2fhkY15XtrTij6wXKIfdWDSIwWh4GToPWieQA1okDXtXPI7uvajbHTGJDoNNaugpIdrz2eES6L7ZpSCz_qxIxRvIQAsHt6-zseJ_mzSXlYf7N4WzQMvQuAR0pM5XcJUaEqOd4kuW7_zavnxp6L-s_kDQA7OxoWO-TupUH2DSI_FIHAvPgxZKyw8EKX3NT7EhuloI" />
-                    <div class="absolute top-4 left-4">
-                        <span
-                            class="px-3 py-1 rounded-lg bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm text-primary text-[10px] font-bold uppercase tracking-widest shadow-sm">AI
-                            & Analytics</span>
-                    </div>
-                </div>
-                <div class="p-6 flex flex-col flex-1">
-                    <time class="text-xs text-slate-400 dark:text-slate-500 mb-2">Jan 12, 2026 • 6 min read</time>
-                    <h3
-                        class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-primary transition-colors reveal">
-                        AI Prompt Engineering in Reporting Workflows</h3>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 flex-1">
-                        How to leverage LLMs to automate DAX creation and SQL query generation without compromising
-                        quality.
-                    </p>
-                    <div class="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-800">
-                        <button onclick="openModal('modal3')"
-                            class="text-primary font-bold text-sm flex items-center gap-1 group/btn">
-                            Read More
-                            <span
-                                class="material-symbols-outlined text-sm transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
-                        </button>
-                    </div>
-                </div>
-            </article>
+    <!-- Modals -->
+    <div id="modal1"
+      class="modal fixed inset-0 z-[100] items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm transition-opacity">
+      <div
+        class="bg-white dark:bg-slate-900 w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 flex flex-col relative">
+        <button onclick="closeModal('modal1')"
+          class="absolute top-4 right-4 p-2 bg-slate-100 dark:bg-slate-800 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+        <div class="p-8">
+          <h2 class="text-3xl font-extrabold mb-4 reveal">How I Reduced Snowflake Processing by 30%</h2>
+          <time class="text-sm border-b pb-4 block text-slate-500 mb-6">March 15, 2026</time>
+          <div class="prose dark:prose-invert max-w-none space-y-4">
+            <p>In a large-scale enterprise environment, computing costs can spiral out of control if proper
+              data models and materialization techniques are not implemented. During my previous role, we
+              had queries parsing millions of rows for daily dashboards resulting in significant latency
+              and high credit consumption on Snowflake.</p>
+            <h4 class="text-lg font-bold mt-6">The Solution Strategy:</h4>
+            <ol class="list-decimal pl-5 space-y-2 text-slate-600 dark:text-slate-400">
+              <li><strong>Query Profiling:</strong> Identified the top 10% most expensive queries which
+                accounted for 80% of compute cost.</li>
+              <li><strong>Materialized Views:</strong> Converted frequently accessed aggregated views
+                (which didn't require immediate real-time sync) into pre-calculated materialized views.
+              </li>
+              <li><strong>Cluster Tuning:</strong> Tuned the auto-suspend and auto-resume behaviors on
+                multi-cluster warehouses during off-peak hours.</li>
+              <li><strong>Refactoring Legacy Logic:</strong> Migrated slow-running Oracle-era cursors into
+                set-based operations optimized for columnar storage.</li>
+            </ol>
+            <p class="font-bold text-primary mt-6">Result: Query latency dropped by an average of 45
+              seconds, and operational compute dropped by 30% within the first month.</p>
+          </div>
         </div>
+      </div>
+    </div>
 
-        <!-- Modals -->
-        <div id="modal1"
-            class="modal fixed inset-0 z-[100] items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm transition-opacity">
-            <div
-                class="bg-white dark:bg-slate-900 w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 flex flex-col relative">
-                <button onclick="closeModal('modal1')"
-                    class="absolute top-4 right-4 p-2 bg-slate-100 dark:bg-slate-800 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition">
-                    <span class="material-symbols-outlined">close</span>
-                </button>
-                <div class="p-8">
-                    <h2 class="text-3xl font-extrabold mb-4 reveal">How I Reduced Snowflake Processing by 30%</h2>
-                    <time class="text-sm border-b pb-4 block text-slate-500 mb-6">March 15, 2026</time>
-                    <div class="prose dark:prose-invert max-w-none space-y-4">
-                        <p>In a large-scale enterprise environment, computing costs can spiral out of control if proper
-                            data models and materialization techniques are not implemented. During my previous role, we
-                            had queries parsing millions of rows for daily dashboards resulting in significant latency
-                            and high credit consumption on Snowflake.</p>
-                        <h4 class="text-lg font-bold mt-6">The Solution Strategy:</h4>
-                        <ol class="list-decimal pl-5 space-y-2 text-slate-600 dark:text-slate-400">
-                            <li><strong>Query Profiling:</strong> Identified the top 10% most expensive queries which
-                                accounted for 80% of compute cost.</li>
-                            <li><strong>Materialized Views:</strong> Converted frequently accessed aggregated views
-                                (which didn't require immediate real-time sync) into pre-calculated materialized views.
-                            </li>
-                            <li><strong>Cluster Tuning:</strong> Tuned the auto-suspend and auto-resume behaviors on
-                                multi-cluster warehouses during off-peak hours.</li>
-                            <li><strong>Refactoring Legacy Logic:</strong> Migrated slow-running Oracle-era cursors into
-                                set-based operations optimized for columnar storage.</li>
-                        </ol>
-                        <p class="font-bold text-primary mt-6">Result: Query latency dropped by an average of 45
-                            seconds, and operational compute dropped by 30% within the first month.</p>
-                    </div>
-                </div>
-            </div>
+    <div id="modal2"
+      class="modal fixed inset-0 z-[100] items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm transition-opacity">
+      <div
+        class="bg-white dark:bg-slate-900 w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 flex flex-col relative">
+        <button onclick="closeModal('modal2')"
+          class="absolute top-4 right-4 p-2 bg-slate-100 dark:bg-slate-800 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+        <div class="p-8">
+          <h2 class="text-3xl font-extrabold mb-4 reveal">Implementing RLS in Enterprise Power BI</h2>
+          <time class="text-sm border-b pb-4 block text-slate-500 mb-6">Feb 28, 2026</time>
+          <div class="prose dark:prose-invert max-w-none space-y-4">
+            <p>Row-Level Security (RLS) is pivotal when delivering a central dashboard across a Fortune 500
+              company where regional managers should only view their specific territories. Static RLS is
+              simple, but fails to map against a rapidly changing organizational hierarchy of over 1,200
+              users.</p>
+            <h4 class="text-lg font-bold mt-6">Dynamic RLS Implementation</h4>
+            <p>Instead of hardcoding roles, I established a dynamic RLS mapping table connected to our Azure
+              Active Directory (Entra ID). By utilizing the <code>USERPRINCIPALNAME()</code> DAX function,
+              we seamlessly map the logged-in user to their organizational privileges stored mapped in
+              Snowflake.</p>
+            <ul class="list-disc pl-5 space-y-2 text-slate-600 dark:text-slate-400">
+              <li>Created a bridge/security table connecting UserPrincipalName to RegionID.</li>
+              <li>Applied bi-directional cross-filtering purely across the security bridge to avoid
+                expanding ambiguity in the central fact tables.</li>
+            </ul>
+            <p class="font-bold mt-6 text-primary">This approach eliminated the need to maintain 50+
+              different dashboard views, merging them into a single, compliant, and scalable model.</p>
+          </div>
         </div>
+      </div>
+    </div>
 
-        <div id="modal2"
-            class="modal fixed inset-0 z-[100] items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm transition-opacity">
-            <div
-                class="bg-white dark:bg-slate-900 w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 flex flex-col relative">
-                <button onclick="closeModal('modal2')"
-                    class="absolute top-4 right-4 p-2 bg-slate-100 dark:bg-slate-800 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition">
-                    <span class="material-symbols-outlined">close</span>
-                </button>
-                <div class="p-8">
-                    <h2 class="text-3xl font-extrabold mb-4 reveal">Implementing RLS in Enterprise Power BI</h2>
-                    <time class="text-sm border-b pb-4 block text-slate-500 mb-6">Feb 28, 2026</time>
-                    <div class="prose dark:prose-invert max-w-none space-y-4">
-                        <p>Row-Level Security (RLS) is pivotal when delivering a central dashboard across a Fortune 500
-                            company where regional managers should only view their specific territories. Static RLS is
-                            simple, but fails to map against a rapidly changing organizational hierarchy of over 1,200
-                            users.</p>
-                        <h4 class="text-lg font-bold mt-6">Dynamic RLS Implementation</h4>
-                        <p>Instead of hardcoding roles, I established a dynamic RLS mapping table connected to our Azure
-                            Active Directory (Entra ID). By utilizing the <code>USERPRINCIPALNAME()</code> DAX function,
-                            we seamlessly map the logged-in user to their organizational privileges stored mapped in
-                            Snowflake.</p>
-                        <ul class="list-disc pl-5 space-y-2 text-slate-600 dark:text-slate-400">
-                            <li>Created a bridge/security table connecting UserPrincipalName to RegionID.</li>
-                            <li>Applied bi-directional cross-filtering purely across the security bridge to avoid
-                                expanding ambiguity in the central fact tables.</li>
-                        </ul>
-                        <p class="font-bold mt-6 text-primary">This approach eliminated the need to maintain 50+
-                            different dashboard views, merging them into a single, compliant, and scalable model.</p>
-                    </div>
-                </div>
-            </div>
+    <div id="modal3"
+      class="modal fixed inset-0 z-[100] items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm transition-opacity">
+      <div
+        class="bg-white dark:bg-slate-900 w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 flex flex-col relative">
+        <button onclick="closeModal('modal3')"
+          class="absolute top-4 right-4 p-2 bg-slate-100 dark:bg-slate-800 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+        <div class="p-8">
+          <h2 class="text-3xl font-extrabold mb-4 reveal">AI Prompt Engineering in Reporting Workflows</h2>
+          <time class="text-sm border-b pb-4 block text-slate-500 mb-6">Jan 12, 2026</time>
+          <div class="prose dark:prose-invert max-w-none space-y-4">
+            <p>As AI tools like GitHub Copilot and ChatGPT become standard practice, translating business
+              requirements into complex DAX logic or Snowflake SQL has radically shifted. But a tool is
+              only as good as the prompt.</p>
+            <h4 class="text-lg font-bold mt-6">Techniques for Better Generations:</h4>
+            <ul class="list-disc pl-5 space-y-2 text-slate-600 dark:text-slate-400">
+              <li><strong>Schema Preamble:</strong> Always provide the LLM with a DDL abstract or table
+                schema definitions (tables, relationships, column metadata) before asking it to write a
+                query. Otherwise, it guesses column names.</li>
+              <li><strong>Granularity Specification:</strong> When generating DAX aggregations, explicitly
+                state the filter context expectations (e.g., 'Ensure this respects the Date dimension
+                slicer but ignores product category').</li>
+              <li><strong>Self-Correction Loops:</strong> If Copilot creates a circular dependency, asking
+                it to 'review the model for cyclical references based on table X and Y' usually guides
+                it to the correct <code>ALLEXCEPT</code> phrasing.</li>
+            </ul>
+            <p>Through dedicated Prompt Engineering, our BI team's development velocity for ad-hoc requests
+              increased by roughly 25%.</p>
+          </div>
         </div>
+      </div>
+    </div>
 
-        <div id="modal3"
-            class="modal fixed inset-0 z-[100] items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm transition-opacity">
-            <div
-                class="bg-white dark:bg-slate-900 w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 flex flex-col relative">
-                <button onclick="closeModal('modal3')"
-                    class="absolute top-4 right-4 p-2 bg-slate-100 dark:bg-slate-800 rounded-full hover:bg-slate-200 dark:hover:bg-slate-700 transition">
-                    <span class="material-symbols-outlined">close</span>
-                </button>
-                <div class="p-8">
-                    <h2 class="text-3xl font-extrabold mb-4 reveal">AI Prompt Engineering in Reporting Workflows</h2>
-                    <time class="text-sm border-b pb-4 block text-slate-500 mb-6">Jan 12, 2026</time>
-                    <div class="prose dark:prose-invert max-w-none space-y-4">
-                        <p>As AI tools like GitHub Copilot and ChatGPT become standard practice, translating business
-                            requirements into complex DAX logic or Snowflake SQL has radically shifted. But a tool is
-                            only as good as the prompt.</p>
-                        <h4 class="text-lg font-bold mt-6">Techniques for Better Generations:</h4>
-                        <ul class="list-disc pl-5 space-y-2 text-slate-600 dark:text-slate-400">
-                            <li><strong>Schema Preamble:</strong> Always provide the LLM with a DDL abstract or table
-                                schema definitions (tables, relationships, column metadata) before asking it to write a
-                                query. Otherwise, it guesses column names.</li>
-                            <li><strong>Granularity Specification:</strong> When generating DAX aggregations, explicitly
-                                state the filter context expectations (e.g., 'Ensure this respects the Date dimension
-                                slicer but ignores product category').</li>
-                            <li><strong>Self-Correction Loops:</strong> If Copilot creates a circular dependency, asking
-                                it to 'review the model for cyclical references based on table X and Y' usually guides
-                                it to the correct <code>ALLEXCEPT</code> phrasing.</li>
-                        </ul>
-                        <p>Through dedicated Prompt Engineering, our BI team's development velocity for ad-hoc requests
-                            increased by roughly 25%.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <script>
+      function openModal(id) {
+        document.getElementById(id).classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeModal(id) {
+        document.getElementById(id).classList.remove('active');
+        document.body.style.overflow = '';
+      }
 
-        <script>
-            function openModal(id) {
-                document.getElementById(id).classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
-            function closeModal(id) {
-                document.getElementById(id).classList.remove('active');
-                document.body.style.overflow = '';
-            }
+      // Close modal when clicking outside content box
+      document.querySelectorAll('.modal').forEach(modal => {
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+          }
+        });
+      });
+    </script>
+  </main>
 
-            // Close modal when clicking outside content box
-            document.querySelectorAll('.modal').forEach(modal => {
-                modal.addEventListener('click', (e) => {
-                    if (e.target === modal) {
-                        modal.classList.remove('active');
-                        document.body.style.overflow = '';
-                    }
-                });
-            });
-        </script>
-    </main>
 
-    
   <!-- ═══ RE-DESIGNED MODERN FOOTER ═══ -->
-  <footer class="relative bg-slate-50 dark:bg-[#0a0f1c] pt-10 pb-24 md:pb-8 border-t border-slate-200 dark:border-slate-800/40 overflow-hidden text-slate-600 dark:text-slate-300 transition-colors duration-300">
+  <footer
+    class="relative bg-slate-50 dark:bg-[#0a0f1c] pt-10 pb-24 md:pb-8 border-t border-slate-200 dark:border-slate-800/40 overflow-hidden text-slate-600 dark:text-slate-300 transition-colors duration-300">
     <!-- subtle glow effect -->
-    <div class="hidden dark:block absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
-    <div class="hidden dark:block absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-64 bg-primary/10 blur-[100px] rounded-full pointer-events-none"></div>
-    
+    <div
+      class="hidden dark:block absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent">
+    </div>
+    <div
+      class="hidden dark:block absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-64 bg-primary/10 blur-[100px] rounded-full pointer-events-none">
+    </div>
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-8 reveal">
         <div class="md:col-span-4 lg:col-span-5">
           <div class="flex items-center gap-3 mb-6 group">
-            <div class="relative w-10 h-10 rounded-full overflow-hidden border-2 border-primary/20 group-hover:border-primary transition-colors duration-300">
-                <img src="./assets/images/profile_photo.jpg" alt="Abdul Wassay" class="w-full h-full object-cover">
+            <div
+              class="relative w-10 h-10 rounded-full overflow-hidden border-2 border-primary/20 group-hover:border-primary transition-colors duration-300">
+              <img src="./assets/images/profile_photo.jpg" alt="Abdul Wassay" class="w-full h-full object-cover">
             </div>
-            <span class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-400">Abdul Wassay</span>
+            <span
+              class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-400">Abdul
+              Wassay</span>
           </div>
-          <p class="max-w-sm mb-8 text-base leading-relaxed">Architecting high-performance data ecosystems and AI-powered BI strategies. Transforming complexity into competitive advantage.</p>
+          <p class="max-w-sm mb-8 text-base leading-relaxed">Architecting high-performance data ecosystems and
+            AI-powered BI strategies. Transforming complexity into competitive advantage.</p>
           <div class="flex gap-4">
             <a href="https://linkedin.com/in/wassayknp" target="_blank"
               class="w-12 h-12 rounded-xl bg-white dark:bg-slate-900/50 flex items-center justify-center hover:bg-[#0077b5] hover:text-white dark:hover:bg-[#0077b5] hover:-translate-y-1 transition-all border border-slate-200 dark:border-slate-800 shadow-sm lift transition-all">
-              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+              </svg>
             </a>
             <a href="https://github.com/wassayknp" target="_blank"
               class="w-12 h-12 rounded-xl bg-white dark:bg-slate-900/50 flex items-center justify-center hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 hover:-translate-y-1 transition-all border border-slate-200 dark:border-slate-800 shadow-sm lift transition-all">
-              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" /></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+              </svg>
             </a>
-            <a href="contact.html" class="w-12 h-12 rounded-xl bg-white dark:bg-slate-900/50 flex items-center justify-center hover:bg-primary hover:text-white hover:-translate-y-1 transition-all border border-slate-200 dark:border-slate-800 shadow-sm lift transition-all">
+            <a href="contact.html"
+              class="w-12 h-12 rounded-xl bg-white dark:bg-slate-900/50 flex items-center justify-center hover:bg-primary hover:text-white hover:-translate-y-1 transition-all border border-slate-200 dark:border-slate-800 shadow-sm lift transition-all">
               <span class="material-symbols-outlined text-xl transition-colors">mail</span>
             </a>
           </div>
         </div>
         <div class="md:col-span-3 lg:col-span-2">
-          <h5 class="text-slate-900 dark:text-white font-bold mb-6 uppercase tracking-widest text-xs opacity-90">Explore</h5>
+          <h5 class="text-slate-900 dark:text-white font-bold mb-6 uppercase tracking-widest text-xs opacity-90">Explore
+          </h5>
           <ul class="space-y-3.5">
-            <li><a href="index.html" class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Home</a></li>
-            <li><a href="projects_experience.html" class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Work</a></li>
-            <li><a href="professional_resume.html" class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Resume</a></li>
-            <li><a href="blog.html" class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Blog</a></li>
+            <li><a href="index.html"
+                class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
+                  class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Home</a>
+            </li>
+            <li><a href="projects_experience.html"
+                class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
+                  class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Work</a>
+            </li>
+            <li><a href="professional_resume.html"
+                class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
+                  class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Resume</a>
+            </li>
+            <li><a href="blog.html"
+                class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
+                  class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Blog</a>
+            </li>
           </ul>
         </div>
         <div class="md:col-span-3 lg:col-span-2">
-          <h5 class="text-slate-900 dark:text-white font-bold mb-6 uppercase tracking-widest text-xs opacity-90">Expertise</h5>
+          <h5 class="text-slate-900 dark:text-white font-bold mb-6 uppercase tracking-widest text-xs opacity-90">
+            Expertise</h5>
           <ul class="space-y-3.5">
-            <li><a href="skills_architecture.html" class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>BI Strategy</a></li>
-            <li><a href="skills_architecture.html" class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Data Modeling</a></li>
-            <li><a href="skills_architecture.html" class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Data Architecture</a></li>
-            <li><a href="skills_architecture.html" class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>AI Ecosystems</a></li>
+            <li><a href="skills_architecture.html"
+                class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
+                  class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>BI
+                Strategy</a></li>
+            <li><a href="skills_architecture.html"
+                class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
+                  class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Data
+                Modeling</a></li>
+            <li><a href="skills_architecture.html"
+                class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
+                  class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Data
+                Architecture</a></li>
+            <li><a href="skills_architecture.html"
+                class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
+                  class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>AI
+                Ecosystems</a></li>
           </ul>
         </div>
         <div class="md:col-span-2 lg:col-span-3">
-          <h5 class="text-slate-900 dark:text-white font-bold mb-6 uppercase tracking-widest text-xs opacity-90">Location</h5>
-          <div class="bg-white dark:bg-slate-900/50 rounded-2xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm relative overflow-hidden group">
-            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <h5 class="text-slate-900 dark:text-white font-bold mb-6 uppercase tracking-widest text-xs opacity-90">
+            Location</h5>
+          <div
+            class="bg-white dark:bg-slate-900/50 rounded-2xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm relative overflow-hidden group">
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            </div>
             <div class="flex items-start gap-4 mb-4 relative z-10">
               <span class="material-symbols-outlined text-primary bg-primary/10 rounded-full p-2">location_on</span>
               <div>
@@ -549,12 +599,17 @@
                 <p class="text-xs text-slate-500 dark:text-slate-400">Open to global roles</p>
               </div>
             </div>
-            <a href="contact.html" class="inline-flex items-center gap-1.5 text-primary text-sm font-bold hover:underline relative z-10 group-hover:translate-x-1 transition-transform">Contact Me <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
+            <a href="contact.html"
+              class="inline-flex items-center gap-1.5 text-primary text-sm font-bold hover:underline relative z-10 group-hover:translate-x-1 transition-transform">Contact
+              Me <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
           </div>
         </div>
       </div>
-      <div class="pt-8 border-t border-slate-200 dark:border-slate-800/60 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p class="text-xs font-medium">© 2026 Abdul Wassay. Built with <span class="text-rose-500 animate-pulse inline-block">❤</span> in India <img src="https://flagcdn.com/w20/in.png" class="inline-block ml-1 -mt-1 w-4" alt="India"></p>
+      <div
+        class="pt-8 border-t border-slate-200 dark:border-slate-800/60 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-xs font-medium">© 2026 Abdul Wassay. Built with <span
+            class="text-rose-500 animate-pulse inline-block">❤</span> in India <img src="https://flagcdn.com/w20/in.png"
+            class="inline-block ml-1 -mt-1 w-4" alt="India"></p>
         <div class="flex gap-6">
           <a href="#" class="text-xs hover:text-primary transition-colors font-medium">Privacy</a>
           <a href="#" class="text-xs hover:text-primary transition-colors font-medium">Terms</a>
@@ -564,46 +619,46 @@
     </div>
   </footer>
 
-    <!-- Bottom Tab Bar -->
-    <div class="md:hidden fixed bottom-6 left-0 right-0 z-40 px-4 pointer-events-none">
-        <div class="max-w-md mx-auto pointer-events-auto">
-            <div
-                class="flex bg-slate-900 border border-slate-800 rounded-full p-1.5 shadow-2xl overflow-x-auto hide-scrollbar">
-                <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white transition-colors"
-                    href="index.html">
-                    <span class="material-symbols-outlined">home</span>
-                    <span class="text-[10px] font-bold">Home</span>
-                </a>
-                <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white transition-colors"
-                    href="projects_experience.html">
-                    <span class="material-symbols-outlined">grid_view</span>
-                    <span class="text-[10px] font-bold">Work</span>
-                </a>
-                <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white transition-colors"
-                    href="professional_resume.html">
-                    <span class="material-symbols-outlined">article</span>
-                    <span class="text-[10px] font-bold">Resume</span>
-                </a>
-                <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white transition-colors"
-                    href="skills_architecture.html">
-                    <span class="material-symbols-outlined">psychology</span>
-                    <span class="text-[10px] font-bold">Skills</span>
-                </a>
-                <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-white bg-primary rounded-full transition-colors"
-                    href="blog.html">
-                    <span class="material-symbols-outlined">menu_book</span>
-                    <span class="text-[10px] font-bold">Blog</span>
-                </a>
-                <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white transition-colors"
-                    href="contact.html">
-                    <span class="material-symbols-outlined">contact_support</span>
-                    <span class="text-[10px] font-bold">Contact</span>
-                </a>
-            </div>
-        </div>
+  <!-- Bottom Tab Bar -->
+  <div class="md:hidden fixed bottom-6 left-0 right-0 z-40 px-4 pointer-events-none">
+    <div class="max-w-md mx-auto pointer-events-auto">
+      <div
+        class="flex bg-slate-900 border border-slate-800 rounded-full p-1.5 shadow-2xl overflow-x-auto hide-scrollbar">
+        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white transition-colors"
+          href="index.html">
+          <span class="material-symbols-outlined">home</span>
+          <span class="text-[10px] font-bold">Home</span>
+        </a>
+        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white transition-colors"
+          href="projects_experience.html">
+          <span class="material-symbols-outlined">grid_view</span>
+          <span class="text-[10px] font-bold">Work</span>
+        </a>
+        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white transition-colors"
+          href="professional_resume.html">
+          <span class="material-symbols-outlined">article</span>
+          <span class="text-[10px] font-bold">Resume</span>
+        </a>
+        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white transition-colors"
+          href="skills_architecture.html">
+          <span class="material-symbols-outlined">psychology</span>
+          <span class="text-[10px] font-bold">Skills</span>
+        </a>
+        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-white bg-primary rounded-full transition-colors"
+          href="blog.html">
+          <span class="material-symbols-outlined">menu_book</span>
+          <span class="text-[10px] font-bold">Blog</span>
+        </a>
+        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white transition-colors"
+          href="contact.html">
+          <span class="material-symbols-outlined">contact_support</span>
+          <span class="text-[10px] font-bold">Contact</span>
+        </a>
+      </div>
     </div>
+  </div>
 
-    
+
   <!-- ═══ ANIMATION & LOGIC SCRIPTS ═══ -->
   <script>
     // ── Dark Mode ──
@@ -621,30 +676,30 @@
 
     // ── Mobile Menu ──
     const mobBtn = document.getElementById('mob-menu-btn');
-    if(mobBtn) {
-        mobBtn.addEventListener('click', () => {
+    if (mobBtn) {
+      mobBtn.addEventListener('click', () => {
         const menu = document.getElementById('mobile-menu');
-        if(menu) menu.classList.toggle('open');
-        });
+        if (menu) menu.classList.toggle('open');
+      });
     }
 
     // ── Typewriter ──
     const el = document.getElementById('typewriter');
-    if(el) {
-        const phrases = ['Senior BI & Analytics Engineer', 'Microsoft Fabric Specialist', 'AI-Powered BI Developer', 'Power BI Expert & DAX Architect'];
-        let pi = 0, ci = 0, deleting = false;
-        function type() {
-            const phrase = phrases[pi];
-            if (!deleting) {
-                el.textContent = phrase.slice(0, ++ci);
-                if (ci === phrase.length) { deleting = true; setTimeout(type, 2000); return; }
-            } else {
-                el.textContent = phrase.slice(0, --ci);
-                if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; }
-            }
-            setTimeout(type, deleting ? 50 : 80);
+    if (el) {
+      const phrases = ['Senior BI & Analytics Engineer', 'Microsoft Fabric Specialist', 'AI-Powered BI Developer', 'Power BI Expert & DAX Architect'];
+      let pi = 0, ci = 0, deleting = false;
+      function type() {
+        const phrase = phrases[pi];
+        if (!deleting) {
+          el.textContent = phrase.slice(0, ++ci);
+          if (ci === phrase.length) { deleting = true; setTimeout(type, 2000); return; }
+        } else {
+          el.textContent = phrase.slice(0, --ci);
+          if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; }
         }
-        setTimeout(type, 800);
+        setTimeout(type, deleting ? 50 : 80);
+      }
+      setTimeout(type, 800);
     }
 
     // ── Scroll Reveal ──
@@ -659,7 +714,7 @@
         if (!e.isIntersecting) return;
         const el = e.target;
         const target = parseInt(el.dataset.target);
-        if(isNaN(target)) return;
+        if (isNaN(target)) return;
         const suffix = el.dataset.suffix || '';
         let start = 0;
         const duration = 1500;
@@ -681,7 +736,7 @@
       entries.forEach(e => {
         if (!e.isIntersecting) return;
         e.target.querySelectorAll('.bar-fill').forEach(bar => {
-          setTimeout(() => { if(bar.dataset.width) bar.style.width = bar.dataset.width + '%'; }, 200);
+          setTimeout(() => { if (bar.dataset.width) bar.style.width = bar.dataset.width + '%'; }, 200);
         });
         barObs.unobserve(e.target);
       });
@@ -696,36 +751,36 @@
       });
       btn.classList.add('active', 'bg-primary/10', 'text-primary');
       btn.classList.remove('text-slate-400');
-      
+
       const barChart = document.getElementById('chart-bar');
       const lineChart = document.getElementById('chart-line');
-      
-      if(barChart && lineChart) {
-          if (view === 'bar') {
-              barChart.classList.remove('hidden');
-              lineChart.classList.add('hidden');
-          } else {
-              barChart.classList.add('hidden');
-              lineChart.classList.remove('hidden');
-          }
+
+      if (barChart && lineChart) {
+        if (view === 'bar') {
+          barChart.classList.remove('hidden');
+          lineChart.classList.add('hidden');
+        } else {
+          barChart.classList.add('hidden');
+          lineChart.classList.remove('hidden');
+        }
       }
     }
-    
+
     // ── Download Resume ──
     function downloadResume() {
-        const date = new Date();
-        const timestamp = date.getFullYear().toString() + 
-                         (date.getMonth() + 1).toString().padStart(2, '0') + 
-                         date.getDate().toString().padStart(2, '0') + '_' + 
-                         date.getHours().toString().padStart(2, '0') + 
-                         date.getMinutes().toString().padStart(2, '0');
-        
-        const a = document.createElement('a');
-        a.href = 'assets/Abdul_Wassay_Resume.pdf';
-        a.download = `Abdul_Wassay_Resume_${timestamp}.pdf`;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
+      const date = new Date();
+      const timestamp = date.getFullYear().toString() +
+        (date.getMonth() + 1).toString().padStart(2, '0') +
+        date.getDate().toString().padStart(2, '0') + '_' +
+        date.getHours().toString().padStart(2, '0') +
+        date.getMinutes().toString().padStart(2, '0');
+
+      const a = document.createElement('a');
+      a.href = 'assets/Abdul_Wassay_Resume.pdf';
+      a.download = `Abdul_Wassay_Resume_${timestamp}.pdf`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
     }
   </script>
 

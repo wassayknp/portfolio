@@ -3,33 +3,34 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Senior BI &amp; Analytics Portfolio | Contact Info</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-        rel="stylesheet" />
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#2060df",
-                        "background-light": "#f6f6f8",
-                        "background-dark": "#0B1120",
-                    },
-                    fontFamily: {
-                        "display": ["Inter"]
-                    },
-                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
-                },
-            },
-        }
-    </script>
-    <style>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Senior BI &amp; Analytics Portfolio | Contact Info</title>
+  <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#2060df",
+            "background-light": "#f6f6f8",
+            "background-dark": "#0B1120",
+          },
+          fontFamily: {
+            "display": ["Inter"]
+          },
+          borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <style>
     .grid-pattern {
       background-size: 40px 40px;
       background-image:
@@ -172,7 +173,7 @@
     .ring-progress {
       transition: stroke-dashoffset 1.4s cubic-bezier(0.25, 1, 0.5, 1);
     }
-  
+
     /* Modal styles */
     .modal {
       opacity: 0;
@@ -180,243 +181,286 @@
       visibility: hidden;
       display: flex;
     }
+
     .modal.active {
       opacity: 1;
       pointer-events: auto;
       visibility: visible;
     }
-</style>
+  </style>
 </head>
 
 <body
-    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-300 pb-24">
+  class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-300 pb-24">
 
-    <!-- Top Navbar -->
-    <nav
-        class="sticky top-0 z-50 w-full border-b border-primary/10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex h-16 items-center justify-between">
-                <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                    <div class="relative w-8 h-8 rounded-full overflow-hidden border-2 border-primary/20 group-hover:border-primary transition-colors duration-300">
-                        <img src="./assets/images/profile_photo.jpg" alt="Abdul Wassay" class="w-full h-full object-cover">
-                    </div>
-                    <span class="text-lg font-bold tracking-tight text-slate-900 dark:text-white">Abdul Wassay</span>
-                </a>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
-                            href="index.html">Home</a>
-                        <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
-                            href="projects_experience.html">Work</a>
-                        <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
-                            href="professional_resume.html">Resume</a>
-                        <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
-                            href="skills_architecture.html">Skills</a>
-                        <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
-                            href="blog.html">Blog</a>
-                        <a class="text-primary font-semibold px-3 py-2 text-sm font-medium transition-colors"
-                            href="contact.html">Contact</a>
-                    </div>
-                </div>
-                <div class="flex items-center gap-4">
-                    <button
-                        class="p-2 rounded-full hover:bg-primary/10 transition-colors text-slate-600 dark:text-slate-400 theme-toggle">
-                        <span class="material-symbols-outlined">light_mode</span>
-                    </button>
-                </div>
-            </div>
+  <!-- Top Navbar -->
+  <nav
+    class="sticky top-0 z-50 w-full border-b border-primary/10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+          <div
+            class="relative w-8 h-8 rounded-full overflow-hidden border-2 border-primary/20 group-hover:border-primary transition-colors duration-300">
+            <img src="./assets/images/profile_photo.jpg" alt="Abdul Wassay" class="w-full h-full object-cover">
+          </div>
+          <span class="text-lg font-bold tracking-tight text-slate-900 dark:text-white">Abdul Wassay</span>
+        </a>
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-8">
+            <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+              href="index.html">Home</a>
+            <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+              href="projects_experience.html">Work</a>
+            <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+              href="professional_resume.html">Resume</a>
+            <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+              href="skills_architecture.html">Skills</a>
+            <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+              href="blog.html">Blog</a>
+            <a class="text-primary font-semibold px-3 py-2 text-sm font-medium transition-colors"
+              href="contact.html">Contact</a>
+          </div>
         </div>
-    </nav>
+        <div class="flex items-center gap-4">
+          <button
+            class="p-2 rounded-full hover:bg-primary/10 transition-colors text-slate-600 dark:text-slate-400 theme-toggle">
+            <span class="material-symbols-outlined">light_mode</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
 
-    <main class="max-w-6xl mx-auto px-4 py-12">
-        <div class="text-center mb-12">
-            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 reveal">Let's <span
-                    class="text-primary">Connect</span></h1>
-            <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Have a quick question, an open role,
-                or a project in mind? Reach out across any of the platforms below.</p>
+  <main class="max-w-6xl mx-auto px-4 py-12">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 reveal">Let's <span
+          class="text-primary">Connect</span></h1>
+      <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Have a quick question, an open role,
+        or a project in mind? Reach out across any of the platforms below.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 reveal">
+
+      <!-- Contact Form -->
+      <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-8 shadow-sm">
+        <h3 class="text-2xl font-bold mb-6 flex items-center gap-2 reveal">
+          <span class="material-symbols-outlined text-primary">send</span> Send a Message
+        </h3>
+        <form class="space-y-6"
+          onsubmit="event.preventDefault(); alert('In a live environment, this would submit your query!');">
+          <div>
+            <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Name</label>
+            <input type="text" required class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all lift transition-all
+                            placeholder=" Enter your name">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Email</label>
+            <input type="email" required class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all lift transition-all
+                            placeholder=" you@company.com">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Message</label>
+            <textarea required rows="4" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all lift transition-all
+                            placeholder=" How can I help you?"></textarea>
+          </div>
+          <button type="submit"
+            class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-primary/25 flex items-center justify-center gap-2 transition-transform transform hover:-translate-y-0.5">
+            Submit Query
+          </button>
+        </form>
+      </div>
+
+      <!-- Social Links & Direct Contact -->
+      <div class="space-y-8">
+        <div>
+          <h3 class="text-lg font-bold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2 reveal">
+            <span class="material-symbols-outlined text-sm">phone_in_talk</span> Direct
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 reveal">
+            <a href="mailto:wassayknp@gmail.com"
+              class="flex flex-col gap-2 p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-primary dark:hover:border-primary transition-colors group">
+              <span
+                class="material-symbols-outlined text-rose-500 text-3xl group-hover:scale-110 transition-transform">mail</span>
+              <div>
+                <p class="text-sm font-bold text-slate-900 dark:text-white">Email</p>
+                <p class="text-xs text-slate-500">wassayknp@gmail.com</p>
+              </div>
+            </a>
+            <a href="tel:+917897034508"
+              class="flex flex-col gap-2 p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-primary dark:hover:border-primary transition-colors group">
+              <span
+                class="material-symbols-outlined text-blue-500 text-3xl group-hover:scale-110 transition-transform">call</span>
+              <div>
+                <p class="text-sm font-bold text-slate-900 dark:text-white">Phone</p>
+                <p class="text-xs text-slate-500">+91 7897034508</p>
+              </div>
+            </a>
+            <a href="https://wa.me/917897034508" target="_blank"
+              class="flex flex-col gap-2 p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-primary dark:hover:border-primary transition-colors group">
+              <span
+                class="material-symbols-outlined text-emerald-500 text-3xl group-hover:scale-110 transition-transform">forum</span>
+              <div>
+                <p class="text-sm font-bold text-slate-900 dark:text-white">WhatsApp</p>
+                <p class="text-xs text-slate-500">+91 7897034508</p>
+              </div>
+            </a>
+          </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 reveal">
-
-            <!-- Contact Form -->
-            <div
-                class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-8 shadow-sm">
-                <h3 class="text-2xl font-bold mb-6 flex items-center gap-2 reveal">
-                    <span class="material-symbols-outlined text-primary">send</span> Send a Message
-                </h3>
-                <form class="space-y-6"
-                    onsubmit="event.preventDefault(); alert('In a live environment, this would submit your query!');">
-                    <div>
-                        <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Name</label>
-                        <input type="text" required
-                            class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all lift transition-all
-                            placeholder="Enter your name">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Email</label>
-                        <input type="email" required
-                            class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all lift transition-all
-                            placeholder="you@company.com">
-                    </div>
-                    <div>
-                        <label
-                            class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Message</label>
-                        <textarea required rows="4"
-                            class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all lift transition-all
-                            placeholder="How can I help you?"></textarea>
-                    </div>
-                    <button type="submit"
-                        class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-primary/25 flex items-center justify-center gap-2 transition-transform transform hover:-translate-y-0.5">
-                        Submit Query
-                    </button>
-                </form>
-            </div>
-
-            <!-- Social Links & Direct Contact -->
-            <div class="space-y-8">
-                <div>
-                    <h3 class="text-lg font-bold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2 reveal">
-                        <span class="material-symbols-outlined text-sm">phone_in_talk</span> Direct
-                    </h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 reveal">
-                        <a href="mailto:wassayknp@gmail.com"
-                            class="flex flex-col gap-2 p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-primary dark:hover:border-primary transition-colors group">
-                            <span
-                                class="material-symbols-outlined text-rose-500 text-3xl group-hover:scale-110 transition-transform">mail</span>
-                            <div>
-                                <p class="text-sm font-bold text-slate-900 dark:text-white">Email</p>
-                                <p class="text-xs text-slate-500">wassayknp@gmail.com</p>
-                            </div>
-                        </a>
-                        <a href="tel:+917897034508"
-                            class="flex flex-col gap-2 p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-primary dark:hover:border-primary transition-colors group">
-                            <span
-                                class="material-symbols-outlined text-blue-500 text-3xl group-hover:scale-110 transition-transform">call</span>
-                            <div>
-                                <p class="text-sm font-bold text-slate-900 dark:text-white">Phone</p>
-                                <p class="text-xs text-slate-500">+91 7897034508</p>
-                            </div>
-                        </a>
-                        <a href="https://wa.me/917897034508" target="_blank"
-                            class="flex flex-col gap-2 p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-primary dark:hover:border-primary transition-colors group">
-                            <span
-                                class="material-symbols-outlined text-emerald-500 text-3xl group-hover:scale-110 transition-transform">forum</span>
-                            <div>
-                                <p class="text-sm font-bold text-slate-900 dark:text-white">WhatsApp</p>
-                                <p class="text-xs text-slate-500">+91 7897034508</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div>
-                    <h3 class="text-lg font-bold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2 reveal">
-                        <span class="material-symbols-outlined text-sm">public</span> Digital Presence
-                    </h3>
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 reveal">
-                        <a href="https://linkedin.com/in/wassayknp" target="_blank"
-                            class="flex items-center gap-3 p-3 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-[#0077b5] hover:text-white transition-colors group">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                                <path
-                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z">
-                                </path>
-                            </svg>
-                            <span class="text-sm font-bold">LinkedIn</span>
-                        </a>
-                        <a href="https://github.com/wassayknp" target="_blank"
-                            class="flex items-center gap-3 p-3 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-[#333] hover:text-white transition-colors group">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                            </svg>
-                            <span class="text-sm font-bold">GitHub</span>
-                        </a>
-                        <a href="https://x.com/wassayknp" target="_blank"
-                            class="flex items-center gap-3 p-3 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-black hover:text-white transition-colors group">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                                <path
-                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                            </svg>
-                            <span class="text-sm font-bold">X (Twitter)</span>
-                        </a>
-                        <a href="https://facebook.com/wassayknp" target="_blank"
-                            class="flex items-center gap-3 p-3 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-[#1877F2] hover:text-white transition-colors group">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                                <path
-                                    d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
-                            </svg>
-                            <span class="text-sm font-bold">Facebook</span>
-                        </a>
-                        <a href="https://instagram.com/wassayknp" target="_blank"
-                            class="flex items-center gap-3 p-3 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-gradient-to-r hover:from-[#f09433] hover:via-[#dc2743] hover:to-[#bc1888] hover:text-white transition-colors group">
-                            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                                <path
-                                    d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z" />
-                                <circle cx="16.806" cy="7.207" r="1.078" />
-                                <path
-                                    d="M20.533 6.111A4.605 4.605 0 0 0 17.9 3.479a6.606 6.606 0 0 0-2.186-.42c-.963-.042-1.268-.054-3.71-.054s-2.755 0-3.71.054a6.554 6.554 0 0 0-2.184.42 4.6 4.6 0 0 0-2.633 2.632 6.585 6.585 0 0 0-.419 2.186c-.043.962-.056 1.267-.056 3.71 0 2.442 0 2.753.056 3.71.015.348.072.686.171 1.011A4.6 4.6 0 0 0 5.862 19.33a6.585 6.585 0 0 0 2.186.419c.963.042 1.268.054 3.71.054s2.755 0 3.71-.054a6.554 6.554 0 0 0 2.184-.42 4.6 4.6 0 0 0 2.633-2.632 6.585 6.585 0 0 0 .419-2.186c.043-.962.056-1.267.056-3.71 0-2.442 0-2.753-.056-3.71.015-.348.072-.686.171-1.011zm-2.035 15.658c-.126.376-.328.72-.596 1.019a2.977 2.977 0 0 1-1.742 1.033c-.705.163-1.077.163-3.768.163-3.414 0-3.716 0-4.664-.044a4.918 4.918 0 0 1-1.631-.314 2.977 2.977 0 0 1-1.742-1.034 2.977 2.977 0 0 1-1.033-1.742 4.918 4.918 0 0 1-.314-1.631c-.044-.947-.044-1.25-.044-4.664s0-3.717.044-4.665a4.918 4.918 0 0 1 .314-1.631 2.977 2.977 0 0 1 1.033-1.742 2.977 2.977 0 0 1 1.742-1.033 4.918 4.918 0 0 1 1.631-.314c.948-.044 1.25-.044 4.664-.044s3.716 0 4.664.044a4.918 4.918 0 0 1 1.631.314 2.977 2.977 0 0 1 1.742 1.033 2.977 2.977 0 0 1 1.033 1.742 4.918 4.918 0 0 1 .314 1.631c.044.948.044 1.25.044 4.665s0 3.717-.044 4.664a4.918 4.918 0 0 1-.314 1.631z" />
-                            </svg>
-                            <span class="text-sm font-bold">Instagram</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <div>
+          <h3 class="text-lg font-bold uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2 reveal">
+            <span class="material-symbols-outlined text-sm">public</span> Digital Presence
+          </h3>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 reveal">
+            <a href="https://linkedin.com/in/wassayknp" target="_blank"
+              class="flex items-center gap-3 p-3 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-[#0077b5] hover:text-white transition-colors group">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z">
+                </path>
+              </svg>
+              <span class="text-sm font-bold">LinkedIn</span>
+            </a>
+            <a href="https://github.com/wassayknp" target="_blank"
+              class="flex items-center gap-3 p-3 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-[#333] hover:text-white transition-colors group">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+              </svg>
+              <span class="text-sm font-bold">GitHub</span>
+            </a>
+            <a href="https://x.com/wassayknp" target="_blank"
+              class="flex items-center gap-3 p-3 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-black hover:text-white transition-colors group">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+              <span class="text-sm font-bold">X (Twitter)</span>
+            </a>
+            <a href="https://facebook.com/wassayknp" target="_blank"
+              class="flex items-center gap-3 p-3 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-[#1877F2] hover:text-white transition-colors group">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+              </svg>
+              <span class="text-sm font-bold">Facebook</span>
+            </a>
+            <a href="https://instagram.com/wassayknp" target="_blank"
+              class="flex items-center gap-3 p-3 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-gradient-to-r hover:from-[#f09433] hover:via-[#dc2743] hover:to-[#bc1888] hover:text-white transition-colors group">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z" />
+                <circle cx="16.806" cy="7.207" r="1.078" />
+                <path
+                  d="M20.533 6.111A4.605 4.605 0 0 0 17.9 3.479a6.606 6.606 0 0 0-2.186-.42c-.963-.042-1.268-.054-3.71-.054s-2.755 0-3.71.054a6.554 6.554 0 0 0-2.184.42 4.6 4.6 0 0 0-2.633 2.632 6.585 6.585 0 0 0-.419 2.186c-.043.962-.056 1.267-.056 3.71 0 2.442 0 2.753.056 3.71.015.348.072.686.171 1.011A4.6 4.6 0 0 0 5.862 19.33a6.585 6.585 0 0 0 2.186.419c.963.042 1.268.054 3.71.054s2.755 0 3.71-.054a6.554 6.554 0 0 0 2.184-.42 4.6 4.6 0 0 0 2.633-2.632 6.585 6.585 0 0 0 .419-2.186c.043-.962.056-1.267.056-3.71 0-2.442 0-2.753-.056-3.71.015-.348.072-.686.171-1.011zm-2.035 15.658c-.126.376-.328.72-.596 1.019a2.977 2.977 0 0 1-1.742 1.033c-.705.163-1.077.163-3.768.163-3.414 0-3.716 0-4.664-.044a4.918 4.918 0 0 1-1.631-.314 2.977 2.977 0 0 1-1.742-1.034 2.977 2.977 0 0 1-1.033-1.742 4.918 4.918 0 0 1-.314-1.631c-.044-.947-.044-1.25-.044-4.664s0-3.717.044-4.665a4.918 4.918 0 0 1 .314-1.631 2.977 2.977 0 0 1 1.033-1.742 2.977 2.977 0 0 1 1.742-1.033 4.918 4.918 0 0 1 1.631-.314c.948-.044 1.25-.044 4.664-.044s3.716 0 4.664.044a4.918 4.918 0 0 1 1.631.314 2.977 2.977 0 0 1 1.742 1.033 2.977 2.977 0 0 1 1.033 1.742 4.918 4.918 0 0 1 .314 1.631c.044.948.044 1.25.044 4.665s0 3.717-.044 4.664a4.918 4.918 0 0 1-.314 1.631z" />
+              </svg>
+              <span class="text-sm font-bold">Instagram</span>
+            </a>
+          </div>
         </div>
-    </main>
+      </div>
+    </div>
+  </main>
 
-    
+
   <!-- ═══ RE-DESIGNED MODERN FOOTER ═══ -->
-  <footer class="relative bg-slate-50 dark:bg-[#0a0f1c] pt-10 pb-24 md:pb-8 border-t border-slate-200 dark:border-slate-800/40 overflow-hidden text-slate-600 dark:text-slate-300 transition-colors duration-300">
+  <footer
+    class="relative bg-slate-50 dark:bg-[#0a0f1c] pt-10 pb-24 md:pb-8 border-t border-slate-200 dark:border-slate-800/40 overflow-hidden text-slate-600 dark:text-slate-300 transition-colors duration-300">
     <!-- subtle glow effect -->
-    <div class="hidden dark:block absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
-    <div class="hidden dark:block absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-64 bg-primary/10 blur-[100px] rounded-full pointer-events-none"></div>
-    
+    <div
+      class="hidden dark:block absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent">
+    </div>
+    <div
+      class="hidden dark:block absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-64 bg-primary/10 blur-[100px] rounded-full pointer-events-none">
+    </div>
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-8 reveal">
         <div class="md:col-span-4 lg:col-span-5">
           <div class="flex items-center gap-3 mb-6 group">
-            <div class="relative w-10 h-10 rounded-full overflow-hidden border-2 border-primary/20 group-hover:border-primary transition-colors duration-300">
-                <img src="./assets/images/profile_photo.jpg" alt="Abdul Wassay" class="w-full h-full object-cover">
+            <div
+              class="relative w-10 h-10 rounded-full overflow-hidden border-2 border-primary/20 group-hover:border-primary transition-colors duration-300">
+              <img src="./assets/images/profile_photo.jpg" alt="Abdul Wassay" class="w-full h-full object-cover">
             </div>
-            <span class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-400">Abdul Wassay</span>
+            <span
+              class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-400">Abdul
+              Wassay</span>
           </div>
-          <p class="max-w-sm mb-8 text-base leading-relaxed">Architecting high-performance data ecosystems and AI-powered BI strategies. Transforming complexity into competitive advantage.</p>
+          <p class="max-w-sm mb-8 text-base leading-relaxed">Architecting high-performance data ecosystems and
+            AI-powered BI strategies. Transforming complexity into competitive advantage.</p>
           <div class="flex gap-4">
             <a href="https://linkedin.com/in/wassayknp" target="_blank"
               class="w-12 h-12 rounded-xl bg-white dark:bg-slate-900/50 flex items-center justify-center hover:bg-[#0077b5] hover:text-white dark:hover:bg-[#0077b5] hover:-translate-y-1 transition-all border border-slate-200 dark:border-slate-800 shadow-sm lift transition-all">
-              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+              </svg>
             </a>
             <a href="https://github.com/wassayknp" target="_blank"
               class="w-12 h-12 rounded-xl bg-white dark:bg-slate-900/50 flex items-center justify-center hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 hover:-translate-y-1 transition-all border border-slate-200 dark:border-slate-800 shadow-sm lift transition-all">
-              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" /></svg>
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+              </svg>
             </a>
-            <a href="contact.html" class="w-12 h-12 rounded-xl bg-white dark:bg-slate-900/50 flex items-center justify-center hover:bg-primary hover:text-white hover:-translate-y-1 transition-all border border-slate-200 dark:border-slate-800 shadow-sm lift transition-all">
+            <a href="contact.html"
+              class="w-12 h-12 rounded-xl bg-white dark:bg-slate-900/50 flex items-center justify-center hover:bg-primary hover:text-white hover:-translate-y-1 transition-all border border-slate-200 dark:border-slate-800 shadow-sm lift transition-all">
               <span class="material-symbols-outlined text-xl transition-colors">mail</span>
             </a>
           </div>
         </div>
         <div class="md:col-span-3 lg:col-span-2">
-          <h5 class="text-slate-900 dark:text-white font-bold mb-6 uppercase tracking-widest text-xs opacity-90">Explore</h5>
+          <h5 class="text-slate-900 dark:text-white font-bold mb-6 uppercase tracking-widest text-xs opacity-90">Explore
+          </h5>
           <ul class="space-y-3.5">
-            <li><a href="index.html" class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Home</a></li>
-            <li><a href="projects_experience.html" class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Work</a></li>
-            <li><a href="professional_resume.html" class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Resume</a></li>
-            <li><a href="blog.html" class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Blog</a></li>
+            <li><a href="index.html"
+                class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
+                  class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Home</a>
+            </li>
+            <li><a href="projects_experience.html"
+                class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
+                  class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Work</a>
+            </li>
+            <li><a href="professional_resume.html"
+                class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
+                  class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Resume</a>
+            </li>
+            <li><a href="blog.html"
+                class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
+                  class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Blog</a>
+            </li>
           </ul>
         </div>
         <div class="md:col-span-3 lg:col-span-2">
-          <h5 class="text-slate-900 dark:text-white font-bold mb-6 uppercase tracking-widest text-xs opacity-90">Expertise</h5>
+          <h5 class="text-slate-900 dark:text-white font-bold mb-6 uppercase tracking-widest text-xs opacity-90">
+            Expertise</h5>
           <ul class="space-y-3.5">
-            <li><a href="skills_architecture.html" class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>BI Strategy</a></li>
-            <li><a href="skills_architecture.html" class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Data Modeling</a></li>
-            <li><a href="skills_architecture.html" class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Data Architecture</a></li>
-            <li><a href="skills_architecture.html" class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>AI Ecosystems</a></li>
+            <li><a href="skills_architecture.html"
+                class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
+                  class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>BI
+                Strategy</a></li>
+            <li><a href="skills_architecture.html"
+                class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
+                  class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Data
+                Modeling</a></li>
+            <li><a href="skills_architecture.html"
+                class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
+                  class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>Data
+                Architecture</a></li>
+            <li><a href="skills_architecture.html"
+                class="hover:text-primary transition-colors text-sm font-medium flex items-center gap-2 group"><span
+                  class="w-1.5 h-1.5 rounded-full bg-primary/0 group-hover:bg-primary transition-all"></span>AI
+                Ecosystems</a></li>
           </ul>
         </div>
         <div class="md:col-span-2 lg:col-span-3">
-          <h5 class="text-slate-900 dark:text-white font-bold mb-6 uppercase tracking-widest text-xs opacity-90">Location</h5>
-          <div class="bg-white dark:bg-slate-900/50 rounded-2xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm relative overflow-hidden group">
-            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <h5 class="text-slate-900 dark:text-white font-bold mb-6 uppercase tracking-widest text-xs opacity-90">
+            Location</h5>
+          <div
+            class="bg-white dark:bg-slate-900/50 rounded-2xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm relative overflow-hidden group">
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            </div>
             <div class="flex items-start gap-4 mb-4 relative z-10">
               <span class="material-symbols-outlined text-primary bg-primary/10 rounded-full p-2">location_on</span>
               <div>
@@ -424,12 +468,17 @@
                 <p class="text-xs text-slate-500 dark:text-slate-400">Open to global roles</p>
               </div>
             </div>
-            <a href="contact.html" class="inline-flex items-center gap-1.5 text-primary text-sm font-bold hover:underline relative z-10 group-hover:translate-x-1 transition-transform">Contact Me <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
+            <a href="contact.html"
+              class="inline-flex items-center gap-1.5 text-primary text-sm font-bold hover:underline relative z-10 group-hover:translate-x-1 transition-transform">Contact
+              Me <span class="material-symbols-outlined text-xs">arrow_forward</span></a>
           </div>
         </div>
       </div>
-      <div class="pt-8 border-t border-slate-200 dark:border-slate-800/60 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p class="text-xs font-medium">© 2026 Abdul Wassay. Built with <span class="text-rose-500 animate-pulse inline-block">❤</span> in India <img src="https://flagcdn.com/w20/in.png" class="inline-block ml-1 -mt-1 w-4" alt="India"></p>
+      <div
+        class="pt-8 border-t border-slate-200 dark:border-slate-800/60 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-xs font-medium">© 2026 Abdul Wassay. Built with <span
+            class="text-rose-500 animate-pulse inline-block">❤</span> in India <img src="https://flagcdn.com/w20/in.png"
+            class="inline-block ml-1 -mt-1 w-4" alt="India"></p>
         <div class="flex gap-6">
           <a href="#" class="text-xs hover:text-primary transition-colors font-medium">Privacy</a>
           <a href="#" class="text-xs hover:text-primary transition-colors font-medium">Terms</a>
@@ -439,46 +488,46 @@
     </div>
   </footer>
 
-    <!-- Bottom Tab Bar -->
-    <div class="md:hidden fixed bottom-6 left-0 right-0 z-40 px-4 pointer-events-none">
-        <div class="max-w-md mx-auto pointer-events-auto">
-            <div
-                class="flex bg-slate-900 border border-slate-800 rounded-full p-1.5 shadow-2xl overflow-x-auto hide-scrollbar">
-                <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white transition-colors"
-                    href="index.html">
-                    <span class="material-symbols-outlined">home</span>
-                    <span class="text-[10px] font-bold">Home</span>
-                </a>
-                <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white transition-colors"
-                    href="projects_experience.html">
-                    <span class="material-symbols-outlined">grid_view</span>
-                    <span class="text-[10px] font-bold">Work</span>
-                </a>
-                <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white transition-colors"
-                    href="professional_resume.html">
-                    <span class="material-symbols-outlined">article</span>
-                    <span class="text-[10px] font-bold">Resume</span>
-                </a>
-                <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white transition-colors"
-                    href="skills_architecture.html">
-                    <span class="material-symbols-outlined">psychology</span>
-                    <span class="text-[10px] font-bold">Skills</span>
-                </a>
-                <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white transition-colors"
-                    href="blog.html">
-                    <span class="material-symbols-outlined">menu_book</span>
-                    <span class="text-[10px] font-bold">Blog</span>
-                </a>
-                <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-white bg-primary rounded-full transition-colors"
-                    href="contact.html">
-                    <span class="material-symbols-outlined">contact_support</span>
-                    <span class="text-[10px] font-bold">Contact</span>
-                </a>
-            </div>
-        </div>
+  <!-- Bottom Tab Bar -->
+  <div class="md:hidden fixed bottom-6 left-0 right-0 z-40 px-4 pointer-events-none">
+    <div class="max-w-md mx-auto pointer-events-auto">
+      <div
+        class="flex bg-slate-900 border border-slate-800 rounded-full p-1.5 shadow-2xl overflow-x-auto hide-scrollbar">
+        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white transition-colors"
+          href="index.html">
+          <span class="material-symbols-outlined">home</span>
+          <span class="text-[10px] font-bold">Home</span>
+        </a>
+        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white transition-colors"
+          href="projects_experience.html">
+          <span class="material-symbols-outlined">grid_view</span>
+          <span class="text-[10px] font-bold">Work</span>
+        </a>
+        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white transition-colors"
+          href="professional_resume.html">
+          <span class="material-symbols-outlined">article</span>
+          <span class="text-[10px] font-bold">Resume</span>
+        </a>
+        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white transition-colors"
+          href="skills_architecture.html">
+          <span class="material-symbols-outlined">psychology</span>
+          <span class="text-[10px] font-bold">Skills</span>
+        </a>
+        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-slate-400 hover:text-white transition-colors"
+          href="blog.html">
+          <span class="material-symbols-outlined">menu_book</span>
+          <span class="text-[10px] font-bold">Blog</span>
+        </a>
+        <a class="flex-1 min-w-[60px] flex flex-col items-center py-2 text-white bg-primary rounded-full transition-colors"
+          href="contact.html">
+          <span class="material-symbols-outlined">contact_support</span>
+          <span class="text-[10px] font-bold">Contact</span>
+        </a>
+      </div>
     </div>
+  </div>
 
-    
+
   <!-- ═══ ANIMATION & LOGIC SCRIPTS ═══ -->
   <script>
     // ── Dark Mode ──
@@ -496,30 +545,30 @@
 
     // ── Mobile Menu ──
     const mobBtn = document.getElementById('mob-menu-btn');
-    if(mobBtn) {
-        mobBtn.addEventListener('click', () => {
+    if (mobBtn) {
+      mobBtn.addEventListener('click', () => {
         const menu = document.getElementById('mobile-menu');
-        if(menu) menu.classList.toggle('open');
-        });
+        if (menu) menu.classList.toggle('open');
+      });
     }
 
     // ── Typewriter ──
     const el = document.getElementById('typewriter');
-    if(el) {
-        const phrases = ['Senior BI & Analytics Engineer', 'Microsoft Fabric Specialist', 'AI-Powered BI Developer', 'Power BI Expert & DAX Architect'];
-        let pi = 0, ci = 0, deleting = false;
-        function type() {
-            const phrase = phrases[pi];
-            if (!deleting) {
-                el.textContent = phrase.slice(0, ++ci);
-                if (ci === phrase.length) { deleting = true; setTimeout(type, 2000); return; }
-            } else {
-                el.textContent = phrase.slice(0, --ci);
-                if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; }
-            }
-            setTimeout(type, deleting ? 50 : 80);
+    if (el) {
+      const phrases = ['Senior BI & Analytics Engineer', 'Microsoft Fabric Specialist', 'AI-Powered BI Developer', 'Power BI Expert & DAX Architect'];
+      let pi = 0, ci = 0, deleting = false;
+      function type() {
+        const phrase = phrases[pi];
+        if (!deleting) {
+          el.textContent = phrase.slice(0, ++ci);
+          if (ci === phrase.length) { deleting = true; setTimeout(type, 2000); return; }
+        } else {
+          el.textContent = phrase.slice(0, --ci);
+          if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; }
         }
-        setTimeout(type, 800);
+        setTimeout(type, deleting ? 50 : 80);
+      }
+      setTimeout(type, 800);
     }
 
     // ── Scroll Reveal ──
@@ -534,7 +583,7 @@
         if (!e.isIntersecting) return;
         const el = e.target;
         const target = parseInt(el.dataset.target);
-        if(isNaN(target)) return;
+        if (isNaN(target)) return;
         const suffix = el.dataset.suffix || '';
         let start = 0;
         const duration = 1500;
@@ -556,7 +605,7 @@
       entries.forEach(e => {
         if (!e.isIntersecting) return;
         e.target.querySelectorAll('.bar-fill').forEach(bar => {
-          setTimeout(() => { if(bar.dataset.width) bar.style.width = bar.dataset.width + '%'; }, 200);
+          setTimeout(() => { if (bar.dataset.width) bar.style.width = bar.dataset.width + '%'; }, 200);
         });
         barObs.unobserve(e.target);
       });
@@ -571,36 +620,36 @@
       });
       btn.classList.add('active', 'bg-primary/10', 'text-primary');
       btn.classList.remove('text-slate-400');
-      
+
       const barChart = document.getElementById('chart-bar');
       const lineChart = document.getElementById('chart-line');
-      
-      if(barChart && lineChart) {
-          if (view === 'bar') {
-              barChart.classList.remove('hidden');
-              lineChart.classList.add('hidden');
-          } else {
-              barChart.classList.add('hidden');
-              lineChart.classList.remove('hidden');
-          }
+
+      if (barChart && lineChart) {
+        if (view === 'bar') {
+          barChart.classList.remove('hidden');
+          lineChart.classList.add('hidden');
+        } else {
+          barChart.classList.add('hidden');
+          lineChart.classList.remove('hidden');
+        }
       }
     }
-    
+
     // ── Download Resume ──
     function downloadResume() {
-        const date = new Date();
-        const timestamp = date.getFullYear().toString() + 
-                         (date.getMonth() + 1).toString().padStart(2, '0') + 
-                         date.getDate().toString().padStart(2, '0') + '_' + 
-                         date.getHours().toString().padStart(2, '0') + 
-                         date.getMinutes().toString().padStart(2, '0');
-        
-        const a = document.createElement('a');
-        a.href = 'assets/Abdul_Wassay_Resume.pdf';
-        a.download = `Abdul_Wassay_Resume_${timestamp}.pdf`;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
+      const date = new Date();
+      const timestamp = date.getFullYear().toString() +
+        (date.getMonth() + 1).toString().padStart(2, '0') +
+        date.getDate().toString().padStart(2, '0') + '_' +
+        date.getHours().toString().padStart(2, '0') +
+        date.getMinutes().toString().padStart(2, '0');
+
+      const a = document.createElement('a');
+      a.href = 'assets/Abdul_Wassay_Resume.pdf';
+      a.download = `Abdul_Wassay_Resume_${timestamp}.pdf`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
     }
   </script>
 
