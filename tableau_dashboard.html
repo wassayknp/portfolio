@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau Dashboard</title>
+    <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        /* Main Content Area */
+        main {
+            flex: 1;
+            padding: 40px 20px;
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .dashboard-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            min-height: 600px;
+        }
+
+        #tableau_div {
+            width: 100%;
+            height: 700px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loading {
+            text-align: center;
+            color: #666;
+            font-size: 1.2em;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: auto;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 8px 0;
+            font-size: 1em;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .created-by {
+            font-weight: 600;
+            color: #667eea;
+            font-size: 1.1em;
+        }
+
+        .footer-divider {
+            height: 1px;
+            background-color: #555;
+            margin: 15px 0;
+            width: 100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-info {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            main {
+                padding: 20px 10px;
+            }
+
+            .dashboard-container {
+                padding: 15px;
+            }
+
+            #tableau_div {
+                height: 500px;
+            }
+
+            footer {
+                padding: 20px 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            header p {
+                font-size: 0.9em;
+            }
+
+            #tableau_div {
+                height: 400px;
+            }
+
+            footer p {
+                font-size: 0.9em;
+            }
+        }
+
+        /* Error Message */
+        .error-message {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>📊 Dashboard Analytics</h1>
+        <p>Interactive Data Visualization</p>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="dashboard-container">
+            <!-- Tableau Dashboard Div -->
+            <div id="tableau_div" class="loading">
+                <p>Loading Dashboard...</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p class="created-by">✓ Created by Abdul Wassay</p>
+            <div class="footer-divider"></div>
+            <div class="footer-info">
+                <p>© 2026 Dashboard Analytics. All rights reserved.</p>
+                <p>Last Updated: <span id="currentDate"></span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tableau Dashboard Script -->
+    <script type="text/javascript">
+        // Initialize Tableau Dashboard
+        function initializeTableau() {
+            var options = {
+                hideTabs: false,
+                hideToolbar: false,
+                onFirstInteractive: function() {
+                    console.log("Dashboard loaded successfully");
+                }
+            };
+
+            // Replace 'YOUR_TABLEAU_PUBLIC_URL' with your actual Tableau Public dashboard URL
+            // Example: https://public.tableau.com/views/YourWorkbookName/YourSheetName
+            var url = "https://public.tableau.com/views/YourWorkbookName/YourSheetName";
+
+            var placeholderDiv = document.getElementById("tableau_div");
+            var viz = new tableau.Viz(placeholderDiv, url, options);
+
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                viz.reflow();
+            });
+        }
+
+        // Set current date in footer
+        function setCurrentDate() {
+            var today = new Date();
+            var options = { year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('currentDate').textContent = today.toLocaleDateString('en-US', options);
+        }
+
+        // Run initialization when page loads
+        window.addEventListener('load', function() {
+            setCurrentDate();
+            // Uncomment the line below when you have a valid Tableau URL
+            // initializeTableau();
+            
+            // For demonstration, show this message
+            document.getElementById('tableau_div').innerHTML = '<p style="color: #999; font-size: 1.1em;">⚠️ Please replace the Tableau URL with your actual dashboard link</p>';
+        });
+
+        // Alternative: If you want to load dashboard after a specific event
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("Page loaded - Ready to embed Tableau dashboard");
+        });
+    </script>
+</body>
+</html>
