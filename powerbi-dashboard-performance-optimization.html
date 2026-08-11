@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>How I Cut Power BI Dashboard Load Times by 40% | Abdul Wassay — Lead Power BI Developer</title>
+  <meta name="description"
+    content="Power BI dashboard performance optimization in practice: ETL and Power Query tuning, SQL pre-aggregation, Star Schema modeling, Import vs DirectQuery decisions and DAX optimization — with a verified 40% load-time reduction across an enterprise reporting suite." />
+  <meta name="keywords"
+    content="Power BI performance optimization, Power BI dashboard load time, slow Power BI dashboard, Power BI performance tuning, DAX optimization, SQL pre-aggregation, Power Query performance, Star Schema, DirectQuery vs Import, Power BI consultant, Power BI developer" />
+  <link rel="canonical" href="https://wassayknp.github.io/portfolio/powerbi-dashboard-performance-optimization.html" />
+  <meta property="og:site_name" content="Abdul Wassay | Lead Power BI Developer | BI Solution Architect" />
+  <meta property="og:title" content="How I Cut Power BI Dashboard Load Times by 40%" />
+  <meta property="og:description"
+    content="Real techniques for Power BI performance: ETL and Power Query tuning, SQL pre-aggregation, Star Schema modeling, Import vs DirectQuery decisions and DAX optimization — with a verified 40% load-time reduction." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://wassayknp.github.io/portfolio/powerbi-dashboard-performance-optimization.html" />
+  <meta property="og:image"
+    content="https://wassayknp.github.io/portfolio/assets/images/blog-powerbi-performance.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Power BI dashboard performance optimization — cutting dashboard load times by 40%" />
+  <meta property="og:article:published_time" content="2026-03-15" />
+  <meta property="og:article:author" content="https://linkedin.com/in/wassayknp" />
+  <meta property="og:article:section" content="Power BI" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How I Cut Power BI Dashboard Load Times by 40%" />
+  <meta name="twitter:description"
+    content="Power BI performance in practice: ETL tuning, SQL pre-aggregation, Star Schema and DAX optimization with a verified 40% load-time reduction." />
+  <meta name="twitter:image"
+    content="https://wassayknp.github.io/portfolio/assets/images/blog-powerbi-performance.png" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://wassayknp.github.io/portfolio/powerbi-dashboard-performance-optimization.html"
+      },
+      "headline": "How I Cut Power BI Dashboard Load Times by 40%",
+      "description": "Power BI dashboard performance optimization: ETL and Power Query tuning, SQL pre-aggregation, Star Schema modeling, Import vs DirectQuery decisions and DAX optimization, with a verified 40% load-time reduction.",
+      "image": "https://wassayknp.github.io/portfolio/assets/images/blog-powerbi-performance.png",
+      "author": {
+        "@type": "Person",
+        "name": "Abdul Wassay",
+        "url": "https://wassayknp.github.io/portfolio/",
+        "sameAs": ["https://linkedin.com/in/wassayknp", "https://github.com/wassayknp"],
+        "jobTitle": "Lead Power BI Developer"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Abdul Wassay",
+        "url": "https://wassayknp.github.io/portfolio/"
+      },
+      "datePublished": "2026-03-15",
+      "dateModified": "2026-03-15",
+      "inLanguage": "en",
+      "keywords": ["Power BI", "DAX", "performance optimization", "ETL", "SQL", "Star Schema", "DirectQuery", "pre-aggregation"],
+      "articleBody": "In enterprise Power BI delivery, dashboard load time is the first thing users notice. Slow loads erode trust in the report, no matter how good the analysis is. The fastest win is rarely in the visual layer; it is upstream, in the ETL and SQL that feed the semantic model. This article walks through the practical approach I use to optimize Power BI report and dashboard performance, and the strategy that reduced load times by 40% across an enterprise reporting suite through optimized ETL pipelines, SQL queries and pre-aggregation."
+    }
+  </script>
+  <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#2060df",
+            "background-light": "#f6f6f8",
+            "background-dark": "#0B1120",
+          },
+          fontFamily: {
+            "display": ["Inter"]
+          },
+          borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <style>
+    .grid-pattern {
+      background-size: 40px 40px;
+      background-image:
+        linear-gradient(to right, rgba(32, 96, 223, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(32, 96, 223, 0.05) 1px, transparent 1px);
+    }
+
+    body {
+      min-height: max(884px, 100dvh);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 0.2s;
+    }
+
+    /* Article typography */
+    .article-body h2 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: inherit;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgb(226 232 240);
+    }
+
+    .dark .article-body h2 {
+      border-bottom-color: rgb(30 41 59);
+    }
+
+    .article-body h3 {
+      font-size: 1.125rem;
+      font-weight: 700;
+      margin-top: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .article-body p {
+      margin-bottom: 1.25rem;
+      line-height: 1.8;
+    }
+
+    .article-body ul,
+    .article-body ol {
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .article-body ul {
+      list-style: disc;
+    }
+
+    .article-body ol {
+      list-style: decimal;
+    }
+
+    .article-body code {
+      font-size: 0.875em;
+      padding: 0.15em 0.4em;
+      border-radius: 0.375rem;
+      background: rgb(226 232 240);
+    }
+
+    .dark .article-body code {
+      background: rgb(30 41 59);
+    }
+
+    .article-body strong {
+      font-weight: 700;
+    }
+
+    /* Card hover lift */
+    .lift {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .lift:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(32, 96, 223, 0.12);
+    }
+
+    /* Mobile menu */
+    #mobile-menu {
+      transition: max-height 0.3s ease, opacity 0.3s ease;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+    }
+
+    #mobile-menu.open {
+      max-height: 400px;
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body
+  class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 transition-colors duration-300 pb-20">
+
+  <!-- Top Navbar -->
+  <nav
+    class="sticky top-0 z-50 w-full border-b border-primary/10 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <a href="index.html" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+          <div
+            class="relative w-8 h-8 rounded-full overflow-hidden border-2 border-primary/20 group-hover:border-primary transition-colors duration-300">
+            <img src="./assets/images/profile_photo.jpg" alt="Abdul Wassay" class="w-full h-full object-cover">
+          </div>
+          <span class="text-lg font-bold tracking-tight text-slate-900 dark:text-white">Abdul Wassay</span>
+        </a>
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-8">
+            <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+              href="index.html">Home</a>
+            <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+              href="projects_experience.html">Work</a>
+            <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+              href="professional_resume.html">Resume</a>
+            <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+              href="skills_architecture.html">Skills</a>
+            <a class="text-primary font-semibold px-3 py-2 text-sm font-medium transition-colors"
+              href="blog.html">Blog</a>
+            <a class="text-slate-600 dark:text-slate-400 hover:text-primary dark:hover:text-primary px-3 py-2 text-sm font-medium transition-colors"
+              href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div class="flex items-center gap-4">
+          <button
+            class="p-2 rounded-full hover:bg-primary/10 transition-colors text-slate-600 dark:text-slate-400 theme-toggle">
+            <span class="material-symbols-outlined">light_mode</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Article -->
+  <main class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <div class="mb-6">
+      <a href="blog.html"
+        class="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline transition-colors">
+        <span class="material-symbols-outlined text-base">arrow_back</span> All articles
+      </a>
+    </div>
+
+    <article>
+      <header class="mb-8">
+        <div class="flex flex-wrap items-center gap-2 mb-4">
+          <span
+            class="px-3 py-1 rounded-lg bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-widest">Power
+            BI Performance</span>
+          <span class="text-xs text-slate-400 dark:text-slate-500">March 15, 2026 • 8 min read</span>
+        </div>
+        <h1
+          class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight mb-5">
+          How I Cut Power BI Dashboard Load Times by 40%
+        </h1>
+        <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+          In enterprise Power BI delivery, dashboard load time is the first thing users notice. Slow loads erode
+          trust in the report — no matter how good the analysis is. Here is the practical, step-by-step strategy I
+          use to make Power BI dashboards load dramatically faster.
+        </p>
+        <div class="flex items-center gap-3 pt-5 mt-6 border-t border-slate-200 dark:border-slate-800">
+          <img src="./assets/images/profile_photo.jpg" alt="Abdul Wassay"
+            class="w-11 h-11 rounded-full object-cover border-2 border-primary/20">
+          <div>
+            <p class="text-sm font-bold">Abdul Wassay</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Lead Power BI Developer | BI Solution Architect</p>
+          </div>
+        </div>
+      </header>
+
+      <img src="./assets/images/blog-powerbi-performance.png" alt="Power BI dashboard performance optimization — ETL, SQL pre-aggregation, Star Schema and DAX tuning"
+        class="w-full rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm mb-10" />
+
+      <div class="article-body text-slate-700 dark:text-slate-300">
+
+        <p>The fastest win in Power BI performance is rarely in the visual layer — it is <strong>upstream</strong>,
+          in the ETL and SQL that feed the semantic model. Over the course of an enterprise delivery, I reduced
+          dashboard load times by <strong>40%</strong> through a combination of optimized ETL pipelines, complex SQL
+          queries and pre-aggregation. Below is the exact approach, in the order I apply it.</p>
+
+        <h2>1. Measure first: you can't fix what you haven't profiled</h2>
+        <p>Before touching a single query, I baseline the report with the tools built into the Power BI ecosystem:
+          <strong>Performance Analyzer</strong> in Power BI Desktop, <strong>DAX Studio</strong> for server timings
+          and storage engine vs formula engine splits, and <strong>VertiPaq Analyzer</strong> for column cardinality
+          and model size. The goal is to separate the three phases of report rendering:</p>
+        <ul>
+          <li><strong>Data load</strong> — time spent by the engine reading from cache or the gateway.</li>
+          <li><strong>DAX query execution</strong> — time spent computing the visual's measure.</li>
+          <li><strong>Visual rendering</strong> — time spent drawing the visual on the page.</li>
+        </ul>
+        <p>In most slow dashboards I've profiled, the bulk of the time sits in data load and DAX execution — which
+          means the fix belongs in the data layer and the model, not in the layout.</p>
+
+        <h2>2. Optimize the ETL pipeline and Power Query (M)</h2>
+        <p>Power Query is where most performance is silently lost. Every transformation adds to the query plan, and
+          queries that pull entire source tables into the engine before filtering pay for data they never use. My
+          ETL optimization checklist:</p>
+        <ul>
+          <li><strong>Push work upstream.</strong> Filter, aggregate and join in the source (SQL) layer instead of
+            Power Query wherever possible. Folding-friendly M steps execute on the database, not on your machine or
+            the gateway.</li>
+          <li><strong>Remove redundant transformations.</strong> Changed types, promoted headers and appended steps
+            left over from prototyping add overhead to every refresh and query.</li>
+          <li><strong>Avoid expensive table operations.</strong> Merge and append only what is necessary; prefer
+            single-purpose staging queries over one giant, tangled query per table.</li>
+          <li><strong>Reduce row volume at the source.</strong> If a report only needs the last 24 months of
+            history, don't load 10 years into the model.</li>
+        </ul>
+        <p>In the engagement that produced the 40% reduction, removing redundant transformations and pushing heavy
+          joins upstream meant Power Query handled a fraction of the data it previously touched — and every
+          dashboard in the suite loaded faster as a result.</p>
+
+        <h2>3. Complex SQL, CTEs, stored procedures and pre-aggregation</h2>
+        <p>SQL is where the biggest single lever lives. Moving heavy computation into the database layer with
+          <strong>optimized SQL queries</strong> and <strong>pre-aggregated result sets</strong> means Power BI
+          imports a compact, query-ready table instead of raw transaction data. My approach:</p>
+        <ul>
+          <li><strong>Pre-aggregate at the source.</strong> Build summary tables in the data warehouse — by day,
+            month, region or product — so the semantic model imports aggregates, not grain-level rows.</li>
+          <li><strong>Use CTEs and stored procedures deliberately.</strong> Stored procedures encapsulate business
+            logic, allow parameterized refresh and keep complex transformations in the database where they can be
+            tuned and indexed.</li>
+          <li><strong>Query optimization.</strong> Review execution plans, add or refine indexes, and eliminate
+            table scans on large fact tables.</li>
+        </ul>
+        <p>This is the phase that delivered the headline result: <strong>optimized ETL pipelines, SQL queries and
+            pre-aggregation reduced dashboard load times by 40%</strong> across the reporting suite.</p>
+
+        <h2>4. Star Schema and semantic model design</h2>
+        <p>A well-built model is fast before a single measure is written. I design <strong>Star Schema</strong>
+          models with fact tables at the center and conformed dimensions around them — no snowflaking where it can
+          be avoided, no bidirectional filters unless genuinely required, and dates modeled through a proper date
+          dimension so time intelligence works in one place. The payoff:</p>
+        <ul>
+          <li>Filter propagation is predictable and cheap.</li>
+          <li>Measures are simple and consistent, which reduces formula engine work.</li>
+          <li>The model is explainable to business users — which matters in client-facing delivery and UAT.</li>
+        </ul>
+
+        <h2>5. Import Mode vs DirectQuery: make the decision per dataset</h2>
+        <p>There is no universal right answer — the decision depends on <strong>dataset size, refresh requirements,
+            reporting needs and business logic complexity</strong>. My rule of thumb:</p>
+        <ul>
+          <li><strong>Import Mode</strong> for the vast majority of dashboards — in-memory querying is an order of
+            magnitude faster, and scheduled refreshes keep the model current.</li>
+          <li><strong>DirectQuery</strong> only where data freshness must be real-time, the source is performant, or
+            the data simply cannot be cached.</li>
+          <li><strong>Hybrid patterns</strong> when some tables need freshness and others don't — pairing
+            DirectQuery fact tables with imported dimensions where the architecture supports it.</li>
+        </ul>
+        <p>Choosing Import Mode where DirectQuery had crept in was one of the highest-impact decisions in the
+          optimization program.</p>
+
+        <h2>6. Write performance-conscious DAX</h2>
+        <p>Advanced DAX that is <em>correct</em> but not <em>performant</em> still slows dashboards down. The DAX
+          principles I enforce:</p>
+        <ul>
+          <li><strong>Prefer simple measures.</strong> A basic aggregate over a well-shaped model beats a clever
+            expression over a messy one.</li>
+          <li><strong>Use time intelligence deliberately.</strong> Date dimension-based calculations with
+            <code>CALCULATE</code> and proper filter context beat row-context-heavy iterations on large tables.</li>
+          <li><strong>Watch iterators.</strong> Functions like <code>SUMX</code> and <code>FILTER</code> scan rows;
+            keep them on small, aggregated tables rather than transaction-level fact tables.</li>
+          <li><strong>Reuse calculation groups and variables.</strong> Centralizing KPI business rules keeps
+            measures consistent and reduces redundant computation.</li>
+        </ul>
+
+        <h2>7. The service side: gateway, refresh and governance</h2>
+        <p>Performance doesn't end at the .pbix. In <strong>Power BI Service</strong> the same rigor applies:</p>
+        <ul>
+          <li><strong>Power BI Gateway</strong> configuration — direct query and refresh traffic routes through it,
+            so a well-optimized gateway with proper data source credentials prevents nightly bottlenecks.</li>
+          <li><strong>Refresh management</strong> — stagger dataset refreshes, avoid peak windows, and use
+            incremental refresh so only changed partitions reload.</li>
+          <li><strong>Row-Level Security (RLS)</strong> — dynamic RLS on a security bridge table is auditable and
+            performs well at scale, keeping access governed without duplicating reports per region.</li>
+          <li><strong>Workspace and deployment discipline</strong> — CI/CD through Azure DevOps and Git keeps
+            development, test and production environments consistent, so performance fixes ship cleanly instead of
+            drifting.</li>
+        </ul>
+
+        <h2>The checklist</h2>
+        <ol>
+          <li>Profile with Performance Analyzer, DAX Studio and VertiPaq Analyzer before changing anything.</li>
+          <li>Push ETL work upstream; simplify Power Query; load only the rows and columns you need.</li>
+          <li>Pre-aggregate in SQL with stored procedures, CTEs and indexes tuned for the report.</li>
+          <li>Enforce Star Schema; keep the model clean and explainable.</li>
+          <li>Decide Import vs DirectQuery per dataset — and bias toward Import for speed.</li>
+          <li>Write simple, time-intelligence-aware DAX; watch row-context iterators.</li>
+          <li>Govern the service layer: gateway, incremental refresh, RLS and CI/CD.</li>
+        </ol>
+
+        <div
+          class="mt-10 p-6 rounded-2xl bg-primary/5 border border-primary/20 dark:bg-primary/10 dark:border-primary/30">
+          <p class="font-bold text-slate-900 dark:text-white mb-2">The result</p>
+          <p>By applying this strategy end to end — <strong>optimized ETL pipelines, SQL queries and
+              pre-aggregation</strong> — dashboard load times were reduced by <strong>40%</strong> across the
+            enterprise reporting suite, and the improvements held up in production through governed, CI/CD-driven
+            deployment.</p>
+        </div>
+
+      </div>
+    </article>
+
+    <!-- Author box -->
+    <aside
+      class="mt-12 p-6 md:p-8 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm">
+      <div class="flex flex-col sm:flex-row items-start gap-5">
+        <img src="./assets/images/profile_photo.jpg" alt="Abdul Wassay"
+          class="w-16 h-16 rounded-full object-cover border-2 border-primary/20 shrink-0">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-widest text-primary mb-1">About the author</p>
+          <h3 class="text-xl font-extrabold mb-2">Abdul Wassay — Lead Power BI Developer</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+            8+ years designing and leading Power BI solutions for US and global clients. Expertise spans Power BI,
+            Advanced DAX, SQL, data modeling, Star Schema, SSRS/Paginated Reports, RLS and BI solution
+            architecture — delivered end to end with Agile/Scrum, Jira and Azure DevOps CI/CD. Based in Kanpur,
+            India; open to Senior and Lead Power BI opportunities across India and GCC (UAE, Saudi Arabia, Qatar).
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a href="professional_resume.html"
+              class="px-4 py-2 rounded-full bg-primary text-white text-sm font-bold hover:opacity-90 transition-opacity">View
+              Resume</a>
+            <a href="https://linkedin.com/in/wassayknp" target="_blank"
+              class="px-4 py-2 rounded-full border border-slate-300 dark:border-slate-700 text-sm font-bold hover:border-primary/50 transition-colors">LinkedIn</a>
+            <a href="contact.html"
+              class="px-4 py-2 rounded-full border border-slate-300 dark:border-slate-700 text-sm font-bold hover:border-primary/50 transition-colors">Contact
+              Me</a>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Related -->
+    <div class="mt-12">
+      <h3 class="text-lg font-extrabold mb-4">More from the blog</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <a href="blog.html"
+          class="group p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 lift">
+          <p class="text-xs text-slate-400 dark:text-slate-500 mb-2">Feb 28, 2026 • 12 min read</p>
+          <p class="font-bold group-hover:text-primary transition-colors">Implementing RLS in Enterprise Power BI</p>
+        </a>
+        <a href="blog.html"
+          class="group p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 lift">
+          <p class="text-xs text-slate-400 dark:text-slate-500 mb-2">Jan 12, 2026 • 6 min read</p>
+          <p class="font-bold group-hover:text-primary transition-colors">AI Prompt Engineering in Reporting
+            Workflows</p>
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer
+    class="relative bg-slate-50 dark:bg-[#0a0f1c] pt-10 pb-24 md:pb-8 border-t border-slate-200 dark:border-slate-800/40 overflow-hidden text-slate-600 dark:text-slate-300 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-xs font-medium">© 2026 Abdul Wassay. Built with <span
+            class="text-rose-500 animate-pulse inline-block">❤</span> in India <img src="https://flagcdn.com/w20/in.png"
+            class="inline-block ml-1 -mt-1 w-4" alt="India"></p>
+        <div class="flex gap-6">
+          <a href="index.html" class="text-xs hover:text-primary transition-colors font-medium">Home</a>
+          <a href="blog.html" class="text-xs hover:text-primary transition-colors font-medium">Blog</a>
+          <a href="contact.html" class="text-xs hover:text-primary transition-colors font-medium">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ── Dark Mode ──
+    const html = document.documentElement;
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+    }
+    document.querySelectorAll('.theme-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        html.classList.toggle('dark');
+        localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+      });
+    });
+
+    // ── Scroll Reveal ──
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+
+</html>

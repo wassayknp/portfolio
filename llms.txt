@@ -1,0 +1,23 @@
+# Abdul Wassay — Lead Power BI Developer | BI Solution Architect
+
+> Abdul Wassay is a Lead Power BI Developer with 8+ years of BI experience delivering end-to-end analytics solutions for US and global clients. Expertise spans Power BI (Advanced DAX, Power Query/M, SSRS, Paginated Reports), SQL (CTEs, stored procedures, query optimization), data modeling (Star Schema, semantic models, RLS), BI solution architecture, enterprise analytics and client-facing delivery across Agile/Scrum with Jira and Azure DevOps CI/CD. Open to Senior and Lead Power BI / BI opportunities across India (Hyderabad, Bengaluru, Chennai & other major metros) and GCC (Dubai & UAE main cities, Saudi Arabia main cities, Qatar).
+
+## Profile
+
+- [Home / Portfolio](https://wassayknp.github.io/portfolio/): Lead Power BI Developer positioning, verified performance impact (40% faster dashboard loads, 50% less month-end effort, 15+ hrs/week saved, 200+ dashboards), full BI lifecycle and enterprise data stack.
+- [Executive Resume](https://wassayknp.github.io/portfolio/professional_resume.html): Work history — Lead Power BI Developer / Senior BI Engineer at DEFTeam Solutions (May 2021–Present) and Technology Analyst / BI Developer at Infosys (Oct 2016–Apr 2020). Certifications: Generative AI Foundations & Prompt Engineering (Microsoft/UpGrad 2025), Microsoft Power BI Masterclass (Udemy 2024), TIBCO Certified Professional: Spotfire (2022). B.Tech Computer Science & Engineering, Dr. APJ Abdul Kalam Technical University (2012–2016).
+- [Work & Projects](https://wassayknp.github.io/portfolio/projects_experience.html): Enterprise BI & Public Sector Analytics, Financial Reporting Automation (P&L), BI & Analytics Pipeline (Oracle, Snowflake, REST APIs, Fabric Dataflows Gen2), BI Delivery & Automation (CI/CD, Copilot), Geospatial BI & Location Intelligence (QGIS, GeoJSON), Enterprise Analytics at Infosys (200+ Power BI/Tableau dashboards).
+- [Skills & Architecture](https://wassayknp.github.io/portfolio/skills_architecture.html): Power BI, Advanced DAX, SQL, data modeling, Star Schema, semantic modeling, SSRS/Paginated Reports, RLS, Power BI Gateway, Snowflake, Oracle, SQL Server, Azure SQL, Microsoft Fabric Dataflows, Azure DevOps, CI/CD, Jira, Agile/Scrum, QGIS/GeoJSON, Tableau, Spotfire, Power Automate, Copilot, GenAI, prompt engineering.
+- [Blog](https://wassayknp.github.io/portfolio/blog.html): Articles on Power BI dashboard performance optimization, dynamic Row-Level Security, and AI prompt engineering in reporting workflows.
+- [How I Cut Power BI Dashboard Load Times by 40%](https://wassayknp.github.io/portfolio/powerbi-dashboard-performance-optimization.html): Practical Power BI performance guide — ETL and Power Query tuning, SQL pre-aggregation, Star Schema modeling, Import vs DirectQuery decisions and DAX optimization, with a verified 40% load-time reduction across an enterprise reporting suite.
+- [Contact](https://wassayknp.github.io/portfolio/contact.html): Email wassayknp@gmail.com, phone +91-7897034508, LinkedIn linkedin.com/in/wassayknp, GitHub github.com/wassayknp.
+
+## Key facts (verified)
+
+- 8+ years business intelligence experience (2016–present)
+- Reduced dashboard load times by 40% via optimized ETL pipelines, SQL queries and pre-aggregation
+- Automated report distribution and ETL refresh with Power Automate, saving 15+ hours/week
+- Reduced month-end reporting effort by 50% by migrating Excel P&L workflows to Power BI and SQL Server
+- Developed 200+ Power BI and Tableau dashboards for global clients at Infosys
+- Increased ad-hoc reporting adoption by 30% through business-user training
+- Reduced ad-hoc data access requests by 35% using Copilot-assisted data exploration
